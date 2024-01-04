@@ -53,6 +53,7 @@
 
 ## 12. Contact Information
 - Provide contact details for users or contributors.
+- example@gmail.com
 
 ## 13. Changelog
 - Document changes, enhancements, and bug fixes for each version.
