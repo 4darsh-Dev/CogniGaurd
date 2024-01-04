@@ -27,7 +27,7 @@ CogniGuard is a web extension dedicated to identifying and combating dark patter
 
 ## Screenshots 📸
 
-[Include screenshots of the extension interface in action.]
+[Include screenshots of the extension interface in action.] coming soon.
 
 ## Documentation 📖
 
