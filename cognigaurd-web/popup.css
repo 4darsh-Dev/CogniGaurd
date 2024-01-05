@@ -135,6 +135,47 @@
 
 }
 
+@layer transparency-meter {
+    #transparency-meter {
+        position: relative;
+        width: auto;
+        height: 100%;
+        display: inline-block;
+        background: conic-gradient(
+            red 0 120deg,
+            yellow 120deg 240deg,
+            green 240deg 360deg
+        );
+        border-radius: 50%;
+        margin-top: 50px;
+        overflow: hidden;
+    }
+    
+    #arrow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 5px;
+        height: 100px;
+        background-color: white;
+        border-radius: 5px;
+        transform-origin: 50% 100%;
+        transform: rotate(0deg);
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    #score-display {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+    }
+}
+
 @layer scan-result {
     .scan-result-box{
         width:100%;
