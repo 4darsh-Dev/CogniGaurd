@@ -1,6 +1,4 @@
-// Implement your dark pattern detection logic here
-// For simplicity, this example always shows the popup
-// content.js
+
 // This script will be injected into all web pages
 
 // Function to send website data to the API
