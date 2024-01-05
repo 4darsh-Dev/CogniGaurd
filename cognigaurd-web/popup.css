@@ -1,22 +1,237 @@
-*{
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
+
+@layer base {
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+
+    }
+
+    :root{
+        --primary-color:#2457C5;
+        --secondary-color:#469A3F; 
+        --white: #fff;
+        --black: #050D14;
+        --base-size:1.3rem;
+        --sans: Poppins, sans-serif;
+        --mono: Montserrat, monospace;
+
+        
+    }
+    .container{
+        width: 350px;
+        height: 500px;
+        border: 0px solid var(--primary-color);
+        border-radius: 6px;
+        box-shadow: 0 0 25px gray;
+    
+    }
 }
-.container{
-    width: 400px;
-    height: 400px;
-    border: 0px solid blue;
-    border-radius: 6px;
-    box-shadow: 0 0 25px gray;
+
+
+@layer header {
+
+    nav {
+        height: 3rem;
+        width: 100%;
+        padding: 8px;
+    }
+
+    .nav-list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+        align-items: center; 
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .logo a,
+    .logo p {
+        font-size: var(--base-size);
+        color: var(--primary-color);
+    }
+
+    .logo p {
+        font-family: var(--sans);
+    }
+
+    .menu-list {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .menu-list a {
+        font-size: var(--base-size);
+        color: var(--primary-color);
+    }
+}
+
+
+@layer dp-info{
+    .dp-box{
+        padding: 12px 24px;
+        width:100%;
+        height: 120px;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+
+
+    }
+    .dp-box img{
+        width: auto;
+        height: 100%;
+        border-radius: 12px;
+
+    }
+    .info-box{
+        width: auto;
+        display: inline-block;
+
+    }
+    .info-box a{
+        font-family: var(--sans);
+        font-size: 12px;
+        /* width: 6rem; */
+        padding: 6px 6px;
+        display: block;
+        text-decoration: none;
+        border-radius: 6px;
+        margin: 8px ;
+    }
+    #info-1{
+        color: var(--white);
+        background-color: var(--secondary-color);
+        border: 2px solid var(--secondary-color);
+    }
+    #info-2{
+        border: 2px solid var(--secondary-color);
+        color: var(--secondary-color);
+        text-align: center;
+
+
+    }
+
+
+
+
 
 }
 
-ul{
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
+@layer scan-result {
+    .scan-result-box{
+        width:100%;
+        padding : 12px 24px;
+        height:235px;
+        overflow: hidden;
+        
+    }
+
+    .scan-result-box h2 {
+        font-family: var(--mono);
+        font-size: 15px;
+        color: var(--black);
+        margin-bottom: 12px;
+
+    }
+    .scan-list{
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .scan-items{
+        font-family: var(--sans);
+        font-size: 12px;
+        color: var(--primary-color);
+        padding: 4px 12px;
+        border-radius: 6px;
+        background-color: var(--white);
+        border: 2px solid var(--primary-color);
+        text-align: center;
+    }
+
+    #report-dp{
+        font-family: var(--sans);
+        font-size: 14px;
+        padding: 6px 12px;
+        border-radius: 6px;
+        background-color: var(--primary-color);
+        color: var(--white);
+        position: relative;
+        top: 15px;
+        text-decoration: none;
+
+    }
+}
+
+@layer tp-score {
+    .tp-box{
+        width:100%;
+        padding : 5px 24px;
+        height:45px;
+        display: flex; 
+        flex-direction: row;
+        gap: 12px;
+
+    }
+    #tp-para {
+        font-family: var(--sans);
+        font-size: 14px;
+        padding: 6px 12px;
+        border-radius: 6px;
+        background-color: var(--secondary-color);
+        color: var(--white);
+    }
+    #transparencyScore{
+        font-family: var(--sans);
+        font-size: 14px;
+        color: var(--black);
+        padding: 6px;
+
+    }
+
+}
+
+@layer help {
+    .help-box{
+        width:100%;
+        padding : 12px 24px;
+        height:30px;
+        display: flex; 
+        flex-direction: row;
+        
+
+    }
+    .help-box a{
+        font-family: var(--sans);
+        font-size: 14px;
+        color: var(--primary-color);
+        text-decoration: none;
+    }
     
 
-}
+    #get-help{
+        margin-left:auto;
+    }
 
+}
 

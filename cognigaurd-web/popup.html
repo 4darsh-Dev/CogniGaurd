@@ -4,25 +4,79 @@
 <head>
   <title>CogniGuard</title>
   <link rel="stylesheet" type="text/css" href="popup.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
   <div class="container">
     <header>
       <nav>
-        <ul>
-          <li><img src="/assets/imgages/icon.jpeg" alt="Logo"></li>
-          <li>CogniGuard</li>
+        <ul class="nav-list">
+          <li>
+            <div class="logo">
+              <a href="#"><i class='bx bxs-shield' ></i></a>
+              <p>CogniGuard</p>
+            </div>
+          </li>
+          <li>
+            <div class="menu-list">
+              <a href="#"><i class='bx bxs-home'></i></a>
+              <a href="#"><i class='bx bxs-cog' ></i></a>
+              <a href="#"><i class='bx bx-dots-vertical-rounded' ></i></a>
+            </div>
+          </li>
         </ul>
       </nav>
     </header>
-    <h2>Dark Pattern Detected!</h2>
-    <p>This website may employ dark patterns. Be cautious.</p>
-    <div class="transparency-score">
-      <h3>Transparency score </h3>
-      <p>...##</p>
+    <section id="dark-pattern-info">
+      <div class="dp-box">
+        <img src="assets/images/fg-scan.jpg" alt="Scan">
+        <div class="info-box">
+          <a id="info-1" href="#">Know about Dark Patterns</a>
+          <a id="info-2" href="#">Ways of handling</a>
+        </div>
+      </div>
+      
+    </section>
 
-    </div>
+    <section id="scan-results">
+
+      
+      <div class="scan-result-box">
+        <h2>What we have found so far:</h2>
+        <ul class="scan-list">
+          <li class="scan-items">Sample</li>
+          <li class="scan-items">Sample2</li>
+          <li class="scan-items">Sample3</li>
+          <li class="scan-items">Sample4</li>
+
+
+        </ul>
+        <a id="report-dp" href="#">Report Dark Patten</a>
+      </div>
+      
+    </section>
+
+
+    <section id="tp-score">
+      <div class="tp-box">
+        
+        <p id="tp-para" >Transparency score <p>
+        <p id="transparencyScore">0</p>
+  
+      </div>
+
+    </section>
+
+    <section id="help">
+      <div class="help-box">
+        <a id="tandc" href="#">Terms and Conditions?</a>
+        <a id="get-help" href="#">Get Help</a>
+      </div>
+      
+    </section>
+    
+    
   </div>
 
 
