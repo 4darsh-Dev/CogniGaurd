@@ -9,12 +9,17 @@
     ],
     "browser_action": {
       "default_icon": {
-        "16": "",
+        "16": "assets/images/icon-black.png",
         "48": "assets/images/icon-black.png",
         "128": "assets/images/icon-black.png"
       },
       "default_popup": "popup.html"
     },
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+
     "icons": {
       "16": "assets/images/icon-black.png",
       "48": "assets/images/icon-black.png",
@@ -25,6 +30,11 @@
         "matches": ["<all_urls>"],
         "js": ["content.js"]
       }
+    ],
+    "web_accessible_resources": [
+      "content.js"
     ]
+
+    
   }
   
