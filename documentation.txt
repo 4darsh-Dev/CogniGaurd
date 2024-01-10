@@ -1,4 +1,4 @@
-# CogniGuard Documentation
+# CogniGuard: Defending Users Against Dark Patterns on the Web
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -19,50 +19,59 @@
 16. [Feedback](#feedback)
 
 ## 1. Introduction
-- Provide a brief overview of the project's purpose and importance.
+CogniGuard is a powerful web extension designed to empower users by identifying and combatting dark patterns on various websites, particularly focusing on E-commerce platforms. Dark patterns are deceptive design practices that manipulate user behavior, eroding trust and hindering ethical online experiences. This documentation provides a comprehensive guide on how to use, contribute, and understand the inner workings of CogniGuard.
 
 ## 2. Getting Started
-- Guide users on installation and prerequisites.
+### Installation
+To get started with CogniGuard, follow the installation instructions for your preferred web browser (Chrome, Firefox, Safari).
+
+### Prerequisites
+Ensure you have Python, Django, and necessary dependencies installed for the backend. Familiarize yourself with the BERT model for natural language processing.
 
 ## 3. Usage
-- Demonstrate how to use the web extension with examples.
+CogniGuard seamlessly integrates with your web browser, actively analyzing websites in real-time. Users receive warnings and alerts when dark patterns such as price manipulation or fake urgency are detected. The transparency score for each website is also displayed, providing users with valuable insights into the platform's trustworthiness.
 
 ## 4. Features
-- Detail the key features and their benefits.
+- **HTML & JavaScript Code Analysis:** Scrutinize webpages for deceptive elements through DOM manipulation and event listeners.
+- **Price Manipulation Detection:** Analyze displayed prices and detect potential manipulation using web scraping and a fine-tuned ML model.
+- **Crowdsourced Database and ML Integration:** Users can report dark patterns, contributing to a continuously evolving machine learning model.
+- **Misleading Terms & Conditions Detection:** Utilize BERT for NLP to analyze terms and conditions for suspicious content.
+- **Transparency Score Calculation:** Compute and display transparency scores based on various analyses.
 
 ## 5. Configuration
-- Explain any configuration options and customization settings.
+Configure CogniGuard by adjusting settings in the web extension or backend. Refer to the configuration section for detailed instructions.
 
 ## 6. Contributing
-- Guidelines for contributing, bug reporting, and feature requests.
+We welcome contributions! Follow the guidelines in the contributing section to contribute to the development of CogniGuard.
 
 ## 7. Roadmap
-- Planned features, improvements, and future milestones.
+Explore the planned features and improvements in the roadmap section. Your feedback and contributions help shape the future of CogniGuard.
 
 ## 8. Code of Conduct
-- Establish expected behavior for contributors.
+Read and adhere to our code of conduct to foster a positive and inclusive community around CogniGuard.
 
 ## 9. Acknowledgments
-- Express gratitude to contributors, libraries, and tools.
+We appreciate the efforts of everyone involved in the development and testing of CogniGuard.
 
 ## 10. License
-- Specify the project's license and any considerations.
+CogniGuard is licensed under [License Name]. Review the license section for more details.
 
 ## 11. FAQs
-- Address frequently asked questions and common issues.
+Refer to the frequently asked questions section for answers to common queries about CogniGuard.
 
 ## 12. Contact Information
-- Provide contact details for users or contributors.
-- example@gmail.com
+For further assistance or inquiries, contact our team through the provided contact information.
 
 ## 13. Changelog
-- Document changes, enhancements, and bug fixes for each version.
+Stay updated on the latest changes and improvements with our detailed changelog.
 
 ## 14. Examples or Demos
-- Showcase real-world examples or demos of the project.
+Explore examples or demos showcasing CogniGuard's capabilities in action.
 
 ## 15. Security
-- Provide information on security considerations.
+Learn about the security measures implemented in CogniGuard to ensure a secure user experience.
 
 ## 16. Feedback
-- Encourage users to provide feedback and report issues.
+We value your feedback! Share your thoughts, suggestions, or report issues in the feedback section.
+
+CogniGuard is committed to creating a transparent and user-centric online environment, and your involvement is crucial to achieving this goal. Thank you for choosing CogniGuard!
