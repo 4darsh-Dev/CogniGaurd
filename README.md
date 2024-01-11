@@ -2,13 +2,13 @@
 
 ## Overview
 
-CogniGuard is a web extension dedicated to identifying and combating dark patterns on websites, ensuring users a transparent and ethical online experience.
+CogniGuard is a powerful web extension designed to empower users by identifying and combatting dark patterns on various websites, particularly focusing on E-commerce platforms. Ensuring users a transparent and ethical online experience. Dark patterns are deceptive design practices that manipulate user behavior, eroding trust and hindering ethical online experiences.
 
 ## Tech Stack 🛠️
 
 - **Web Extension:** HTML, CSS, JavaScript 
 - **Python (BeautifulSoup, Scrapy):** Web scraping for price data analysis.
-- **Django:** Backend for API management.
+- **Django:** Backend for API management and Dark pattern report pattern for CogniGuard
 - **BERT Model:** Fine-tuned for sophisticated pattern recognition.
 
 ## Installation 🚀
@@ -16,6 +16,7 @@ CogniGuard is a web extension dedicated to identifying and combating dark patter
 1. Download and install the CogniGuard extension in your browser.
 2. Start browsing websites confidently, knowing dark patterns are actively monitored.
 3. Transparency scores are displayed on the extension interface upon opening a website.
+
 
 ## Features 🌐🔍
 
@@ -31,7 +32,7 @@ CogniGuard is a web extension dedicated to identifying and combating dark patter
 
 ## Documentation 📖
 
-Detailed documentation on usage, contribution guidelines, and API integration can be found in the [Coming Soon](link-to-wiki).
+Detailed documentation on usage, contribution guidelines, and API integration can be found in the [Documentation Link](https://github.com/4darsh-Dev/CogniGaurd/wiki).
 
 ## Authors 🧑‍💻
 
@@ -41,23 +42,70 @@ Detailed documentation on usage, contribution guidelines, and API integration ca
 
 - [@DharmeshTanwar56 (Dharmesh Tanwar)](https://github.com/DharmeshTanwar56) - UI/UX Designer
 
+- [goldy-dev123 (Goldy)](https://github.com/goldy-dev123) - Technical Writing
+
 
 ## Contributing Guidelines 🤝🚀
 
-Explore how you can contribute to our mission of combating dark patterns. Whether it's reporting instances, suggesting enhancements, or contributing code changes, your involvement is crucial to creating a fair digital environment.
+
+Thank you for considering contributing to CogniGuard! We welcome your help in making this project even better.
+
+Here are the key points to guide your contributions:
+
+- **Fork the Repository:** Start by forking the CogniGuard repository to your own GitHub account. 🍴
+
+- **Clone the Repository:** Clone the forked repository to your local machine using `git clone https://github.com/4darsh-Dev/CogniGaurd `. 💻
+
+- **Create a Branch:** Create a branch for your contributions using a descriptive branch name. 🌿
+
+- **Make Changes:** Implement your changes or additions, ensuring they align with the project's goals. 🚀
+
+- **Testing:** Test your changes thoroughly to ensure functionality and prevent regressions. ✔️
+
+- **Commit Changes:** Commit your changes with clear, concise messages. 💬
+
+- **Create Pull Request:** Push your changes to your forked repository and create a Pull Request (PR) to the main CogniGuard repository. 🎉
+
+- **Follow Code Standards:** Adhere to coding standards and guidelines defined in the project. 📋
+
+- **Provide Detailed PR Description:** Clearly explain the purpose and impact of your PR. 📝
+
+- **Participate in Discussions:** Engage in discussions related to your PR and address feedback promptly. 💬
+
+By following these guidelines, you contribute to the growth and improvement of CogniGuard. Thank you for your valuable contributions! 🚀
 
 ## Roadmap 🗺️
 
 Check out the project's roadmap to understand the planned features, improvements, and future milestones.
+- Creating the CogniGaurd Frontend and Api integration.
+- Building Datasets for fine tuning BERT Deep learning Model.
+- Setting up python virtual environment with necessary modules and libraries.
+- Fine Tuning BERT model for analyzing terms and conditions page.
+- Testing the BERT model on random websites.
+- Django Backend for serving CogniGuard Landing and report dark pattern pages.
+- Setting up Database for Django app.
+- ...updating soon
 
 ## Code of Conduct 🧑‍💼
 
 Familiarize yourself with the project's code of conduct to ensure a positive and inclusive community.
+- **Welcome to the CogniGuard Community!** 🚀
+- **Values:** Prioritize inclusivity, respect, collaboration, open-mindedness, and transparency. 🌟
+- **Expected Behavior:** Embrace positive language, constructive criticism, and acknowledgment of efforts. Adhere to guidelines and maintain a respectful tone. 🌈
+- **Unacceptable Behavior:** Prohibit harassment, trolling, personal attacks, and privacy violations. 🚫
+- **Reporting:** Promptly report violations. Investigation includes warnings or removal from the community. 🛡️
+- **Conclusion:** We aim to create a space where everyone feels welcome, valued, and respected. Join us in fostering a positive and collaborative community! 🙌
+
 
 ## Acknowledgments 🙏
 
-Show appreciation for contributors, libraries, or tools that have played a significant role in the development of DarkPatternDetector.
+We express our gratitude to the incredible individuals who have contributed to the development and success of CogniGuard. 🌟 Your dedication, passion, and insights have played a pivotal role in shaping this project.
 
+Special thanks to the open-source community for their continuous support and collaborative spirit. 🚀 Your contributions, whether big or small, have contributed to the growth and improvement of CogniGuard.
+
+We appreciate the efforts of each tester, developer, and community member who has devoted time and expertise to make CogniGuard a valuable tool.
+
+Thank you for being part of our journey and contributing to a transparent and user-centric online environment. 🌐 Your involvement is crucial to the success of CogniGuard!
 
 ## Feedback 📬
 
