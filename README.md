@@ -4,6 +4,40 @@
 
 CogniGuard is a powerful web extension designed to empower users by identifying and combatting dark patterns on various websites, particularly focusing on E-commerce platforms. Ensuring users a transparent and ethical online experience. Dark patterns are deceptive design practices that manipulate user behavior, eroding trust and hindering ethical online experiences.
 
+
+## Project Setup Locally 🚀
+
+### Setting up Django API
+
+1. clone the git repository locally.
+```git clone https://github.com/4darsh-Dev/CogniGaurd.git```
+2. Install python and setup virtual envionment
+``` pip install virtualenv ```
+``` virtualenv myenv ```
+### Activating virtual environment named as myenv
+### 1. In Windows 🪟
+``` .\myenv\Scripts\activate  ```
+### 2. In Linux/Mac 🐧
+``` source myenv/bin/activate```
+
+3. Installing required modules and libraries
+``` pip install -r requirements.txt ```
+
+4. Running Django Development Server
+``` python manage.py makemigrations ```
+``` python manage.py migrate ```
+``` python manage.py runserver ```
+-- Server will be started at localhost (example: 127.0.0.1:8000)
+
+### Setting up CogniGuard Web Extension
+
+1. Open Google Chrome Browser and visit url
+``` chrome://extensions/ ```
+2. Turn on Developer Mode.
+3. Click on load unpacked at then select the cogniguard-web folder with manifest.json
+4. Click on extension icon and you will find the CogniGuard.
+
+
 ## Tech Stack 🛠️
 
 - **Web Extension:** HTML, CSS, JavaScript 
@@ -11,14 +45,10 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 - **Django:** Backend for API management and Dark pattern report pattern for CogniGuard
 - **BERT Model:** Fine-tuned for sophisticated pattern recognition.
 
-## Installation 🚀
-
-1. Download and install the CogniGuard extension in your browser.
-2. Start browsing websites confidently, knowing dark patterns are actively monitored.
-3. Transparency scores are displayed on the extension interface upon opening a website.
 
 
 ## Features 🌐🔍
+
 
 1. **JavaScript Code Analysis:** Uncover deceptive tactics through DOM manipulation and event listeners.
 2. **Price Manipulation Detection:** Warn users of potential price manipulation and fake urgency.
