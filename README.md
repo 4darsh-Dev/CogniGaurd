@@ -4,7 +4,15 @@
 
 CogniGuard is a powerful web extension designed to empower users by identifying and combatting dark patterns on various websites, particularly focusing on E-commerce platforms. Ensuring users a transparent and ethical online experience. Dark patterns are deceptive design practices that manipulate user behavior, eroding trust and hindering ethical online experiences.
 
-![GitHub code size](https://img.shields.io/github/languages/code-size/4darsh-Dev/CogniGuard?style=plastic)
+![GitHub code size](https://img.shields.io/github/languages/code-size/4darsh-Dev/CogniGaurd?style=plastic)
+![GitHub contributors](https://img.shields.io/github/contributors/4darsh-Dev/CogniGaurd?style=plastic)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/4darsh-Dev/CogniGaurd)
+![GitHub issues](https://img.shields.io/github/issues/4darsh-Dev/CogniGaurd)
+![GitHub License](https://img.shields.io/github/license/4darsh-Dev/CogniGaurd)
+![GitHub Release](https://img.shields.io/github/v/release/4darsh-Dev/CogniGaurd)
+![GitHub forks](https://img.shields.io/github/forks/4darsh-Dev/CogniGaurd)
+![GitHub Repo stars](https://img.shields.io/github/stars/4darsh-Dev/CogniGaurd)
+
 
 
 ## Project Setup Locally 🚀
