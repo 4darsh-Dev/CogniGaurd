@@ -8,7 +8,6 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
   <img src="https://onionreads.com/wp-content/uploads/2024/01/Screenshot-2024-01-15-014420.png" alt="CogniGuard" width="600px" />
 </p>
 
-![CogniGaurd](https://onionreads.com/wp-content/uploads/2024/01/Screenshot-2024-01-15-014420.png| width=100)
 ![GitHub code size](https://img.shields.io/github/languages/code-size/4darsh-Dev/CogniGaurd?style=plastic)
 ![GitHub contributors](https://img.shields.io/github/contributors/4darsh-Dev/CogniGaurd?style=plastic)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/4darsh-Dev/CogniGaurd)
