@@ -1,7 +1,0 @@
-2024-01-07 13:01:22,349 - INFO - Scraping https://www.flipkart.com/pages/terms
-2024-01-07 13:01:23,395 - INFO - Scraping https://www.myntra.com/termsofuse
-2024-01-07 13:04:16,779 - INFO - Scraping https://onionreads.com/terms-and-conditions/
-2024-01-08 14:10:26,319 - INFO - Scraping https://onionreads.com/terms-and-conditions/
-2024-01-08 14:11:32,624 - INFO - Scraping https://onionreads.com/terms-and-conditions/
-2024-01-08 15:37:45,334 - INFO - Scraping https://onionreads.com/terms-and-conditions/
-2024-01-08 15:37:55,147 - INFO - Scraping https://onionreads.com/terms-and-conditions/
