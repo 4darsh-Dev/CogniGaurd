@@ -4,6 +4,8 @@
 
 CogniGuard is a powerful web extension designed to empower users by identifying and combatting dark patterns on various websites, particularly focusing on E-commerce platforms. Ensuring users a transparent and ethical online experience. Dark patterns are deceptive design practices that manipulate user behavior, eroding trust and hindering ethical online experiences.
 
+![GitHub code size](https://img.shields.io/github/languages/code-size/4darsh-Dev/CogniGuard?style=plastic)
+
 
 ## Project Setup Locally 🚀
 
@@ -27,7 +29,7 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 ``` python manage.py makemigrations ```
 ``` python manage.py migrate ```
 ``` python manage.py runserver ```
--- Server will be started at localhost (example: 127.0.0.1:8000)
+-- Server will be started at localhost (example: http://127.0.0.1:8000/)
 
 ### Setting up CogniGuard Web Extension
 
@@ -72,7 +74,7 @@ Detailed documentation on usage, contribution guidelines, and API integration ca
 
 - [@DharmeshTanwar56 (Dharmesh Tanwar)](https://github.com/DharmeshTanwar56) - UI/UX Designer
 
-- [goldy-dev123 (Goldy)](https://github.com/goldy-dev123) - Technical Writing
+- [@goldy-dev123 (Goldy)](https://github.com/goldy-dev123) - Technical Writing
 
 
 ## Contributing Guidelines 🤝🚀
