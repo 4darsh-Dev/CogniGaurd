@@ -27,12 +27,16 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 ```bash 
 git clone https://github.com/4darsh-Dev/CogniGaurd.git
 ```
-2. Install python and setup virtual envionment
+2. Install python and setup virtual envionment. 
+#### 1. Open terminal in cogniguard folder
 ```bash 
 pip install virtualenv 
 ```
 ```bash 
-virtualenv myenv 
+cd api
+```
+```bash 
+python -m venv myenv 
 ```
 #### Activating virtual environment named as myenv
 ##### 1. In Windows 🪟
@@ -118,7 +122,10 @@ Here are the key points to guide your contributions:
 
 - **Fork the Repository:** Start by forking the CogniGuard repository to your own GitHub account. 🍴
 
-- **Clone the Repository:** Clone the forked repository to your local machine using `git clone https://github.com/4darsh-Dev/CogniGaurd `. 💻
+- **Clone the Repository:** Clone the forked repository to your local machine using . 💻
+```bash
+git clone https://github.com/4darsh-Dev/CogniGaurd 
+```
 
 - **Create a Branch:** Create a branch for your contributions using a descriptive branch name. 🌿
 
