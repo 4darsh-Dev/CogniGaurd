@@ -24,31 +24,55 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 ### Setting up Django API
 
 1. clone the git repository locally.
-```git clone https://github.com/4darsh-Dev/CogniGaurd.git```
-2. Install python and setup virtual envionment
-``` pip install virtualenv ```
-``` virtualenv myenv ```
-### Activating virtual environment named as myenv
-### 1. In Windows 🪟
-``` .\myenv\Scripts\activate  ```
-### 2. In Linux/Mac 🐧
-``` source myenv/bin/activate```
+```bash 
+git clone https://github.com/4darsh-Dev/CogniGaurd.git
+```
+2. Install python and setup virtual envionment. 
+#### 1. Open terminal in cogniguard folder
+```bash 
+pip install virtualenv 
+```
+```bash 
+cd api
+```
+```bash 
+python -m venv myenv 
+```
+#### Activating virtual environment named as myenv
+##### 1. In Windows 🪟
+```bash 
+.\myenv\Scripts\activate  
+```
+##### 2. In Linux/Mac 🐧
+```bash
+ source myenv/bin/activate
+ ```
 
 3. Installing required modules and libraries
-``` pip install -r requirements.txt ```
+```bash
+ pip install -r requirements.txt 
+ ```
 
 4. Running Django Development Server
-``` python manage.py makemigrations ```
-``` python manage.py migrate ```
-``` python manage.py runserver ```
+```bash 
+python manage.py makemigrations 
+```
+```bash 
+python manage.py migrate 
+```
+```bash 
+python manage.py runserver 
+```
 -- Server will be started at localhost (example: http://127.0.0.1:8000/)
 
 ### Setting up CogniGuard Web Extension
 
 1. Open Google Chrome Browser and visit url
-``` chrome://extensions/ ```
+``` bash
+ chrome://extensions/ 
+ ```
 2. Turn on Developer Mode.
-3. Click on load unpacked at then select the cogniguard-web folder with manifest.json
+3. Click on load unpacked and then select the cogniguard-web folder with manifest.json
 4. Click on extension icon and you will find the CogniGuard.
 
 
@@ -98,7 +122,10 @@ Here are the key points to guide your contributions:
 
 - **Fork the Repository:** Start by forking the CogniGuard repository to your own GitHub account. 🍴
 
-- **Clone the Repository:** Clone the forked repository to your local machine using `git clone https://github.com/4darsh-Dev/CogniGaurd `. 💻
+- **Clone the Repository:** Clone the forked repository to your local machine using . 💻
+```bash
+git clone https://github.com/4darsh-Dev/CogniGaurd 
+```
 
 - **Create a Branch:** Create a branch for your contributions using a descriptive branch name. 🌿
 
