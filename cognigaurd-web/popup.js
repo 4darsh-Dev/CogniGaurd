@@ -15,6 +15,7 @@ const fetchTransparencyScore = () => {
         })
         .then(userData => {
             // Process the retrieved data
+            
             const transparencyScore = userData.transparency_score;
             const transparencyScoreElement = document.getElementById("transparencyScore");
             transparencyScoreElement.textContent = `${transparencyScore}`;
