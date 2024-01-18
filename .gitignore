@@ -8,3 +8,4 @@ db.sqlite3
 Scripts/
 share/
 pyvenv.cfg
+.env
