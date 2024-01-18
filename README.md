@@ -28,7 +28,7 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 git clone https://github.com/4darsh-Dev/CogniGaurd.git
 ```
 2. Install python and setup virtual envionment. 
-#### 1. Open terminal in cogniguard folder
+#### 1. Open terminallear in cogniguard folder
 ```bash 
 pip install virtualenv 
 ```
