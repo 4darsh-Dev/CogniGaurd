@@ -1,11 +1,10 @@
-console.log('CogniGuard Popup working!')
+console.log("CogniGuard Popup working!");
 
 // api endpoint
-const apiUrl = 'http://127.0.0.1:8000/api/'
+const apiUrl = "http://127.0.0.1:8000/api/";
 
 // Function to fetch transparency score
 const fetchTransparencyScore = () => {
-
     // Fetching transparency score from api
     fetch(apiUrl + "tp-score/")
         .then(response => {
@@ -29,16 +28,16 @@ const fetchTransparencyScore = () => {
 };
 
 // Fetch transparency score when DOM is loaded
-document.addEventListener('DOMContentLoaded', fetchTransparencyScore)
+document.addEventListener("DOMContentLoaded", fetchTransparencyScore);
 
 function updateTransparencyMeter(transparencyScore) {
-  const arrowElement = document.querySelector('.needle-img')
-  const scoreDisplayElement = document.querySelector('.transparency-score')
+    const arrowElement = document.getElementById("arrow");
+    const scoreDisplayElement = document.getElementById("score-display");
 
-  // Calculate arrow rotation based on transparency score
-  const rotation = (transparencyScore / 10) * 180 - 90
-
-  // Rotate arrow and update score display
-  arrowElement.style.transform = `rotate(${rotation}deg)`
-  scoreDisplayElement.innerText = transparencyScore
+    // Calculate arrow rotation based on transparency score
+    const rotation = (transparencyScore / 10) * 180 - 90;
+    
+    // Rotate arrow and update score display
+    arrowElement.style.transform = `rotate(${rotation}deg)`;
+    scoreDisplayElement.innerText = transparencyScore;
 }
