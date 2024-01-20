@@ -9,7 +9,8 @@ const sendWebsiteData = () => {
   };
 
   // Send data to API
-  fetch(apiUrl, {
+  fetch(apiUrl +"price-manipulation/", {
+    
       method: "POST",
       headers: {
           "Content-Type": "application/json",
