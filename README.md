@@ -13,7 +13,12 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/4darsh-Dev/CogniGaurd)
 ![GitHub issues](https://img.shields.io/github/issues/4darsh-Dev/CogniGaurd)
 ![GitHub License](https://img.shields.io/github/license/4darsh-Dev/CogniGaurd)
-![GitHub Release](https://img.shields.io/github/v/release/4darsh-Dev/CogniGaurd)
+[![Python](https://img.shields.io/github/languages/top/4darsh-Dev/CogniGaurd?label=Python)](https://github.com/4darsh-Dev/CogniGaurd)
+[![JavaScript](https://img.shields.io/github/languages/top/4darsh-Dev/CogniGaurd?label=JavaScript)](https://github.com/4darsh-Dev/CogniGaurd)
+[![HTML](https://img.shields.io/github/languages/top/4darsh-Dev/CogniGaurd?label=HTML)](https://github.com/4darsh-Dev/CogniGaurd)
+[![CSS](https://img.shields.io/github/languages/top/4darsh-Dev/CogniGaurd?label=CSS)](https://github.com/4darsh-Dev/CogniGaurd)
+
+<!-- ![GitHub Release](https://img.shields.io/github/v/release/4darsh-Dev/CogniGaurd) -->
 ![GitHub forks](https://img.shields.io/github/forks/4darsh-Dev/CogniGaurd)
 ![GitHub Repo stars](https://img.shields.io/github/stars/4darsh-Dev/CogniGaurd)
 
