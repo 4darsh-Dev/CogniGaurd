@@ -1,11 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
-</head>
-<body>
-    <h1>Report for Dark patterns </h1>
-</body>
-</html>
+ {% extends "base.html" %}
+ {% load static %}
+ {% block head %}{% endblock head %}
+
+{% block content %}
+<section class="content-section">
+    <header class="welcome flex-cont">
+        <div><img src="./public/img/4560 1.png" class="welcome-img" alt="shield-and-security"></div>
+        <div class="welcome-text">
+            <h1 class="font-large font-primary">Welcome to <span class="blue-text">Cogniguard</span>
+                Customer Service
+            </h1>
+            <div class="welcome-btns">
+                <a href="#" class="btn-primary">Get Started</a>
+                <a href="#" class="btn-secondary">Give Feedback</a>
+            </div>
+            <!-- <div class="dp-search">
+            <img src="./public/img/Search.svg" alt="search-icon">
+            <input type="text">
+        </div> -->
+        </div>
+    </header>
+    <section class="dp-about flex-cont">
+        <h1 class="font-mid-large font-primary">
+            What <span class="blue-text">Dark Patterns</span> are and How these affect you?
+        </h1>
+        <div>
+            <ul>
+                <li> Designed to mislead users into making unintended choices</li>
+                <li>Gathering user data or tracking them without clear consent or making it difficult to opt
+                    out.</li>
+                <li>Luring users with attractive offers that change or disappear upon closer look.</li>
+                <li> Making it hard to cancel subscriptions, often with hidden fees or confusing procedures.
+                </li>
+                <li>Creating a sense of false scarcity or pressure to act quickly, like countdown timers or
+                    limited-time offers.</li>
+                <a href="#" class="btn-secondary">Know More</a>
+            </ul>
+
+        </div>
+    </section>
+    <section class="cogni-about flex-cont">
+        <img class="slide-left animate-img" src="./public/img/cogni-about.jpg" alt="shield-and-security">
+        <div class="slide-right animate-p">
+            <h1 class="font-mid-large font-primary">Why <span class="blue-text">CogniGuard</span> Exists...
+            </h1>
+            <ul>
+                <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, provident.</li>
+                <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, provident.</li>
+                <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, provident.</li>
+                <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, provident.</li>
+                <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, provident.</li>
+                <a href="#" class="btn-secondary">Know More</a>
+            </ul>
+        </div>
+    </section>
+</section>
+{% endblock content %}
+
+
+{% block script %}
+
+    {% endblock script %}
