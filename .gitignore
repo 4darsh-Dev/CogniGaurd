@@ -9,3 +9,4 @@ Scripts/
 share/
 pyvenv.cfg
 .env
+fine_tuned_models/ 
