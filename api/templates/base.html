@@ -1,0 +1,134 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <title>CogniGuard | {% block title %}{% endblock title %}</title>
+
+    {% block head %}
+    {% endblock head %}
+</head>
+
+<body>
+    <main>
+        <section class="main-section">
+            <nav class="navbar">
+                <div class="navbar__logo">
+                    <img src="./public/img/logo.png" alt="CogniGuard-logo">
+                </div>
+                <div class="navbar__links  font-primary">
+                    <div class="auth">
+                        <a href="#" class="btn-primary">
+                            <div class="align-items">
+                                <i class="material-symbols-outlined">
+                                    logout
+                                </i>
+                                Login
+                            </div>
+                        </a>
+                        <a href="#" class="btn-secondary">
+                            <div class="align-items">
+                                <span class="material-symbols-outlined">
+                                    double_arrow
+                                </span>
+                                Sign Up
+                            </div>
+                        </a>
+                    </div>
+                    <a href="#" class="link">
+                        <div class="align-items">
+                            <i class="material-symbols-outlined icons">
+                                home
+                            </i>
+                            Home
+                        </div>
+                    </a>
+                    <a href="#" class="link">
+                        <div class="align-items">
+                            <span class="material-symbols-outlined">
+                                info
+                            </span>
+                            About
+                        </div>
+                    </a>
+                    <a href="#" class="link">
+                        <div class="align-items">
+                            <span class="material-symbols-outlined">
+                                warning
+                            </span>
+                            Detected Dark Patterns
+                        </div>
+                    </a>
+                    <a href="#" class="link">Services</a>
+                    <a href="#" class="link">What are Dark Patterns</a>
+                    <a href="#" class="link">
+                        <div class="align-items">
+                            <span class="material-symbols-outlined">
+                                help
+                            </span>
+                            Get Help
+                        </div>
+                    </a>
+                </div>
+            </nav>
+            {% block content%}
+            {% endblock content%}
+        </section>
+        <footer>
+            <div class="footer-text">
+                <div class="cogni-desc">
+                    <h1 class="font-mid-large">CogniGuard</h1>
+                    <p>A web extension which is capable of identifying dark patterns and compatible across all popular
+                        web browsers like Chrome, Firefox and Safari. A dedicated website for crowdsourced database
+                        built on Django and an API for communicating with JavaScript extension and having ML model.</p>
+                </div>
+                <div class="cogni-links">
+                    <div>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Services</a>
+                        <a href="#">Help</a>
+                    </div>
+                    <div>
+                        <a href="#" class="btn-secondary">Feedback</a>
+                        <a href="#" class="btn-secondary">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-design">
+                <div>
+                    <img src="./public/img/left-rect.png" alt="footer design right">
+                </div>
+                <div class="footer-links">
+                    <a href="#"><img src="./public/img/Instagram.png" alt="instagram-icon"></a>
+                    <a href="#"><img src="./public/img/Instagram.png" alt="instagram-icon"></a>
+                    <a href="#"><img src="./public/img/Instagram.png" alt="instagram-icon"></a>
+                    <a href="#"><img src="./public/img/Instagram.png" alt="instagram-icon"></a>
+                </div>
+                <div>
+                    <img src="./public/img/right-rect.png" alt="footer design right">
+                </div>
+            </div>
+
+        </footer>
+
+    </main>
+    <script src="app.js"></script>
+    {% block script %}
+
+    {% endblock script %}
+</body>
+
+</html>
