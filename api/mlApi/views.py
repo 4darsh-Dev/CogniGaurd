@@ -2,11 +2,11 @@ from django.shortcuts import render,redirect
 from django.http import JsonResponse
 
 # Create your views here.
-from .models import WebsiteTransparencyScore
+from .models import WebsiteTransparencyScore, DarkPatternsData
 
-import sys
-sys.path.append("F:\backup-kali\codeFiles\projects\cognigaurd\api\scraping")
-from 
+from scraping.dp_scrape import get_scrape_data
+
+
 
 def tpScore(request):
     tScore = transparencyCalc(request)
@@ -29,15 +29,27 @@ def dpData(request):
     # Extract the URL from the request
     url = request.GET.get('url', '')
 
-    # Call the scraping function and get the text
+    if url != '':
+        # Call the scraping function and get the text
     
-    scraped_text = scrape_text_from_url(url)
+        scraped_text = get_scrape_data(url)
 
-    # Fine-tune BERT model and classify dark pattern
-    predicted_label = fine_tune_and_classify(scraped_text)
+        # Fine-tune BERT model and classify dark pattern
+        # predicted_labels = fine_tune_and_classify(scraped_text)
+        predicted_labels= {"Sample": "This is a Sample dark pattern"}
 
-    # Save the result in the SQLite3 database
-    website = Website.objects.get_or_create(url=url)[0]
-    dark_pattern = DarkPattern.objects.create(website=website, label=predicted_label)
+        # Save the dark pattern data in the DarkPatternData model
+        website_url = url
+        for label, dark_text in predicted_labels.items():
+            dark_pattern, created = DarkPatternsData.objects.get_or_create(
+                website_url=website_url,
+                dark_pattern_label=label,
+                defaults={'dark_text': dark_text}
+            )
+
+            # If the record already exists, update the dark_text field
+            if not created:
+                dark_pattern.dark_text = dark_text
+                dark_pattern.save()
 
     return JsonResponse({"dp_data": "This is the dark pattern data"})
