@@ -21,3 +21,6 @@ print(nan_values)
 
 print(uniqueVal1)
 print(uniqueVal3)
+
+new_df = df[['text', 'Pattern Category']]
+new_df.to_csv('F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_dataset.csv',sep="\t", index=False)
