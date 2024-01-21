@@ -9,4 +9,5 @@ Scripts/
 share/
 pyvenv.cfg
 .env
-fine_tuned_models/ 
+fine_tuned_models/
+fine_tuned_bert/
