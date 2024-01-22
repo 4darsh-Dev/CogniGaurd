@@ -24,6 +24,27 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 ![GitHub forks](https://img.shields.io/github/forks/4darsh-Dev/CogniGaurd)
 ![GitHub Repo stars](https://img.shields.io/github/stars/4darsh-Dev/CogniGaurd)
 
+## Fine-Tuned ML Model Evaluation Score 
+
+### Eval Scores
+
+<p align="center">
+  <img src="https://onionreads.com/wp-content/uploads/2024/01/Screenshot-2024-01-22-210038.png" alt="BERT Fine-Tuned Eval Score " width="600px" />
+</p>
+
+|   Metric   |   Score   |
+|:----------:|:---------:|
+|  Accuracy  |  0.985993 |
+| Precision  |  0.985138 |
+|   Recall   |  0.985993 |
+|  F1-Score  |  0.984211 |
+
+
+### Confusion Matrix
+<p align="center">
+  <img src="https://onionreads.com/wp-content/uploads/2024/01/Screenshot-2024-01-22-210009.png" alt="BERT Confusion Matrix" width="600px" />
+</p>
+
 
 
 ## Project Setup Locally 🚀
