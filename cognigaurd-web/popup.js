@@ -13,6 +13,7 @@ const fetchTransparencyScore = () => {
             }
             return response.json();
         })
+
         .then(userData => {
             // Process the retrieved data
             
@@ -25,6 +26,7 @@ const fetchTransparencyScore = () => {
         .catch(error => {
             console.log("Error", error);
         });
+        
 };
 
 // Fetch transparency score when DOM is loaded
@@ -41,3 +43,40 @@ function updateTransparencyMeter(transparencyScore) {
     arrowElement.style.transform = `rotate(${rotation}deg)`;
     scoreDisplayElement.innerText = transparencyScore;
 }
+
+// Displaying dark patterns
+let scanResultBox = document.getElementsByClassName("scan-result-box")[0];
+const displayDp = (response, length) =>{
+    
+    
+    let head = document.createElement('h2');
+    head.innerText = "What we have found so far:";
+
+    scanResultBox.appendChild(head)
+
+    let scanList = document.createElement("ul");
+    scanList.classList.add("scan-list");
+
+    scanResultBox.appendChild(scanList)
+
+    let responseArr = []   
+
+    for(let i=0; i<length; i++)
+    {
+        let scanItems = document.createElement("li")
+        scanItems.classList.add("scan-items");
+
+        scanItems.innerText = `${responseArr[0]}`;
+
+        scanList.appendChild(scanItems);
+
+
+    }
+
+
+}
+
+let analyzeBtn = document.getElementById("analyze-btn");
+
+analyzeBtn.addEventListener("click", displayDp);
+
