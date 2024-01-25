@@ -1,15 +1,32 @@
-var observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    if (mutation.attributeName === 'style') {
-      if (window.getComputedStyle(popup).visibility === 'visible') {
-        var popupRect = popup.getBoundingClientRect();
-        var popupCenter = { x: popupRect.left + popupRect.width / 2, y: popupRect.top + popupRect.height / 2 };
-        var screenCenter = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-        if (Math.abs(popupCenter.x - screenCenter.x) < 1 && Math.abs(popupCenter.y - screenCenter.y) < 1) {
-          chrome.runtime.sendMessage({type: 'popupDetected'});
+
+
+observers=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+      // console.log(entry);
+      if(entry.isIntersecting){
+        if(Math.abs(entry.boundingClientRect.left+(entry.boundingClientRect.width/2)- window.innerWidth/2) < 15 && Math.abs(entry.boundingClientRect.top+(entry.boundingClientRect.height/2) - window.innerHeight/2) < 15){
+          // console.log(entry)
         }
       }
-    }
   });
+},{threshold:1});
+
+target=null;
+document.querySelectorAll("*").forEach(function(target){
+  observers.observe(target);
 });
-observer.observe(document, {childList: true, subtree: true}); 
+
+
+console.log(document.getElementsByClassName("grid grid-cols-7 md:grid-cols-12 mx-auto h-full relative").getboundingClientRect);
+
+// once finalizing a popup element eliminate the intersectionobserver then just observe it to reduce computataion
+// add more filters to prevent false positive
+// like : keyword matching in text
+/*
+z index
+centering
+close button 
+modal
+background opacity
+
+*/
