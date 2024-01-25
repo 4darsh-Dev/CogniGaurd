@@ -1,6 +1,10 @@
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
   if (changeInfo.status == 'complete') {
-    chrome.tabs.executeScript(tabId, {file: 'popup_detect.js'});
+    console.log("hello")
+    chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      files: ['popup_detect.js']
+    });
   }
 });
 
