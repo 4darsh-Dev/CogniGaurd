@@ -1,5 +1,3 @@
-
-
 observers=new IntersectionObserver(function(entries){
   entries.forEach(function(entry){
       // console.log(entry);
