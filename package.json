@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "pupeteer": "^0.0.1",
+    "puppeteer": "^21.9.0"
+  },
+  "name": "cognigaurd",
+  "description": "CogniGuard is a powerful web extension designed to empower users by identifying and combatting dark patterns on various websites, particularly focusing on E-commerce platforms. Ensuring users a transparent and ethical online experience.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
