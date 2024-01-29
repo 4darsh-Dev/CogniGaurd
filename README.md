@@ -64,6 +64,9 @@ pip install virtualenv
 cd api
 ```
 ```bash 
+cd CogniGaurd
+```
+```bash 
 python -m venv myenv 
 ```
 #### Activating virtual environment named as myenv
@@ -135,6 +138,8 @@ Detailed documentation on usage, contribution guidelines, and API integration ca
 - [@4darsh-Dev (Adarsh Maurya)](https://github.com/4darsh-Dev) - Project Lead
 
 - [@amansingh494 (Aman Singh)](https://github.com/amansingh494) - FrontEnd Developer
+
+- [@Anmolgoel29 (Anmol Goel)](https://github.com/Anmolgoel29) - Machine Learning
 
 - [@DharmeshTanwar56 (Dharmesh Tanwar)](https://github.com/DharmeshTanwar56) - UI/UX Designer
 
