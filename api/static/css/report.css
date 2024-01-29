@@ -1,0 +1,31 @@
+.main-section {
+  gap: 10rem;
+}
+.content-section {
+  gap: 3rem;
+}
+.heading-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 2.7rem;
+  font-family: var(--font-primary);
+}
+.report-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.report-form form input {
+  width: 33vw;
+  height: 6vh;
+}
+.report-form form textarea {
+  border-radius: 5px;
+  width: 33vw;
+  height: 20vh;
+}
+::placeholder {
+  font-family: monospace;
+}
