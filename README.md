@@ -13,9 +13,37 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/4darsh-Dev/CogniGaurd)
 ![GitHub issues](https://img.shields.io/github/issues/4darsh-Dev/CogniGaurd)
 ![GitHub License](https://img.shields.io/github/license/4darsh-Dev/CogniGaurd)
-![GitHub Release](https://img.shields.io/github/v/release/4darsh-Dev/CogniGaurd)
+[![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)](https://github.com/4darsh-Dev/CogniGaurd)
+[![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://github.com/4darsh-Dev/CogniGaurd)
+[![JavaScript]( 	https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/4darsh-Dev/CogniGaurd)
+[![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://github.com/4darsh-Dev/CogniGaurd)
+[![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://github.com/4darsh-Dev/CogniGaurd)
+[![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)](https://github.com/4darsh-Dev/CogniGaurd)
+
+<!-- ![GitHub Release](https://img.shields.io/github/v/release/4darsh-Dev/CogniGaurd) -->
 ![GitHub forks](https://img.shields.io/github/forks/4darsh-Dev/CogniGaurd)
 ![GitHub Repo stars](https://img.shields.io/github/stars/4darsh-Dev/CogniGaurd)
+
+## Fine-Tuned ML Model Evaluation Score 
+
+### Eval Scores
+
+<p align="center">
+  <img src="https://onionreads.com/wp-content/uploads/2024/01/Screenshot-2024-01-22-210038.png" alt="BERT Fine-Tuned Eval Score " width="600px" />
+</p>
+
+|   Metric   |   Score   |
+|:----------:|:---------:|
+|  Accuracy  |  0.985993 |
+| Precision  |  0.985138 |
+|   Recall   |  0.985993 |
+|  F1-Score  |  0.984211 |
+
+
+### Confusion Matrix
+<p align="center">
+  <img src="https://onionreads.com/wp-content/uploads/2024/01/Screenshot-2024-01-22-210009.png" alt="BERT Confusion Matrix" width="600px" />
+</p>
 
 
 

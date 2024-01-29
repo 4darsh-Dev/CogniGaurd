@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path("tp-score/", views.tpScore, name="tpScore"),
+    path("dp-data/", views.dpData, name="dpData"),
     
 ]

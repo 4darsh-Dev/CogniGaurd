@@ -13,7 +13,6 @@ def get_scrape_data(url):
     response = requests.get(url, headers=headers)
 
     
-
     if response.status_code == 200:
         html_text = response.text
 
@@ -42,9 +41,9 @@ def get_scrape_data(url):
 
 my_url = "https://www.amazon.in/BassHeads-122-Earphones-Tangle-Straight/dp/B07QZ3CZ48/ref=sr_1_1?crid=I50H5USKYCLC&keywords=wired%2Bearphones%2Bboat&qid=1705597770&sprefix=wired%2Bearphones%2B%2Caps%2C2763&sr=8-1&th=1"
 # my_url = "https://www.onionreads.com/disclaimer"
-scraped_text = get_scrape_data(my_url)
+# scraped_text = get_scrape_data(my_url)
 
-if scraped_text:
-    print(f"Scraped Text : {scraped_text}")
-else:
-    print("Failed to Scrape")
+# if scraped_text:
+#     print(f"Scraped Text : {scraped_text}")
+# else:
+#     print("Failed to Scrape")

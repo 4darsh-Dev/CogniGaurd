@@ -9,7 +9,7 @@ const sendWebsiteData = () => {
   };
 
   // Send data to API
-  fetch(apiUrl +"price-manipulation/", {
+  fetch(apiUrl +"dp-data/", {
     
       method: "POST",
       headers: {
@@ -29,7 +29,20 @@ const sendWebsiteData = () => {
       .catch(error => {
           console.error("Error:", error);
       });
+
 };
 
 // Execute the function when the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", sendWebsiteData);
+// document.addEventListener("", sendWebsiteData);
+
+let analyzeBtn = document.getElementById("analyze-btn")
+
+analyzeBtn.addEventListener("click", sendWebsiteData )
+
+
+// Send message to background script
+chrome.runtime.sendMessage({ url: window.location.href }, function(response) {
+    console.log(response.result);
+    // Update extension UI with the dark pattern information
+    // ...
+});
