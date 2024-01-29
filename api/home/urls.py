@@ -4,5 +4,5 @@ from home import views
 
 urlpatterns = [
     path("", views.index, name="home"),
-    
+    path("/popup_detect", views.popup_detect, name="popup_detect"),
 ]

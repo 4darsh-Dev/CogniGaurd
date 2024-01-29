@@ -1,3 +1,33 @@
+const sendWebsiteData = (dat , type) => {
+  const websiteData = {
+      img: dat,
+      type:type
+      // Add more data as needed
+  };
+
+  // Send data to API
+  fetch(apiUrl +"price-manipulation/", {
+    
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify(websiteData),
+  })
+      .then(response => {
+          if (!response.ok) {
+              throw new Error("Error sending website data to API");
+          }
+          return response.json();
+      })
+      // .then(apiResponse => {
+      //     console.log("API Response:", apiResponse);
+      // })
+      .catch(error => {
+          console.error("Error:", error);
+      });
+};
+
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo,tab) {
   if (changeInfo.status == 'complete' && !tab.url.startsWith('chrome://')) {
     chrome.scripting.executeScript({
@@ -31,12 +61,13 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         
         chrome.tabs.captureVisibleTab(null, {}, function (dataUrl){
           console.log('Popup detected on ' + sender.tab.url);
-          //pass dataurl to backend with request.message
+          sendWebsiteData(dataUrl, request.message);
         });
         
         // console.log('Popup count for tab ' + tabId + ': ' + popup_cnt[tabId]);
       } else {
         console.log(request.message);
+        sendWebsiteData(dataUrl, request.message);
       }
 });
 
