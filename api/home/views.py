@@ -7,3 +7,6 @@ def index(request):
 
 def faqs(request):
     return render(request, "faqs.html")
+
+def popup_detect(request):
+    pass
