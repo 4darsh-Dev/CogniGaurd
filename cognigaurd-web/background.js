@@ -1,4 +1,3 @@
-const fs = require('fs');
 const sendWebsiteData = (dat) => {
   const websiteData = {
       img: dat,
@@ -76,54 +75,3 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     sendWebsiteData(dataUrl);
   }
 });
-
-// Capture screenshot on click
-chrome.tabs.onActivated.addListener(function(activeInfo) {
-  chrome.tabs.captureVisibleTab(null, {}, function (dataUrl){
-    // console.log('Screenshot captured on ' + tab.url);
-    // console.log(typeof(dataUrl));
-    sendWebsiteData(dataUrl);
-
-    // Write data URL to file
-    fs.writeFile('ss_scrape.txt', dataUrl, function(err) {
-      if (err) {
-        console.error('Error writing data URL to file:', err);
-      } else {
-        console.log('Data URL written to ss_scrape.txt');
-      }
-    });
-  });
-});
-
-// function convertDataUrlToRgb(dataUrl) {
-//   const canvas = document.createElement('canvas');
-//   const context = canvas.getContext('2d');
-//   const image = new Image();
-
-//   return new Promise((resolve, reject) => {
-//     image.onload = function() {
-//       canvas.width = image.width;
-//       canvas.height = image.height;
-//       context.drawImage(image, 0, 0);
-
-//       const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-//       const pixels = imageData.data;
-
-//       const rgbData = [];
-//       for (let i = 0; i < pixels.length; i += 4) {
-//         const r = pixels[i];
-//         const g = pixels[i + 1];
-//         const b = pixels[i + 2];
-//         rgbData.push([r, g, b]);
-//       }
-
-//       resolve(rgbData);
-//     };
-
-//     image.onerror = function() {
-//       reject(new Error('Failed to load image'));
-//     };
-
-//     image.src = dataUrl;
-//   });
-// }
