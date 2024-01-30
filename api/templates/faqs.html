@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block head %}
-<link rel="stylesheet" href="{% static "css/faqs.css" %}">
+<link rel="stylesheet" href="{% static " css/faqs.css" %}">
 {% endblock head %}
 
 {% block content %}
@@ -17,124 +17,129 @@
             <div class="faqs-div">
                 <div class="faq">
                     <div class="faq-question">
-                        <span class="material-symbols-outlined">
-                            more_vert
-                        </span>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Consequatur,
-                        esse!
-                        <i class="material-symbols-outlined faq-button">
-                            expand_more
-                        </i>
+                        <span class="material-symbols-outlined">more_vert</span>
+                        What is Cogniguard?
+                        <i class="material-symbols-outlined faq-button">expand_more</i>
                     </div>
                     <div class="faq-answer" id="faq1-content">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos qui cumque
-                            ipsam
-                            debitis, consectetur aliquam nulla officia, provident dolor quae blanditiis
-                            doloribus
-                            quibusdam labore dolorem. Est ex voluptates architecto asperiores?</p>
+                        <p>Cogniguard is a sophisticated web extension designed to amplify online transparency. It
+                            provides users with a transparency score for visited websites, detecting and alerting users
+                            about the presence of dark patterns. This empowers users to make informed decisions and
+                            protect their privacy.</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="faq-question">
+                        <span class="material-symbols-outlined">more_vert</span>
+                        How does Cogniguard work?
+                        <i class="material-symbols-outlined faq-button">expand_more</i>
+                    </div>
+                    <div class="faq-answer" id="faq2-content">
+                        <p>Cogniguard analyzes the real-time structure and content of websites. It identifies and flags
+                            instances of dark patterns, generating a transparency score for the website. This score
+                            indicates the level of openness and honesty in its design and user interaction.</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="faq-question">
+                        <span class="material-symbols-outlined">more_vert</span>
+                        What are dark patterns?
+                        <i class="material-symbols-outlined faq-button">expand_more</i>
+                    </div>
+                    <div class="faq-answer" id="faq3-content">
+                        <p>Dark patterns are design elements on websites or apps crafted to manipulate users into taking
+                            actions they may not want to perform. These can include misleading prompts, hidden options,
+                            or confusing interfaces intended to deceive or coerce users.</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="faq-question">
+                        <span class="material-symbols-outlined">more_vert</span>
+                        How does Cogniguard detect dark patterns?
+                        <i class="material-symbols-outlined faq-button">expand_more</i>
+                    </div>
+                    <div class="faq-answer" id="faq4-content">
+                        <p>Cogniguard utilizes advanced algorithms to analyze website code and content, identifying
+                            patterns consistent with known dark patterns. It also considers user interactions and
+                            feedback to continuously improve its detection capabilities.</p>
                     </div>
                 </div>
                 <div class="faq">
                     <div class="faq-question">
-                        <span class="material-symbols-outlined">
-                            more_vert
-                        </span>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Consequatur,
-                        esse!
-                        <i class="material-symbols-outlined faq-button">
-                            expand_more
-                        </i>
+                        <span class="material-symbols-outlined">more_vert</span>
+                        What is the transparency score?
+                        <i class="material-symbols-outlined faq-button">expand_more</i>
                     </div>
-                    <div class="faq-answer" id="faq1-content">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos qui cumque
-                            ipsam
-                            debitis, consectetur aliquam nulla officia, provident dolor quae blanditiis
-                            doloribus
-                            quibusdam labore dolorem. Est ex voluptates architecto asperiores?</p>
-                    </div>
-                </div>
-                <div class="faq">
-                    <div class="faq-question">
-                        <span class="material-symbols-outlined">
-                            more_vert
-                        </span>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Consequatur,
-                        esse!
-                        <i class="material-symbols-outlined faq-button">
-                            expand_more
-                        </i>
-                    </div>
-                    <div class="faq-answer" id="faq1-content">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos qui cumque
-                            ipsam
-                            debitis, consectetur aliquam nulla officia, provident dolor quae blanditiis
-                            doloribus
-                            quibusdam labore dolorem. Est ex voluptates architecto asperiores?</p>
+                    <div class="faq-answer" id="faq5-content">
+                        <p>The transparency score provided by Cogniguard reflects the openness and honesty of a website.
+                            A higher score indicates a more transparent and user-friendly website, while a lower score
+                            suggests the presence of potential dark patterns.</p>
                     </div>
                 </div>
             </div>
             <div class="faqs-div">
                 <div class="faq">
                     <div class="faq-question">
-                        <span class="material-symbols-outlined">
-                            more_vert
-                        </span>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Consequatur,
-                        esse!
-                        <i class="material-symbols-outlined faq-button">
-                            expand_more
-                        </i>
+                        <span class="material-symbols-outlined">more_vert</span>
+                        How can I interpret the transparency score?
+                        <i class="material-symbols-outlined faq-button">expand_more</i>
                     </div>
-                    <div class="faq-answer" id="faq1-content">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos qui cumque
-                            ipsam
-                            debitis, consectetur aliquam nulla officia, provident dolor quae blanditiis
-                            doloribus
-                            quibusdam labore dolorem. Est ex voluptates architecto asperiores?</p>
+                    <div class="faq-answer" id="faq6-content">
+                        <p>A transparency score close to 100 indicates a website with high transparency, while a lower
+                            score suggests potential issues. Users can use this score to gauge the reliability and
+                            user-friendliness of the websites they visit.</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="faq-question">
+                        <span class="material-symbols-outlined">more_vert</span>
+                        Is Cogniguard compatible with all browsers?
+                        <i class="material-symbols-outlined faq-button">expand_more</i>
+                    </div>
+                    <div class="faq-answer" id="faq7-content">
+                        <p>Cogniguard is designed as a browser extension and is compatible with popular web browsers
+                            such as Chrome, Firefox, and Edge. Users can install the extension from their browser's
+                            respective extension stores.</p>
                     </div>
                 </div>
                 <div class="faq">
                     <div class="faq-question">
-                        <span class="material-symbols-outlined">
-                            more_vert
-                        </span>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Consequatur,
-                        esse!
-                        <i class="material-symbols-outlined faq-button">
-                            expand_more
-                        </i>
+                        <span class="material-symbols-outlined">more_vert</span>
+                        Is my data safe with Cogniguard?
+                        <i class="material-symbols-outlined faq-button">expand_more</i>
                     </div>
-                    <div class="faq-answer" id="faq1-content">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos qui cumque
-                            ipsam
-                            debitis, consectetur aliquam nulla officia, provident dolor quae blanditiis
-                            doloribus
-                            quibusdam labore dolorem. Est ex voluptates architecto asperiores?</p>
+                    <div class="faq-answer" id="faq7-content">
+                        <p>Yes, Cogniguard prioritizes user privacy. The extension focuses solely on analyzing website
+                            structures and does not store or transmit personal user data. It operates with a commitment
+                            to safeguarding user privacy.</p>
                     </div>
                 </div>
                 <div class="faq">
                     <div class="faq-question">
-                        <span class="material-symbols-outlined">
-                            more_vert
-                        </span>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Consequatur,
-                        esse!
-                        <i class="material-symbols-outlined faq-button">
-                            expand_more
-                        </i>
+                        <span class="material-symbols-outlined">more_vert</span>
+                        Can I provide feedback on website detections?
+                        <i class="material-symbols-outlined faq-button">expand_more</i>
                     </div>
-                    <div class="faq-answer" id="faq1-content">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos qui cumque
-                            ipsam
-                            debitis, consectetur aliquam nulla officia, provident dolor quae blanditiis
-                            doloribus
-                            quibusdam labore dolorem. Est ex voluptates architecto asperiores?</p>
+                    <div class="faq-answer" id="faq7-content">
+                        <p>Absolutely! Cogniguard values user feedback. Users can report false positives or suggest
+                            improvements through the extension interface, contributing to the ongoing enhancement of the
+                            dark pattern detection algorithm.</p>
+                    </div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question">
+                        <span class="material-symbols-outlined">more_vert</span>
+                        How can I install Cogniguard?
+                        <i class="material-symbols-outlined faq-button">expand_more</i>
+                    </div>
+                    <div class="faq-answer" id="faq7-content">
+                        <p>Installing Cogniguard is simple. Visit your browser's extension store, search for
+                            "Cogniguard," and follow the installation instructions. Once installed, the extension will
+                            work seamlessly in the background to enhance your browsing experience.</p>
                     </div>
                 </div>
             </div>
@@ -145,5 +150,5 @@
 
 
 {% block script %}
-
+<script src="../static/js/faqs.js"></script>
 {% endblock script %}

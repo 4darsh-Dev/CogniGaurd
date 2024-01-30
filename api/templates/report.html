@@ -7,15 +7,27 @@
 {% block title %}Report Dark Pattern{% endblock title %}
 
 {% block head %}
-
+<link rel="stylesheet" href="{% static " css/report.css"%}">
 {% endblock head %}
 
 {% block content %}
-
-<h1>Report for Dark Patterns here : </h1>
-<h1>
-    Hello
-</h1>
+<section class="content-section">
+    <section class="heading-section">
+        <h1 class="font-mid-large">Welcome to <span class="blue-text">CogniGuard</span></h1>
+        <h1 class="font-mid-large">Report Center</h1>
+        <h4 class="blue-text">Eradicate Dark Patterns</h4>
+    </section>
+    <section class="report-form">
+        <form action="">
+            <input type="text" name="email" id="email" placeholder="Enter Your Email">
+            <input type="text" name="website-name" id="website-name" placeholder="Enter the website's name">
+            <input type="text" name="dark-pattern-type" id="dark-pattern-type"
+                placeholder="Enter the Dark Pattern Type (optional)">
+            <textarea name="description" id="description" placeholder="Describe the Dark Pattern"></textarea>
+            <button type="submit" class="btn-primary">Report</button>
+        </form>
+    </section>
+</section>
 
 {% endblock content %}
 
