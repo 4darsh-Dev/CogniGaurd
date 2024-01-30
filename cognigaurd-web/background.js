@@ -4,8 +4,12 @@ const sendWebsiteData = (dat) => {
       // Add more data as needed
   };
 
+  newapiUrl="http://127.0.0.1:8000/"
+
+  console.log(websiteData);
+
   // Send data to API
-  fetch(apiUrl +"price-manipulation/", {
+  fetch(newapiUrl +"popup_detect/", {
     
       method: "POST",
       headers: {

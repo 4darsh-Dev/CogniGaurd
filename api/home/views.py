@@ -15,8 +15,24 @@ def faqs(request):
     return render(request, "faqs.html")
 
 def popup_detect(request):
+    # img = data_url_to_image(request.GET.get('img', ''))
+    # return JsonResponse(dump(predict(img)))
+    
+    #get image data url
     img = request.GET.get('img', '')
-    return JsonResponse(dump(predict(img)))
+
+    if(img == ""):
+        return JsonResponse({"error" : "data url empty"})
+
+    #convert dataurl to PIL
+    img=data_url_to_image(img)
+
+    #predict the result using trained ml algo
+    result = predict(img)
+
+    # return the results
+    return JsonResponse(dump(result))
+
 
 def data_url_to_image(data_url):
     # Remove the header of the data URL
@@ -31,9 +47,4 @@ def data_url_to_image(data_url):
     # Open the image with PIL
     img = Image.open(image_data)
 
-    # Convert the image to RGB
-    img = img.convert('RGB')
-
     return img
-
-    
