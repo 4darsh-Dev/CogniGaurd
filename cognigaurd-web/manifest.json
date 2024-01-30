@@ -9,8 +9,7 @@
     "tabs",
     "scripting",
     "notifications",
-    "activeTab"
-    
+    "activeTab"    
   ],
   "host_permissions": [
     "https://*/*",

@@ -50,7 +50,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       
       if (currentTime - lastMessageTime < 3000) {
         lastMessageTime = currentTime;
-        return; // Ignore the message if it's within 1 second of the previous message
+        return; // Ignore the message if it's within 3 second of the previous message
       }
 
       lastMessageTime = currentTime;
@@ -60,7 +60,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         
         chrome.tabs.captureVisibleTab(null, {}, function (dataUrl){
           console.log('Popup detected on ' + sender.tab.url);
-          sendWebsiteData(dataUrl, request.message);
+          console.log(typeof(dataUrl));
+          sendWebsiteData(dataUrl);
         });
         
         // console.log('Popup count for tab ' + tabId + ': ' + popup_cnt[tabId]);
