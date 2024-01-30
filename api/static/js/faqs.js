@@ -7,7 +7,7 @@ faqs.forEach((faq) => {
     if (faqContent.style.maxHeight) {
       faqContent.style.maxHeight = null
     } else {
-      faqContent.style.maxHeight = faqContent.scrollHeight + 'px'
+      faqContent.style.maxHeight = faqContent.scrollHeight + 100 + 'px'
     }
 
     faqContent.classList.toggle('show')

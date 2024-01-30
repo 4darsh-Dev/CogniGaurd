@@ -118,6 +118,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   padding: 1.87rem;
   border: 2px solid #d0d2d9;
   box-shadow: 5px 4px 20px 0px #b7b7c0;
@@ -188,6 +189,7 @@ footer {
 }
 .footer-links {
   display: flex;
+  gap: 2rem;
 }
 .footer-links img {
   height: 2.5rem !important;
