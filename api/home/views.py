@@ -1,4 +1,7 @@
 from django.shortcuts import render,redirect
+from popup_detect_ml import predict
+from django.http import JsonResponse
+from json import dump
 
 # Create your views here.
 
@@ -9,4 +12,6 @@ def faqs(request):
     return render(request, "faqs.html")
 
 def popup_detect(request):
-    pass
+    img = request.GET.get('url', '')
+    return JsonResponse(dump(predict(img)))
+    

@@ -1,0 +1,3 @@
+0 Not Popup
+1 Popup
+2 Side Popup
