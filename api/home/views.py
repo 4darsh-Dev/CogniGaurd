@@ -7,3 +7,9 @@ def index(request):
 
 def faqs(request):
     return render(request, "faqs.html")
+
+def reportDp(request):
+    return render(request, "report.html")
+
+def about(request):
+    return render(request, "about.html")
