@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'mlApi.apps.MlapiConfig',
     'home.apps.HomeConfig',
+    
     'rest_framework',
     'corsheaders',
     'django.contrib.admin',
@@ -78,6 +79,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'cogniguard.wsgi.application'
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Database
@@ -143,27 +146,4 @@ STATICFILES_DIRS = [
     
 ]
 
-# Django rest framework
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication'
-    ]
-}
 
-
-
-# CORS_ALLOWED_ORIGINS = [
-#     "https://your-production-domain.com",
-#     "http://localhost:3000",  # Example for a local development server
-# ]
-
-# C
-
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:8000",
-#     "chrome-extension://fbaobglhjfffocnidihaombgpjhcpail",
-    
-# ]
-
-
-CORS_ALLOW_ALL_ORIGINS = True
