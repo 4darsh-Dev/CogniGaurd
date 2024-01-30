@@ -4,6 +4,12 @@ faqs.forEach((faq) => {
   const faqContent = faq.querySelector('.faq-answer')
   button.addEventListener('click', () => {
     button.classList.toggle('rotate')
+    if (faqContent.style.maxHeight) {
+      faqContent.style.maxHeight = null
+    } else {
+      faqContent.style.maxHeight = faqContent.scrollHeight + 100 + 'px'
+    }
+
     faqContent.classList.toggle('show')
   })
 })
