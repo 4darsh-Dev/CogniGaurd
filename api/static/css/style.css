@@ -102,7 +102,7 @@ ul {
 .main-section {
   display: flex;
   align-items: flex-start;
-  
+
   /* gap: 2rem;
   padding: 0 2.87rem; */
 }
@@ -113,7 +113,7 @@ ul {
   align-items: center;
   margin: 6rem 2rem 2rem 4rem;
   gap: 8rem;
-  padding-left: 21rem;
+  padding-left: 20rem;
 }
 /* navbar */
 .navbar {
@@ -128,9 +128,9 @@ ul {
   border-radius: 1rem;
   gap: 2rem;
   position: fixed;
-  background: white;gap: 2rem;
+  background: white;
+  gap: 2rem;
   height: 558px;
-  
 }
 .navbar__logo img {
   height: 5.75rem;
@@ -196,12 +196,13 @@ footer {
 .footer-links {
   display: flex;
   gap: 2rem;
+  margin-bottom: 0.5rem;
 }
 .footer-links img {
   height: 2.5rem !important;
 }
-.footer-design img {
-  height: 4rem;
+.footer-design i {
+  font-size: 2rem;
 }
 .footer-text {
   display: flex;
@@ -231,6 +232,9 @@ footer {
 .cogni-links div:first-child {
   display: flex;
   gap: 3rem;
+}
+.base-design {
+  width: 27rem;
 }
 /* speedometer */
 /* .gauge {

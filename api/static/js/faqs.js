@@ -9,7 +9,12 @@ faqs.forEach((faq) => {
     } else {
       faqContent.style.maxHeight = faqContent.scrollHeight + 100 + 'px'
     }
-
-    faqContent.classList.toggle('show')
+    if (faqContent.classList.contains('show')) {
+      setTimeout(() => {
+        faqContent.classList.remove('show')
+      }, 250)
+    } else {
+      faqContent.classList.add('show')
+    }
   })
 })
