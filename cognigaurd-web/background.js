@@ -1,7 +1,6 @@
-const sendWebsiteData = (dat , type) => {
+const sendWebsiteData = (dat) => {
   const websiteData = {
       img: dat,
-      type:type
       // Add more data as needed
   };
 
@@ -20,9 +19,9 @@ const sendWebsiteData = (dat , type) => {
           }
           return response.json();
       })
-      // .then(apiResponse => {
-      //     console.log("API Response:", apiResponse);
-      // })
+      .then(apiResponse => {
+          console.log("API Response:", apiResponse);
+      })
       .catch(error => {
           console.error("Error:", error);
       });
@@ -67,7 +66,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         // console.log('Popup count for tab ' + tabId + ': ' + popup_cnt[tabId]);
       } else {
         console.log(request.message);
-        sendWebsiteData(dataUrl, request.message);
+        sendWebsiteData(dataUrl);
       }
 });
 
