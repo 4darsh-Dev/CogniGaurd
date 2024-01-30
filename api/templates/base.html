@@ -15,10 +15,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
-    <title>CogniGuard | {% block title %}{% endblock title %}</title>
-
     {% block head %}
     {% endblock head %}
+    <title>CogniGuard | {% block title %}{% endblock title %}</title>
+
 </head>
 
 <body>
@@ -47,7 +47,7 @@
                             </div>
                         </a>
                     </div>
-                    <a href="#" class="link">
+                    <a href="/" class="link">
                         <div class="align-items">
                             <i class="material-symbols-outlined icons">
                                 home
@@ -55,7 +55,7 @@
                             Home
                         </div>
                     </a>
-                    <a href="#" class="link">
+                    <a href="/about" class="link">
                         <div class="align-items">
                             <span class="material-symbols-outlined">
                                 info
@@ -63,7 +63,7 @@
                             About
                         </div>
                     </a>
-                    <a href="#" class="link">
+                    <a href="/" class="link">
                         <div class="align-items">
                             <span class="material-symbols-outlined">
                                 warning
@@ -71,14 +71,28 @@
                             Detected Dark Patterns
                         </div>
                     </a>
-                    <a href="#" class="link">Services</a>
-                    <a href="#" class="link">What are Dark Patterns</a>
-                    <a href="#" class="link">
+                    <a href="https://en.wikipedia.org/wiki/Dark_pattern" class="link">
+                        <div>
+                            <span class="material-symbols-outlined">
+                                description
+                            </span>
+                            What are Dark Patterns
+                        </div>
+                    </a>
+                    <a href="/" class="link">
                         <div class="align-items">
                             <span class="material-symbols-outlined">
                                 help
                             </span>
                             Get Help
+                        </div>
+                    </a>
+                    <a href="/faqs" class="link">
+                        <div class="align-items">
+                            <span class="material-symbols-outlined">
+                                forum
+                            </span>
+                            FAQs
                         </div>
                     </a>
                 </div>
@@ -96,10 +110,10 @@
                 </div>
                 <div class="cogni-links">
                     <div>
-                        <a href="#">About</a>
-                        <a href="#">Contact</a>
-                        <a href="#">Services</a>
-                        <a href="#">Help</a>
+                        <a href="/about">About</a>
+                        <a href="https://en.wikipedia.org/wiki/Dark_pattern">Dark Patterns</a>
+                        <a href="/report">Report</a>
+                        <a href="/help">Help</a>
                     </div>
                     <div>
                         <a href="#" class="btn-secondary">Feedback</a>
@@ -112,9 +126,10 @@
                     <img src="{% static "img/left-rect.png" %}" alt="footer design right">
                 </div>
                 <div class="footer-links">
-                    <a href="#"><img src="{% static "img/Instagram.png" %}" alt="instagram-icon"></a>
-                    <a href="#"><img src="{% static "img/Instagram.png" %}" alt="instagram-icon"></a>
-                    <a href="#"><img src="{% static "img/Instagram.png" %}" alt="instagram-icon"></a>
+                    <a href="#"><img src="{% static "img/Email.png" %}" alt="instagram-icon"></a>
+                    <a href="https://github.com/4darsh-Dev/CogniGaurd"><img src="{% static "img/github-logo.png" %}"
+                            alt="instagram-icon"></a>
+                    <a href="#"><img src="{% static "img/twitter-logo.png" %}" alt="instagram-icon"></a>
                     <a href="#"><img src="{% static "img/Instagram.png" %}" alt="instagram-icon"></a>
                 </div>
                 <div>
@@ -125,7 +140,7 @@
         </footer>
 
     </main>
-    <script src="app.js"></script>
+    <script src="../static/js/app.js"></script>
     {% block script %}
 
     {% endblock script %}

@@ -34,6 +34,8 @@ def dpData(request):
     
         scraped_text = get_scrape_data(url)
 
+        print(scraped_text)
+
         # Fine-tune BERT model and classify dark pattern
         # predicted_labels = fine_tune_and_classify(scraped_text)
         predicted_labels= {"Sample": "This is a Sample dark pattern"}

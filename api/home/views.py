@@ -14,6 +14,7 @@ def index(request):
 def faqs(request):
     return render(request, "faqs.html")
 
+
 def popup_detect(request):
     # img = data_url_to_image(request.GET.get('img', ''))
     # return JsonResponse(dump(predict(img)))
@@ -48,3 +49,9 @@ def data_url_to_image(data_url):
     img = Image.open(image_data)
 
     return img
+  
+def reportDp(request):
+    return render(request, "report.html")
+
+def about(request):
+    return render(request, "about.html")
