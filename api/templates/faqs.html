@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block head %}
-<link rel="stylesheet" href="{% static " css/faqs.css" %}">
+<link rel="stylesheet" href="{% static "css/faqs.css" %}">
 {% endblock head %}
 
 {% block title %}FAQs{% endblock title %}
@@ -151,5 +151,5 @@
 {% endblock content %}
 
 {% block script %}
-<script src="../static/js/faqs.js"></script>
+<script src="{% static "js/faqs.js" %}"></script>
 {% endblock script %}
