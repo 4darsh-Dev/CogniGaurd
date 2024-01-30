@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'mlApi.apps.MlapiConfig',
     'home.apps.HomeConfig',
+    
     'rest_framework',
     'corsheaders',
     'django.contrib.admin',
@@ -75,6 +76,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'cogniguard.wsgi.application'
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Database
@@ -136,7 +139,7 @@ STATICFILES_DIRS = [
 ]
 
 
-CORS_ALLOWED_ORIGINS = [ 
-    "chrome-extension://fbaobglhjfffocnidihaombgpjhcpail",
-    "http://127.0.0.1:5500",
-]
+# CORS_ORIGIN_WHITELIST = [ 
+#     "chrome-extension://fbaobglhjfffocnidihaombgpjhcpail",
+#     "http://127.0.0.1:8000",
+# ]
