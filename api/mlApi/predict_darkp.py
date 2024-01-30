@@ -48,7 +48,9 @@ def find_dark_pattern(text_predict):
 
     return get_dark_pattern_name(predicted_label)
 
-text_to_predict = "Hurry only 5 items left in the cart. 85% of the people have already bought this product."
+# text_to_predict = "Hello my name is adarsh and my friend name is aman , he is only on sale for the next two days. "
+
+text_to_predict = "Hurry only 5 items left otherwise they will be sold out. "
 
 # Record the start time
 start_time = time.time()
