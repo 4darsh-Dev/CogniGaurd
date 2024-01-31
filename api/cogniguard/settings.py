@@ -49,13 +49,16 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware', # add this
+    'corsheaders.middleware.CorsMiddleware', # add this middleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Written by admin
+CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 
 ROOT_URLCONF = 'cogniguard.urls'
 
@@ -115,8 +118,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# CORS settings
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
+
+TIME_ZONE = 'UTC'
+ 
 USE_I18N = True
 
 USE_TZ = True
@@ -139,7 +147,3 @@ STATICFILES_DIRS = [
 ]
 
 
-# CORS_ORIGIN_WHITELIST = [ 
-#     "chrome-extension://fbaobglhjfffocnidihaombgpjhcpail",
-#     "http://127.0.0.1:8000",
-# ]
