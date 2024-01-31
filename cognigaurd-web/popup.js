@@ -163,19 +163,19 @@ const fetchTransparencyScore = () => {
 };
 
 // Fetch transparency score when DOM is loaded
-document.addEventListener("DOMContentLoaded", fetchTransparencyScore);
+// document.addEventListener("DOMContentLoaded", fetchTransparencyScore);
 
-function updateTransparencyMeter(transparencyScore) {
-    const arrowElement = document.getElementById("arrow");
-    const scoreDisplayElement = document.getElementById("score-display");
+// function updateTransparencyMeter(transparencyScore) {
+//     const arrowElement = document.getElementById("arrow");
+//     const scoreDisplayElement = document.getElementById("score-display");
 
-    // Calculate arrow rotation based on transparency score
-    const rotation = (transparencyScore / 10) * 180 - 90;
+//     // Calculate arrow rotation based on transparency score
+//     const rotation = (transparencyScore / 10) * 180 - 90;
     
-    // Rotate arrow and update score display
-    arrowElement.style.transform = `rotate(${rotation}deg)`;
-    scoreDisplayElement.innerText = transparencyScore;
-}
+//     // Rotate arrow and update score display
+//     arrowElement.style.transform = `rotate(${rotation}deg)`;
+//     scoreDisplayElement.innerText = transparencyScore;
+// }
 
 // Displaying dark patterns
 let scanResultBox = document.getElementsByClassName("scan-result-box")[0];
