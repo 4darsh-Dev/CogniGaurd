@@ -1,0 +1,12 @@
+* {
+  font-family: var(--font-secondary);
+}
+.content-section section {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+.cogniguard-ss {
+  height: 30rem;
+  border: 1px solid var(--color-primary);
+}
