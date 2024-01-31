@@ -94,6 +94,9 @@ ul {
   display: flex;
   align-items: center;
   gap: 5rem;
+  margin: 4rem 0;
+
+
 }
 .blue-text {
   color: var(--color-primary);
