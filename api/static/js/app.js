@@ -1,36 +1,28 @@
-// function setSpeed(speed) {
-//   const needle = document.getElementById('needle')
-//   needle.style.transform = `rotate(${speed}deg)`
-// }
-// let transparencyScore = prompt('Enter transparency Score (0-100)')
-// // adjusting according to transparency score
-// if (transparencyScore >= 8) {
-//   setSpeed(270)
-// } else if (transparencyScore <= 4) {
-//   setSpeed(90)
-// } else {
-//   setSpeed(0)
-// }
-// animation
-const img = document.querySelector('.animate-img')
-const p = document.querySelector('.animate-p')
-console.log(img.getBoundingClientRect().top, img.offsetHeight)
-const animate = (element) => {
+const footer = document.querySelector('footer')
+const navbar = document.querySelector('.navbar')
+const contentScetion = document.querySelector('.content-section')
+let flag = true
+document.addEventListener('scroll', () => {
+  console.log(
+    window.scrollY,
+    window.innerHeight,
+    window.scrollY + window.innerHeight,
+    footer.offsetTop
+  )
   if (
-    window.scrollY >
-    element.getBoundingClientRect().top + element.offsetHeight
+    window.scrollY + window.innerHeight >= footer.offsetTop &&
+    flag === true
   ) {
-    element.classList.add('animate')
-  }
-  if (
-    window.scrollY <
-    element.getBoundingClientRect().top + element.offsetHeight + 100
+    navbar.style.position = 'absolute'
+    navbar.style.top = footer.offsetTop - navbar.scrollHeight - 50 + 'px'
+    flag = false
+  } else if (
+    flag === false &&
+    window.scrollY + window.innerHeight < footer.offsetTop
   ) {
-    element.classList.remove('animate')
+    navbar.style.position = 'fixed'
+    navbar.style.top = null
+    flag = true
   }
-}
-const animateAll = () => {
-  animate(img)
-  animate(p)
-}
-document.addEventListener('scroll', animateAll)
+})
+//  scrllY + innerHeight = offsetHeight
