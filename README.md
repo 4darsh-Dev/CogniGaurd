@@ -48,6 +48,9 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 
 ## Project Setup Locally 🚀
 
+### Link of Cogni-BERT Trained Model
+1. Google-drive link --> https://drive.google.com/file/d/10hYsKfWHkT3VHdEmKNOWUIf_QwX3oJMU/view?usp=drive_link
+
 ### Setting up Django API
 
 1. clone the git repository locally.
