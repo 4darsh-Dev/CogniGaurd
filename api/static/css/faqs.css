@@ -1,3 +1,7 @@
+.content-section {
+  gap: 3rem;
+  margin: 4rem 2rem;
+}
 .faqs-heading {
   display: flex;
   flex-direction: column;
@@ -9,6 +13,9 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+}
+.faqs-section h1 {
+  font-weight: lighter;
 }
 .faqs {
   display: flex;
@@ -29,36 +36,31 @@
   padding: 0.5rem;
   display: flex;
   align-items: center;
-  /* border: 2px solid black; */
   border-radius: 10px;
   justify-content: space-between;
+  height: 3rem;
+  transition: 4s;
 }
 .faq-button {
   cursor: pointer;
   transform: rotate(90deg);
-  transition: rotate 0.3s ease-in-out;
+  transition: rotate 0.35s ease-in-out;
 }
 
 .faq-answer {
-  padding: 0.5rem;
-  opacity: 0;
-  display: none;
-  height: 0;
-  transform: translateY(-40px);
-  border: 2px solid black;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
-    height 0.3s ease-in-out;
   border-radius: 10px;
-  z-index: -1;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.faq-ques-text {
+  text-align: center;
 }
 .rotate {
   transform: rotate(0deg);
 }
-.show {
-  display: inline-block;
-  opacity: 1;
-  height: auto;
-  visibility: visible;
-  transform: translateY(0);
-  z-index: 1;
+.hide.show {
+  display: block;
+  border: 2px solid black;
+  padding: 0.5rem;
 }
