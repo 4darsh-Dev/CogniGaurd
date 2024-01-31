@@ -24,7 +24,7 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 ![GitHub forks](https://img.shields.io/github/forks/4darsh-Dev/CogniGaurd)
 ![GitHub Repo stars](https://img.shields.io/github/stars/4darsh-Dev/CogniGaurd)
 
-## Fine-Tuned ML Model Evaluation Score 
+## Cogni-BERT Model Evaluation Score 
 
 ### Eval Scores
 
@@ -44,7 +44,6 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 <p align="center">
   <img src="https://onionreads.com/wp-content/uploads/2024/01/Screenshot-2024-01-22-210009.png" alt="BERT Confusion Matrix" width="600px" />
 </p>
-
 
 
 ## Project Setup Locally 🚀
@@ -184,10 +183,12 @@ Check out the project's roadmap to understand the planned features, improvements
 - Creating the CogniGaurd Frontend and Api integration.
 - Building Datasets for fine tuning BERT Deep learning Model.
 - Setting up python virtual environment with necessary modules and libraries.
-- Fine Tuning BERT model for analyzing terms and conditions page.
+- Fine Tuning BERT model (Cogni-BERT) for analyzing terms and conditions page.
 - Testing the BERT model on random websites.
 - Django Backend for serving CogniGuard Landing and report dark pattern pages.
 - Setting up Database for Django app.
+- Adding popup detection using keras and teachable Machine (by Google ) open source.
+- Collecting smaples for popup detectin
 - ...updating soon
 
 ## Code of Conduct 🧑‍💼
