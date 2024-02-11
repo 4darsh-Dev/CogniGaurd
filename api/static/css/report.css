@@ -21,11 +21,19 @@
 .report-form form input {
   width: 33vw;
   height: 6vh;
+  border-radius: 6px;
+  border: 1px solid gray;
+  padding: 0 6px;
+
+
 }
 .report-form form textarea {
   border-radius: 5px;
   width: 33vw;
   height: 20vh;
+  border-radius: 6px;
+  border: 1px solid gray;
+  padding: 0 6px;
 }
 ::placeholder {
   font-family: monospace;

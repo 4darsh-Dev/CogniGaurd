@@ -19,10 +19,15 @@
 }
 .faqs {
   display: flex;
+  flex-direction: column;
   gap: 4rem;
 }
 .faq {
-  width: 25rem;
+  width: 60vw;
+  border: 1px solid gray;
+  border-radius: 6px;
+
+
 }
 .faqs-div {
   display: flex;
@@ -61,6 +66,33 @@
 }
 .hide.show {
   display: block;
-  border: 2px solid black;
-  padding: 0.5rem;
+  /* border: 2px solid black; */
+  padding: 1.5rem;
+  box-shadow: 0 0 25px gray;
+
+
+}
+
+.sub-head{
+  color: black;
+    display: block;
+    font-family: sans-serif, monospace;
+    font-size: 16px;
+    font-weight: 500;
+    width: 90px;
+    height: 25px;
+
+}
+
+.form-f{
+  width: 400px;
+    height: 40px;
+    border-radius: 8px;
+  border: 2px solid gray;
+    padding: 6px;
+    padding-left: 27px;
+    /* background-color:royalblue; */
+
+    margin-bottom: 10px;
+    font-size: 16px;
 }
