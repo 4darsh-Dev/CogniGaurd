@@ -46,6 +46,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+# REST api settings configuration
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+}
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -56,6 +67,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Cors allowed origins
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 # Written by admin
 CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
@@ -80,7 +95,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'cogniguard.wsgi.application'
 
-CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Database
@@ -118,9 +132,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-# CORS settings
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = True
+# # CORS settings
+# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOW_CREDENTIALS = True
 
 
 TIME_ZONE = 'UTC'

@@ -1,54 +1,54 @@
 {
-  "manifest_version": 3,
-  "name": "CogniGuard",
-  "version": "0.1.0",
-  "description": "Detects dark patterns on websites.",
-  "permissions": [
-    "activeTab",
-    "storage",
-    "tabs",
-    "scripting",
-    "notifications",
-    "http://127.0.0.1:8000/"  
-
-  ],
-  "host_permissions": [
-    "https://*/*",
-    "http://*/*"
-  ],
-  
-  "action": {
-    "default_icon": {
-      "16": "assets/images/icon-black.png",
-      "24": "assets/images/icon-black.png",
-      "32": "assets/images/icon-black.png"
+    "manifest_version": 3,
+    "name": "CogniGuard",
+    "version": "0.1.0",
+    "description": "Detects dark patterns on websites.",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "tabs",
+      "notifications",
+      "http://127.0.0.1:8000/"
+      
+    ],
+    "host_permissions": [
+      "https://*/*",
+      "http://*/*"
+    ],
+    
+    "action": {
+      "default_icon": {
+        "16": "assets/images/icon-black.png",
+        "24": "assets/images/icon-black.png",
+        "32": "assets/images/icon-black.png"
+      },
+      "default_title": "CogniGuard",
+      "default_popup": "popup.html"
     },
-    "default_title": "CogniGuard",
-    "default_popup": "popup.html"
-  },
 
-  "background": {
-    "service_worker": "background.js"
-  },
+    "background": {
+      "service_worker": "background.js"
+    },
 
+    
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/images/icon-black.png",
+          "assets/images/fg-scan.jpg"
+        ],
+
+        "matches": ["<all_urls>"]
+      }
+
+    ]
+
+    
+  }
   
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "assets/images/icon-black.png",
-        "assets/images/fg-scan.jpg"
-      ],
-
-      "matches": ["<all_urls>"]
-    }
-
-  ]
-
-  
-}

@@ -16,6 +16,11 @@ def index(request):
 def faqs(request):
     return render(request, "faqs.html")
 
+def termsConditions(request):
+    return render(request, "termsConditions.html")
+
+def knowDp(request):
+    return redirect("/")
 
 def popup_detect(request):
     # img = data_url_to_image(request.GET.get('img', ''))

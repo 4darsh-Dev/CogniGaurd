@@ -1,25 +1,29 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.http import JsonResponse, HttpResponse
 
 # Create your views here.
-from .models import WebsiteTransparencyScore, DarkPatternsData
+from .models import WebsiteTransparencyScore, DarkPatternsData, DpRequest
 
-from scraping.dp_scrape import get_scrape_data
+from scraping.dp_scrape import get_scrape_data,dark_sentence_list
 
-from django.middleware.csrf import get_token
+# Setup for DRF views
+from rest_framework import generics,permissions
 
-# Import the urllib.parse library
-from urllib.parse import urlparse
+from .serializers import DpRequestSerializer
 
+import pandas as pd
+from .predict_darkp import find_dark_pattern
 
-def csrf_token_view(request):
-    csrf_token = get_token(request)
-    return JsonResponse({'csrfToken': csrf_token})
+# For submitting the URL to the model
+dpCond = False
 
-
-def index(request):
-    return HttpResponse("Hello, world. You're at Django API Index.")
-
+class MessageCreateView(generics.CreateAPIView):
+    dpCond = True
+    queryset = DpRequest.objects.all()
+    serializer_class = DpRequestSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    http_method_names = ['post']
+    
 
 
 def tpScore(request):
@@ -38,55 +42,77 @@ def transparencyCalc(request):
 
     return tScore
 
-def dpData(request):
 
-    print("I am executing! ")
-    # Extract the URL from the request
-    url = request.GET.get('url', None)
-    print(url)
+# Checking for existing data and then saving the dark patterns data 
+def dpData(url):
 
-    if url is not None:
-        # Remove URL-encoded double quotes ("%22") from the beginning and end
-        url = urlparse(url).path
+    if url:
+        # Check if the URL exists in DarkPatternsData model
+        existing_data = DarkPatternsData.objects.filter(website_url=url).exists()
 
-        # Check if the scheme is missing and add a default scheme
-        parsed_url = urlparse(url)
+        if existing_data:
+            # If the URL already exists, do nothing
+            return "Data already exists in the model"
 
-        # Remove double quotes from the URL
-        url = url.strip('"')
+        else:
+            # Perform some operations
+            # For example, scrape data from the URL using get_scrape_data function
+            scrape_output, sentenceFile = dark_sentence_list(url)
+            print(scrape_output)
 
-        if not parsed_url.scheme:
-            url = url
-            newUrl = url
-            print(f"Final url {newUrl}")
+            # Opening the sentences file
+            df = pd.read_csv("sentences.csv")
+
+            # Process each sentence
+            for _, row in df.iterrows():
+                sentence = row['sentence']
+                processed_result = find_dark_pattern(sentence)
+                print(f"{sentence}: {processed_result}")
+            # Predicting the dark pattern
             
-            scraped_text = get_scrape_data(newUrl)
 
-        
+            # Save the scraped data to DarkPatternsData model
+            # dark_patterns_data = DarkPatternsData.objects.create(
+            #     website_url=url,
+            #     dark_pattern_label="Label",  # Replace with the appropriate label
+            #     dark_text="Scraped data"  # Replace with the scraped data
+            # )
 
-            # print(scraped_text) 
+            return "Data saved to DarkPatternsData model"
+
+    else:
+        return "URL parameter is missing in the request"
+    
+
+# For viewing the list of URLs submitted
+class MessageListView(generics.ListAPIView):
+    queryset = DpRequest.objects.all()
+    serializer_class = DpRequestSerializer
+    http_method_names = ['get']
 
 
-        # return "done! succesfully scraping"
 
-        # Fine-tune BERT model and classify dark pattern
-        # predicted_labels = fine_tune_and_classify(scraped_text)
-        
-        predicted_labels= {"dp_data": "This is the dark pattern data"}
+# For viewing the details of a specific URL
 
-        # Save the dark pattern data in the DarkPatternData model
-        # website_url = url
-        # for label, dark_text in predicted_labels.items():
-        #     dark_pattern, created = DarkPatternsData.objects.get_or_create(
-        #         website_url=website_url,
-        #         dark_pattern_label=label,
-        #         defaults={'dark_text': dark_text}
-        #     )
 
-        #     # If the record already exists, update the dark_text field
-        #     if not created:
-        #         dark_pattern.dark_text = dark_text
-        #         dark_pattern.save()
 
-    return JsonResponse(predicted_labels)
+
+    
+
+## You need to ensure that it doesn't call the dpData function if the dpCond is False
+
+    # Fetching urls from model
+    dpUrls = DpRequest.objects.all()
+    urlLen = len(dpUrls)
+    myDpUrl = dpUrls[urlLen-1].url
+    print(dpUrls)
+    myOutput = dpData(myDpUrl)
+    print(myOutput)
+    dpCond = False
+
+
+
+
+
+
 

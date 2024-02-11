@@ -1,139 +1,4 @@
-// console.log("CogniGuard Popup working!");
-
-// // api endpoint
-// const apiUrl = "http://127.0.0.1:8000/api/";
-
-// // Function to fetch transparency score
-// const fetchTransparencyScore = () => {
-//     // Fetching transparency score from api
-//     fetch(apiUrl + "tp-score/")
-//         .then(response => {
-//             if (!response.ok) {
-//                 throw new Error("Response was not ok!");
-//             }
-//             return response.json();
-//         })
-
-//         .then(userData => {
-//             // Process the retrieved data
-            
-//             const transparencyScore = userData.transparency_score;
-//             const transparencyScoreElement = document.getElementById("transparencyScore");
-//             transparencyScoreElement.textContent = `${transparencyScore}`;
-//             updateTransparencyMeter(transparencyScore);
-            
-//         })
-//         .catch(error => {
-//             console.log("Error", error);
-//         });
-        
-// };
-
-// // Fetch transparency score when DOM is loaded
-// document.addEventListener("DOMContentLoaded", fetchTransparencyScore);
-
-// function updateTransparencyMeter(transparencyScore) {
-//     const arrowElement = document.getElementById("arrow");
-//     const scoreDisplayElement = document.getElementById("score-display");
-
-//     // Calculate arrow rotation based on transparency score
-//     const rotation = (transparencyScore / 10) * 180 - 90;
-    
-//     // Rotate arrow and update score display
-//     arrowElement.style.transform = `rotate(${rotation}deg)`;
-//     scoreDisplayElement.innerText = transparencyScore;
-// }
-
-// // Displaying dark patterns
-// let scanResultBox = document.getElementsByClassName("scan-result-box")[0];
-// const displayDp = (response, length) =>{
-    
-    
-//     let head = document.createElement('h2');
-//     head.innerText = "What we have found so far:";
-
-//     scanResultBox.appendChild(head)
-
-//     let scanList = document.createElement("ul");
-//     scanList.classList.add("scan-list");
-
-//     scanResultBox.appendChild(scanList)
-
-//     let responseArr = []   
-
-//     for(let i=0; i<length; i++)
-//     {
-//         let scanItems = document.createElement("li")
-//         scanItems.classList.add("scan-items");
-
-//         scanItems.innerText = `${responseArr[0]}`;
-
-//         scanList.appendChild(scanItems);
-
-
-//     }
-
-
-// }
-
-// let analyzeBtn = document.getElementById("analyze-btn");
-
-// analyzeBtn.addEventListener("click", displayDp);
-
-
-// // CSRF Token / fixing the 403 forbidden error
-
-// // CSRF Token / fixing the 403 forbidden error
-
-// // csrfUrl = "http://127.0.0.1:8000/api/csrf/";
-
-// const fetchCsrfToken = async () => {
-
-//     const response = await fetch(apiUrl + "csrf/", { method: "GET" });
-//     const data = await response.json();
-//     console.log(data.csrfToken);
-//     return data.csrfToken;
-
-//   };
-  
-//   // Use an async function to fetch the CSRF token
-//   const sendWebsiteData = async () => {
-//     const csrfToken = await fetchCsrfToken();
-  
-//     const websiteData = {
-//       url: window.location.href,
-//       // Add more data as needed
-//     };
-  
-//     // Send data to API
-//     fetch(apiUrl + "dp-data/", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         "X-CSRFToken": csrfToken,
-//       },
-//       body: JSON.stringify(websiteData),
-//     })
-//       .then(response => {
-//         if (!response.ok) {
-//           throw new Error("Error sending website data to API");
-//         }
-//         return response.json();
-//       })
-//       .then(apiResponse => {
-//         console.log("API Response:", apiResponse);
-//       })
-//       .catch(error => {
-//         console.error("Error:", error);
-//       });
-//   };
-
-
-  
-//   // Execute the function when the DOM is fully loaded
-//   document.addEventListener("DOMContentLoaded", sendWebsiteData);
-  
-
+// Description: This file contains the JavaScript code for the popup window of the Chrome extension. 
 
 console.log("CogniGuard Popup working!");
 
@@ -162,20 +27,49 @@ const fetchTransparencyScore = () => {
         });
 };
 
-// Fetch transparency score when DOM is loaded
-// document.addEventListener("DOMContentLoaded", fetchTransparencyScore);
+// Sending the url to the api
+function sendUrlToAPI(url) {
+  // Construct the Basic Auth header
+  
+  // Checking for erroneous url
+  // url = encodeURIComponent(url);
+  console.log(url);
 
-// function updateTransparencyMeter(transparencyScore) {
-//     const arrowElement = document.getElementById("arrow");
-//     const scoreDisplayElement = document.getElementById("score-display");
+  var username = 'cogni';
+  var password = 'Mycogni@420';
+  var credentials = username + ':' + password;
+  var base64Credentials = btoa(credentials);
 
-//     // Calculate arrow rotation based on transparency score
-//     const rotation = (transparencyScore / 10) * 180 - 90;
-    
-//     // Rotate arrow and update score display
-//     arrowElement.style.transform = `rotate(${rotation}deg)`;
-//     scoreDisplayElement.innerText = transparencyScore;
-// }
+  // Make an AJAX request to your Django Rest Framework API
+  fetch(apiUrl + 'dp-request/', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic ' + base64Credentials
+      },
+      body: JSON.stringify({ url: url })
+
+  })
+  .then(response => {
+      if (response.ok) {
+          console.log('URL sent successfully');
+          // Handle success as needed
+          
+      } else {
+          console.error('Failed to send URL');
+          // Handle error as needed
+      }
+  })
+  .catch(error => {
+      console.error('Error:', error);
+      // Handle error as needed
+  });
+}
+
+
+
+
+
 
 // Displaying dark patterns
 let scanResultBox = document.getElementsByClassName("scan-result-box")[0];
@@ -198,72 +92,59 @@ const displayDp = (response, length) => {
     }
 };
 
-// let analyzeBtn = document.getElementById("analyze-btn");
-
-// // Click event listener for analyze button
-// analyzeBtn.addEventListener("click", () => {
-//     // Call the function to send website data when the button is clicked
-//     sendWebsiteData();
-// });
-
-// // Function to fetch CSRF token
-// const fetchCsrfToken = async () => {
-//     const response = await fetch(apiUrl + "csrf/", { method: "GET" });
-//     const data = await response.json();
-//     console.log(data.csrfToken);
-//     return data.csrfToken;
-// };
-
-// Function to send website data to the API
-// const sendWebsiteData = async () => {
-//     try {
-//         const csrfToken = await fetchCsrfToken();
-//         const websiteData = {
-//             url: window.location.href,
-//             // Add more data as needed
-//         };
-
-//         // Send data to API
-//         const response = await fetch(apiUrl + "dp-data/", {
-//             method: "POST",
-//             credentials: "same-origin",
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 "Accept": "application/json",
-//                 "X-CSRFToken": csrfToken,
-//             },
-//             body: JSON.stringify(websiteData),
-//         });
-
-//           if (!response.ok) {
-//             throw new Error("Error sending website data to API");
-//           }
-
-//           const apiResponse = await response.json();
-//           console.log("API Response:", apiResponse);
-//         } catch (error) {
-//           console.error("Error:", error);
-//         }
-    
-// };
 
 
 document.addEventListener('DOMContentLoaded', function () {
     // Add event listener to the "Analyze" button
+    
     document.getElementById('analyze-btn').addEventListener('click', function () {
-      // Get the current window URL
-      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        // Send a message to the background script with the URL
-        chrome.runtime.sendMessage({ url: tabs[0].url }, function (response) {
-          if (response && response.dp_data) {
-            // Update the popup content with the received dark pattern data
-            updatePopupContent(response.dp_data);
-          } else {
-            console.error("Invalid response from background script:", response);
-          }
-        });
+      // Get the current tab's URL using the Chrome Extension API
+      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+          let currentUrl = tabs[0].url;
+          // Send the URL to the API
+          sendUrlToAPI(currentUrl);
       });
-    });
+  });
+
+    // opening new tabs on clicking the buttons on the web extension
+
+
+    // Base url
+    let baseUrl = "http://127.0.0.1:8000/";
+      let reportBtn = document.getElementById("report-btn");
+
+      reportBtn.addEventListener("click", function(){
+        let newTabUrl = baseUrl+"report-dp/";
+        // Use chrome.tabs.create to open a new tab
+          console.log("i am opening report page");
+          chrome.tabs.create({ url: newTabUrl });
+
+
+      })
+
+      let helpBtn = document.getElementById("help-btn");
+      helpBtn.addEventListener("click", function(){
+        let newTabUrl = baseUrl+"faqs/";
+
+        chrome.tabs.create({ url: newTabUrl });
+        
+      })
+
+      let tandcBtn = document.getElementById("tandc-btn");
+      tandcBtn.addEventListener("click", function(){
+        let newTabUrl = baseUrl+"terms-conditions/";
+
+        chrome.tabs.create({ url: newTabUrl });
+
+      })
+
+      let knowDp = document.getElementById("know-dp");
+      knowDp.addEventListener("click", ()=>{
+        let newTabUrl = baseUrl+"know-dp/";
+
+        chrome.tabs.create({ url: newTabUrl });
+      })
+
   });
   
   function updatePopupContent(dpData) {
@@ -287,3 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
   
+// opening new tabs on clicking the buttons on the web extension
+
+
+

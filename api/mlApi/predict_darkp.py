@@ -48,6 +48,33 @@ def find_dark_pattern(text_predict):
 
     return get_dark_pattern_name(predicted_label)
 
+<<<<<<< HEAD
+# # text_to_predict = "Hello my name is adarsh and my friend name is aman , he is only on sale for the next two days. "
+# welcomeMsg = """******* Welcome to Dark Pattern Detector ********"""
+
+# text_to_predict = input("Enter the the text to find Dark Pattern : ")
+# # text_to_predict = "Hurry only 5 items left otherwise they will be sold out. "
+
+
+# # Record the start time
+# start_time = time.time()
+
+# # Add a simple progress message
+# print("Predicting Dark Pattern...")
+
+# # Use tqdm to create a progress bar
+# for _ in tqdm(range(10), desc="Predicting", unit="prediction"):
+#     predicted_darkp = find_dark_pattern(text_to_predict)
+
+# # Record the end time
+# end_time = time.time()
+
+# # Calculate the total time taken
+# total_time = end_time - start_time
+
+# print(f"Predicted Dark Pattern: {predicted_darkp}")
+# print(f"Total Time Taken: {total_time:.2f} seconds")
+=======
 # text_to_predict = "Hello my name is adarsh and my friend name is aman , he is only on sale for the next two days. "
 welcomeMsg = """******* Welcome to Dark Pattern Detector ********"""
 
@@ -73,3 +100,4 @@ total_time = end_time - start_time
 
 print(f"Predicted Dark Pattern: {predicted_darkp}")
 print(f"Total Time Taken: {total_time:.2f} seconds")
+>>>>>>> 7fb99d1719b011518f106d67414c183667809f90

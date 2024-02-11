@@ -20,3 +20,16 @@ class DarkPatternsData(models.Model):
     def __str__(self):
         return f"{self.website_url} - Dark Pattern: {self.dark_pattern_label}"
 
+<<<<<<< HEAD
+
+class DpRequest(models.Model):
+    url = models.URLField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+    def __str__(self):
+        return f"{self.url } at {self.created_at}"
+    
+    
+=======
+>>>>>>> 7fb99d1719b011518f106d67414c183667809f90

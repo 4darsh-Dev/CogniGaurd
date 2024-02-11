@@ -10,4 +10,8 @@ share/
 pyvenv.cfg
 .env
 fine_tuned_models/
-fine_tuned_bert/
+finetuned_BERT_epoch_1.model
+finetuned_BERT_epoch_2.model
+finetuned_BERT_epoch_3.model
+finetuned_BERT_epoch_4.model
+finetuned_BERT_epoch_5.model
