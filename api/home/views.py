@@ -6,6 +6,9 @@ import io
 import base64
 from PIL import Image
 
+from .models import DarkPatternReport
+from django.contrib import messages
+
 # Create your views here.
 
 
@@ -58,9 +61,39 @@ def data_url_to_image(data_url):
     return img
 
 
-def reportDp(request):
-    return render(request, "report.html")
-
-
 def about(request):
     return render(request, "about.html")
+
+
+
+def reportDp(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        website_name = request.POST.get('website-name')
+        dark_pattern_type = request.POST.get('dark-pattern-type')
+        description = request.POST.get('description')
+
+        # Check for erroneous parameters
+        if len(description) < 5:
+            error_msg = "Description must be at least 5 characters long. Please try again."
+            messages.error(request, error_msg)
+            return render(request, 'report.html', {"error_message": error_msg})
+
+        # Save the values in the database using the DarkPatternReport model
+        report = DarkPatternReport(
+            name=name,
+            email=email,
+            website_name=website_name,
+            dark_pattern_type=dark_pattern_type,
+            description=description
+        )
+        report.save()
+
+        # On successful submission
+        success_msg = "Your response has been recorded successfully!"
+        messages.success(request, success_msg)
+        return render(request, "report.html", {error_msg: success_msg})  # Redirect to a success page or another URL
+
+    return render(request, "report.html")
+
