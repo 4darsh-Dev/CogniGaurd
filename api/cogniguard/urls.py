@@ -16,9 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.views.generic import RedirectView
+
+# Admin panel customization
+admin.site.site_header = "CogniGuard Admin"
+admin.site.site_title = "CogniGuard Admin Portal"
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("logout/", RedirectView.as_view(url="/admin/logout/")),
     path("", include("home.urls")),
     path("api/", include("mlApi.urls")),
 ]

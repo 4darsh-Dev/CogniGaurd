@@ -33,11 +33,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'customadmin.apps.CustomadminConfig',
     'mlApi.apps.MlapiConfig',
     'home.apps.HomeConfig',
     
     'rest_framework',
     'corsheaders',
+    # 'adminlte3',
+    # 'adminlte3_theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -159,5 +162,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     
 ]
+
+# for staticfiles 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
