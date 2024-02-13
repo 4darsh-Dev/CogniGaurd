@@ -54,6 +54,11 @@ function sendUrlToAPI(url) {
       if (response.ok) {
           console.log('URL sent successfully');
           // Handle success as needed
+          let respondseJson =  response.json();
+          console.log(respondseJson);
+          // Display the dark patterns
+          displayDp(respondseJson, respondseJson.length);
+          
           
       } else {
           console.error('Failed to send URL');
@@ -64,6 +69,8 @@ function sendUrlToAPI(url) {
       console.error('Error:', error);
       // Handle error as needed
   });
+
+
 }
 
 
