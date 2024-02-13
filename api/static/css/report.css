@@ -34,7 +34,10 @@
   border-radius: 6px;
   border: 1px solid gray;
   padding: 0 6px;
+
 }
 ::placeholder {
   font-family: monospace;
+  
 }
+

@@ -93,7 +93,7 @@ def reportDp(request):
         # On successful submission
         success_msg = "Your response has been recorded successfully!"
         messages.success(request, success_msg)
-        return render(request, "report.html", {error_msg: success_msg})  # Redirect to a success page or another URL
+        return render(request, "report.html", {"error_message": success_msg})  # Redirect to a success page or another URL
 
     return render(request, "report.html")
 

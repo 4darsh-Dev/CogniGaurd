@@ -25,7 +25,6 @@ class MessageCreateView(generics.CreateAPIView):
     http_method_names = ['post']
     
 
-
 def tpScore(request):
     tScore = transparencyCalc(request)
     return JsonResponse({"transparency_score": tScore})
@@ -52,8 +51,13 @@ def dpData(url):
 
         if existing_data:
             # If the URL already exists, do nothing
-            return "Data already exists in the model"
+            # checking the result
+            print(dp_data)
 
+            dp_data = DarkPatternsData.objects.filter(website_url=url).values()
+            return JsonResponse({"message": "Data already exists for this URL","data": list(dp_data)})
+        
+            
         else:
             # Perform some operations
             # For example, scrape data from the URL using get_scrape_data function

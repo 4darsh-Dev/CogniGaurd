@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path,include
 from home import views
 
+from django.views.generic import RedirectView
+
 urlpatterns = [
     path("", views.index, name="home"),
     path("faqs/", views.faqs, name="faqs"),
@@ -9,7 +11,7 @@ urlpatterns = [
     path("about/", views.about, name="about"),
     path("terms-conditions/", views.termsConditions, name="terms-conditions"),
     path("know-dp/", views.knowDp, name="knowDp"),
-
+    
 ]
 
 
