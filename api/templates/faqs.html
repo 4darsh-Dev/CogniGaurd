@@ -17,21 +17,22 @@
         <h1 class="font-medium font-secondary">FAQs</h1>
         <div class="faqs">
             <div class="faqs-div">
+                {% if faqs %}
+
                 <div class="faq">
                     <div class="faq-question">
                         <span class="material-symbols-outlined">adjust</span>
-                        <span class="faq-ques-text">What is Cogniguard?</span>
+                        <span class="faq-ques-text">{{ faqs.question }}</span>
                         <i class="material-symbols-outlined faq-button">expand_more</i>
                     </div>
                     <div class="faq-answer hide" id="faq1-content">
-                        <p>Cogniguard is a sophisticated web extension designed to amplify online transparency. It
-                            provides users with a transparency score for visited websites, detecting and alerting users
-                            about the presence of dark patterns. This empowers users to make informed decisions and
-                            protect their privacy.</p>
+                        <p> {{ faqs.answer}} </p>
                     </div>
                 </div>
 
-                <div class="faq">
+                {% endif %}
+
+                {% comment %} <div class="faq">
                     <div class="faq-question">
                         <span class="material-symbols-outlined">adjust</span>
                         <span class="faq-ques-text"> How does Cogniguard work?</span>
@@ -143,7 +144,7 @@
                             "Cogniguard," and follow the installation instructions. Once installed, the extension will
                             work seamlessly in the background to enhance your browsing experience.</p>
                     </div>
-                </div>
+                </div> {% endcomment %}
             </div>
         </div>
     </section>

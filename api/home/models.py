@@ -12,3 +12,9 @@ class DarkPatternReport(models.Model):
     def __str__(self):
         return f"{self.name} - {self.website_name} "
     
+class FAQData(models.Model):
+    question = models.CharField(max_length=200)
+    answer = models.TextField()
+
+    def __str__(self):
+        return self.question

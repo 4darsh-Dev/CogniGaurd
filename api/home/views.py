@@ -6,18 +6,21 @@ import io
 import base64
 from PIL import Image
 
-from .models import DarkPatternReport
+from .models import DarkPatternReport,FAQData
 from django.contrib import messages
 
 # Create your views here.
 
+import pandas as pd
 
 def index(request):
     return render(request, "index.html")
 
 
 def faqs(request):
-    return render(request, "faqs.html")
+    faqs = FAQData.objects.all()
+    return render(request, "faqs.html", {"faqs": faqs})
+    
 
 def termsConditions(request):
     return render(request, "termsConditions.html")
@@ -96,4 +99,7 @@ def reportDp(request):
         return render(request, "report.html", {"error_message": success_msg})  # Redirect to a success page or another URL
 
     return render(request, "report.html")
+
+
+
 
