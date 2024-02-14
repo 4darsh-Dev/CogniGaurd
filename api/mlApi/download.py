@@ -18,7 +18,7 @@ df2  = pd.read_csv(file_path2, sep='\t')
 
 dark_pattern_counts = df['Pattern Category'].value_counts()
 
-dark_pattern_counts2 = df2['Pattern Category'].value_counts()   
+dark_pattern_counts2 = df2['Category'].value_counts()   
 
 
 
