@@ -52,10 +52,14 @@ def dpData(url):
         if existing_data:
             # If the URL already exists, do nothing
             # checking the result
+
             print(dp_data)
 
             dp_data = DarkPatternsData.objects.filter(website_url=url).values()
             return JsonResponse({"message": "Data already exists for this URL","data": list(dp_data)})
+
+
+            
         
             
         else:
@@ -98,21 +102,22 @@ class MessageListView(generics.ListAPIView):
 
 # For viewing the details of a specific URL
 
-
-
-
-    
-
 ## You need to ensure that it doesn't call the dpData function if the dpCond is False
 
     # Fetching urls from model
-    # dpUrls = DpRequest.objects.all()
-    # urlLen = len(dpUrls)
-    # myDpUrl = dpUrls[urlLen-1].url
-    # print(dpUrls)
-    # myOutput = dpData(myDpUrl)
-    # print(myOutput)
-    # dpCond = False
+    dpUrls = DpRequest.objects.all()
+    urlLen = len(dpUrls)
+    myDpUrl = dpUrls[urlLen-1].url
+    print(dpUrls)
+    myOutput = dpData(myDpUrl)
+    print(myOutput)
+    dpCond = False
+
+
+
+
+
+
 
 
 
