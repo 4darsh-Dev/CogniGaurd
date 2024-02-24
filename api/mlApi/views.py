@@ -53,12 +53,11 @@ def dpData(url):
             # If the URL already exists, do nothing
             # checking the result
 
-            print(dp_data)
 
             dp_data = DarkPatternsData.objects.filter(website_url=url).values()
             return JsonResponse({"message": "Data already exists for this URL","data": list(dp_data)})
 
-
+            print(dp_data)
             
         
             
@@ -76,15 +75,17 @@ def dpData(url):
                 sentence = row['sentence']
                 processed_result = find_dark_pattern(sentence)
                 print(f"{sentence}: {processed_result}")
+
+                dark_patterns_data = DarkPatternsData.objects.create(
+                website_url=url,
+                dark_pattern_label=processed_result,  # Replace with the appropriate l
+                dark_text=sentence  # Replace with the scraped data
+            )
             # Predicting the dark pattern
             
 
             # Save the scraped data to DarkPatternsData model
-            # dark_patterns_data = DarkPatternsData.objects.create(
-            #     website_url=url,
-            #     dark_pattern_label="Label",  # Replace with the appropriate label
-            #     dark_text="Scraped data"  # Replace with the scraped data
-            # )
+            
 
             return "Data saved to DarkPatternsData model"
 
@@ -112,6 +113,11 @@ class MessageListView(generics.ListAPIView):
     myOutput = dpData(myDpUrl)
     print(myOutput)
     dpCond = False
+
+
+
+
+
 
 
 
