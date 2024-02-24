@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .popup_detect_ml import predict
+# from .popup_detect_ml import predict
 from django.http import JsonResponse
 from json import dump
 import io
@@ -28,24 +28,24 @@ def termsConditions(request):
 def knowDp(request):
     return redirect("/")
 
-def popup_detect(request):
-    # img = data_url_to_image(request.GET.get('img', ''))
-    # return JsonResponse(dump(predict(img)))
+# def popup_detect(request):
+#     # img = data_url_to_image(request.GET.get('img', ''))
+#     # return JsonResponse(dump(predict(img)))
 
-    # get image data url
-    img = request.GET.get("img", "")
+#     # get image data url
+#     img = request.GET.get("img", "")
 
-    if img == "":
-        return JsonResponse({"error": "data url empty"})
+#     if img == "":
+#         return JsonResponse({"error": "data url empty"})
 
-    # convert dataurl to PIL
-    img = data_url_to_image(img)
+#     # convert dataurl to PIL
+#     img = data_url_to_image(img)
 
-    # predict the result using trained ml algo
-    result = predict(img)
+#     # predict the result using trained ml algo
+#     result = predict(img)
 
-    # return the results
-    return JsonResponse(dump(result))
+#     # return the results
+#     return JsonResponse(dump(result))
 
 
 def data_url_to_image(data_url):
