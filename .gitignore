@@ -16,3 +16,4 @@ finetuned_BERT_epoch_3.model
 finetuned_BERT_epoch_4.model
 finetuned_BERT_epoch_5.model
 staticfiles/
+dump.sql
