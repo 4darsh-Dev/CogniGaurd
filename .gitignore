@@ -17,3 +17,5 @@ finetuned_BERT_epoch_4.model
 finetuned_BERT_epoch_5.model
 staticfiles/
 dump.sql
+schema.sql
+sentences.csv

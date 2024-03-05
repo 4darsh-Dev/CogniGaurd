@@ -13,8 +13,15 @@ from transformers import BertForSequenceClassification
 import pandas as pd
 import numpy as np
 
-file_path = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_dataset.tsv"
-df = pd.read_csv(file_path ,sep="\t")
+# Previous version for .tsv files
+
+# file_path = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_dataset.tsv"
+# df = pd.read_csv(file_path ,sep="\t")
+
+
+# New version for .csv files
+file_path = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_dataset.csv"
+df = pd.read_csv(file_path)
 
 tags_df = df['Category'].value_counts()
 

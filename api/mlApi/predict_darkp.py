@@ -9,7 +9,7 @@ label_dict = {"Urgency": 0, "Not Dark Pattern": 1, "Scarcity": 2, "Misdirection"
 model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=len(label_dict))
 
 # Load fine-tuned weights
-fine_tuned_model_path = "F:/backup-kali/codeFiles/projects/cognigaurd/fine_tuned_bert/finetuned_BERT_epoch_5.model"
+fine_tuned_model_path = "F:/backup-kali/codeFiles/projects/cognigaurd/fine_tuned_bert2/finetuned_BERT_epoch_5.model"
 model.load_state_dict(torch.load(fine_tuned_model_path, map_location=torch.device('cpu')))
 
 # Preprocess the new text

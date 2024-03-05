@@ -59,7 +59,6 @@ def dpData(url):
 
             print(dp_data)
             
-        
             
         else:
             # Perform some operations
@@ -113,6 +112,13 @@ class MessageListView(generics.ListAPIView):
     myOutput = dpData(myDpUrl)
     print(myOutput)
     dpCond = False
+
+
+
+    
+
+
+
 
 
 

@@ -4,11 +4,11 @@
 import pandas as pd
 file_path = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_dataset.tsv"
 
-file_path2 = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_dataset_final.tsv"
+file_path2 = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_dataset.csv"
 
 df = pd.read_csv(file_path, sep='\t')
 
-df2  = pd.read_csv(file_path2, sep='\t')
+df2  = pd.read_csv(file_path2)
 
 # uniqueVal2 = df['Pattern Category'].nunique()
 # print(uniqueVal2)
@@ -38,11 +38,11 @@ print(dark_pattern_counts2)
 # new_df.to_csv('F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_dataset.csv',sep="\t", index=False)
 
 
-import pandas as pd
+# import pandas as pd
 
-output_file_path = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_dataset.csv"
+# output_file_path = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_dataset.csv"
 
-# Read the TSV file
+# # Read the TSV file
 # df = pd.read_csv(file_path2, sep='\t')
 
 # # Write the DataFrame to a CSV file
@@ -50,6 +50,6 @@ output_file_path = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/ne
 
 # print("TSV file converted to CSV successfully!")
 
-df3 = pd.read_csv(output_file_path)
-dark_pattern_counts3 = df3['Category'].value_counts()
-print(dark_pattern_counts3)
+# df3 = pd.read_csv(output_file_path)
+# dark_pattern_counts3 = df3['Category'].value_counts()
+# print(dark_pattern_counts3)
