@@ -7,6 +7,8 @@ class WebsiteTransparencyScore(models.Model):
     website_name = models.CharField(max_length=255, unique=True)
     transparency_score = models.FloatField()
 
+
+
     def __str__(self):
         return f"{self.website_name} - Transparency Score: {self.transparency_score}"
 
@@ -22,6 +24,8 @@ class DarkPatternsData(models.Model):
 
 
 class DpRequest(models.Model):
+
+
     url = models.URLField()
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -29,4 +33,8 @@ class DpRequest(models.Model):
     def __str__(self):
         return f"{self.url } at {self.created_at}"
     
+    
+    
+
+
     
