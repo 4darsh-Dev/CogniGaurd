@@ -256,3 +256,5 @@ model.load_state_dict(torch.load('fine_tuned_bert/finetuned_BERT_epoch_1.model',
 
 _, predictions, true_vals = evaluate(dataloader_validation)
 accuracy_per_class(predictions, true_vals)
+
+

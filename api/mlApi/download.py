@@ -6,9 +6,14 @@ file_path = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_da
 
 file_path2 = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_dataset.csv"
 
+file_path3 = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/evaluate_dp_dataset.csv"
+
+
 df = pd.read_csv(file_path, sep='\t')
 
 df2  = pd.read_csv(file_path2)
+
+df3 = pd.read_csv(file_path3)
 
 # uniqueVal2 = df['Pattern Category'].nunique()
 # print(uniqueVal2)
@@ -20,11 +25,16 @@ dark_pattern_counts = df['Category'].value_counts()
 
 dark_pattern_counts2 = df2['Category'].value_counts()   
 
+dark_pattern_counts3 = df3['Category'].value_counts()
 
 
-print(dark_pattern_counts)
 
-print(dark_pattern_counts2)
+
+# print(dark_pattern_counts)
+
+# print(dark_pattern_counts2)
+
+print(dark_pattern_counts3)
 
 # Alternatively, you can use df.isnull().sum()
 

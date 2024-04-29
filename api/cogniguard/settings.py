@@ -114,19 +114,19 @@ DB_HOST=os.getenv('DB_HOST','')
 DB_PORT=os.getenv('DB_PORT','')
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': DB_NAME,
-        'USER': DB_USER,
-        'PASSWORD': DB_PASSWORD,
-        'HOST': DB_HOST,  # or your MySQL server address
-        'PORT': DB_PORT,  # MySQL default port
-        
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': DB_NAME,
+    #     'USER': DB_USER,
+    #     'PASSWORD': DB_PASSWORD,
+    #     'HOST': DB_HOST,  # or your MySQL server address
+    #     'PORT': DB_PORT,  # MySQL default port
+        
+    # }
 }
 
 
