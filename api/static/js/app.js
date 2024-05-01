@@ -26,3 +26,20 @@ document.addEventListener('scroll', () => {
   }
 })
 //  scrllY + innerHeight = offsetHeight
+
+// menu transition
+const menu = document.querySelector('.hamburger-menu ')
+const sideBar = document.querySelector('.navbar__links')
+const hamburgerMenu = document.querySelector('.hamburger-menu')
+const overlay = document.querySelector('#overlay')
+
+hamburgerMenu.addEventListener('click', () => {
+  hamburgerMenu.classList.toggle('change')
+  overlay.style.display = hamburgerMenu.classList.contains('change')
+    ? 'block'
+    : 'none'
+  hamburgerMenu.classList.toggle('change')
+})
+menu.addEventListener('click', () => {
+  sideBar.classList.toggle('show')
+})
