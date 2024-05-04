@@ -7,11 +7,14 @@
 {% block content %}
 <section class="content-section">
     <header class="welcome flex-cont">
-        <div><img src="{% static "img/4560 1.png" %}" class="welcome-img" alt="shield-and-security"></div>
+        <div><img src="{{% static "img/4560 1.png"%}" class="welcome-img" alt="shield-and-security"></div>
         <div class="welcome-text">
-            <h1 class="font-large font-primary">Welcome to <span class="blue-text">Cogniguard</span>
-                Customer Service
-            </h1>
+            <div>
+                <h1 class="font-mid-large font-primary">Welcome to <span class="blue-text">Cogniguard</span>
+                    Customer Service
+                </h1>
+                <p class="font-primary font-light">Turning the Lights on Dark Patterns</p>
+            </div>
             <div class="welcome-btns">
                 <a href="#" class="btn-primary">Get Started</a>
                 <a href="#" class="btn-secondary">Give Feedback</a>
@@ -26,34 +29,32 @@
         <h1 class="font-mid-large font-primary">
             What <span class="blue-text">Dark Patterns</span> are and How these affect you?
         </h1>
-        <div>
-            <ul>
-                <li> Designed to mislead users into making unintended choices</li>
-                <li>Gathering user data or tracking them without clear consent or making it difficult to opt
-                    out.</li>
-                <li>Luring users with attractive offers that change or disappear upon closer look.</li>
-                <li> Making it hard to cancel subscriptions, often with hidden fees or confusing procedures.
-                </li>
-                <li>Creating a sense of false scarcity or pressure to act quickly, like countdown timers or
-                    limited-time offers.</li>
-                <a href="/know-dp" class="btn-secondary">Know More</a>
-            </ul>
+        <div class="list">
+            <p> Designed to mislead users into making unintended choices</p>
+            <p>Gathering user data or tracking them without clear consent or making it difficult to opt
+                out.</p>
+            <p>Luring users with attractive offers that change or disappear upon closer look.</p>
+            <p> Making it hard to cancel subscriptions, often with hidden fees or confusing procedures.
+            </p>
+            <p>Creating a sense of false scarcity or pressure to act quickly, like countdown timers or
+                limited-time offers.</p>
+            <a href="/know-dp" class="btn-secondary">Know More</a>
 
         </div>
     </section>
     <section class="cogni-about flex-cont">
-        <img class="slide-left animate-img" src="{% static "img/cogni-about.jpg" %}" alt="shield-and-security">
-        <div class="slide-right animate-p">
+        <img class="slide-left animate-img" src={% static "img/cogni-about.jpg"%} alt="shield-and-security">
+        <div class="cogni-about-text slide-right animate-p">
             <h1 class="font-mid-large font-primary">Why <span class="blue-text">CogniGuard</span> Exists...
             </h1>
-            <ul>
-                <li>Provides on time Dark Pattern detection</li>
-                <li>Transparency Score, shows the reality of the website</li>
-                <li>Alerts you for Red Flag websites</li>
-                <li>Lightweight extension, easy installation and setup</li>
-                <li>Helps in eradication of Dark Patterns</li>
+            <div class="list">
+                <p>Provides on time Dark Pattern detection</p>
+                <p>Transparency Score, shows the reality of the website</p>
+                <p>Alerts you for Red Flag websites</p>
+                <p>Lightweight extension, easy installation and setup</p>
+                <p>Helps in eradication of Dark Patterns</p>
                 <a href="/about" class="btn-secondary">Know More</a>
-            </ul>
+            </div>
         </div>
     </section>
 </section>
