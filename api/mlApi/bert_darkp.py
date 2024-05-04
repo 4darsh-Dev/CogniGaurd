@@ -20,7 +20,7 @@ import numpy as np
 
 
 # New version for .csv files
-file_path = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/new_dp_dataset.csv"
+file_path = "F:/backup-kali/codeFiles/projects/cognigaurd/api/datasets/dp_final_dataset_april_3k.csv"
 df = pd.read_csv(file_path)
 
 tags_df = df['Category'].value_counts()
