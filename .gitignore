@@ -19,3 +19,5 @@ staticfiles/
 dump.sql
 schema.sql
 sentences.csv
+myenv/
+
