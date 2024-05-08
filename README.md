@@ -24,9 +24,15 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 ![GitHub forks](https://img.shields.io/github/forks/4darsh-Dev/CogniGaurd)
 ![GitHub Repo stars](https://img.shields.io/github/stars/4darsh-Dev/CogniGaurd)
 
-## Cogni-BERT Model Evaluation Score 
+## Cogni-BERT Model Scores
 
-### Eval Scores
+### Sweeps Training Hyperparametrs
+
+<p align="center">
+  <img src="https://onionreads.com/wp-content/uploads/2024/05/cogni-bert-12sweeps.png" alt="BERT Fine-Tuned Sweep training " width="600px" />
+</p>
+
+### Eval Score
 
 <p align="center">
   <img src="https://onionreads.com/wp-content/uploads/2024/01/Screenshot-2024-01-22-210038.png" alt="BERT Fine-Tuned Eval Score " width="600px" />
