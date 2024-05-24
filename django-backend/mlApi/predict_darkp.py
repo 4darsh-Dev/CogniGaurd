@@ -50,7 +50,7 @@ def find_dark_pattern(text_predict):
 
 
 
-# # text_to_predict = "Hello my name is adarsh and my friend name is aman , he is only on sale for the next two days. "
+# # text_to_predict = "Hello my name is adarsh and my friend name is aman  "
 # welcomeMsg = """******* Welcome to Dark Pattern Detector ********"""
 
 # text_to_predict = input("Enter the the text to find Dark Pattern : ")

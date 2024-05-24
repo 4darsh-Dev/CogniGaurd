@@ -17,16 +17,7 @@
   --font-large: 3rem;
   --font-ex-large: 3.5rem;
 }
-@media (max-width: 768px) {
-  :root {
-    --font-ex-small: 0.25rem;
-    --font-small: 0.5rem;
-    --font-mid-medium: 1rem;
-    --font-medium: 1.25rem;
-    --font-mid-large: 1.75rem;
-    --font-large: 2rem;
-  }
-}
+
 a {
   text-decoration: none;
 }
@@ -110,11 +101,7 @@ a {
   align-items: center;
   gap: 5rem;
   margin: 4rem 0;
-  @media (max-width: 768px) {
-    margin: 5vh 0 !important;
-    flex-direction: column;
-    gap: 3rem;
-  }
+  
 }
 .blue-text {
   color: var(--color-primary);
@@ -122,10 +109,8 @@ a {
 /* main section */
 .main-section {
   display: flex;
-  justify-content: center;
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
+  /* justify-content: center; */
+  
   /* gap: 2rem;
   padding: 0 2.87rem; */
 }
@@ -136,10 +121,7 @@ a {
   align-items: center;
   margin: 6rem 2rem 2rem 4rem;
   gap: 8rem;
-  @media (max-width: 768px) {
-    margin: 10vh 10vw;
-    gap: 15vh;
-  }
+  
 }
 /* navbar */
 .navbar {
@@ -158,27 +140,12 @@ a {
   background: white;
   gap: 2rem;
   height: 558px;
-  @media (max-width: 768px) {
-    flex-direction: row;
-    height: 100px;
-    padding: 0 5vw;
-    /* 
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    transform: translateX(-100%);
-    transition: 0.5s; */
-  }
+  
 }
 .navbar__logo img {
   height: 5.75rem;
   width: 9.55rem;
-  @media (max-width: 768px) {
-    height: 5rem;
-    width: 8.5rem;
-  }
+  
 }
 .navbar__links {
   display: flex;
@@ -186,17 +153,7 @@ a {
   align-items: flex-start;
   gap: 2rem;
   width: 14rem;
-  @media (max-width: 768px) {
-    position: fixed;
-    z-index: 3;
-    background-color: white;
-    padding: 3vh 5vw;
-    border-radius: 10px;
-    right: -100vw;
-    top: 25vh;
-    border: 1px solid black;
-    transition: all 0.5s ease-in-out;
-  }
+  
 }
 .show {
   transform: translateX(-100vw);
@@ -217,9 +174,7 @@ a {
 }
 .welcome-img {
   height: 40vh;
-  @media (max-width: 768px) {
-    height: 25vh;
-  }
+  
 }
 .welcome-btns {
   display: flex;
@@ -246,9 +201,7 @@ a {
 }
 .cogni-about img {
   height: 50vh;
-  @media (max-width: 768px) {
-    height: 30vh;
-  }
+  
 }
 /* footer */
 footer {
@@ -275,11 +228,7 @@ footer {
   color: white;
   justify-content: space-evenly;
   align-items: center;
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10vh;
-  }
+  
 }
 .footer-text a {
   color: white;
@@ -310,9 +259,7 @@ footer {
   width: 50%;
   flex-direction: column;
   gap: 1rem;
-  @media (max-width: 768px) {
-    width: auto;
-  }
+  
 }
 .cogni-desc p {
   letter-spacing: 0.5px;
@@ -323,9 +270,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  @media (max-width: 768px) {
-    gap: 1.5rem;
-  }
+  
 }
 .cogni-links div:first-child {
   display: flex;
@@ -390,9 +335,7 @@ footer {
   cursor: pointer;
   padding: 0;
   z-index: 10;
-  @media (max-width: 768px) {
-    display: flex;
-  }
+  
 }
 
 .line {

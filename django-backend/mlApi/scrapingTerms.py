@@ -1,3 +1,5 @@
+# This script scrapes the terms and conditions of the websites mentioned in the 'websites' list and saves the data to a CSV file.
+
 import requests
 from bs4 import BeautifulSoup
 import csv

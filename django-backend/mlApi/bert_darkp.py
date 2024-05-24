@@ -1,4 +1,4 @@
-# Implementing TowardsDS's BERT model for dark pattern detection
+# Implementing TowardsDS's BERT model for dark pattern detection traning for mulit-class classification
 
 import torch
 from tqdm import tqdm
@@ -151,7 +151,7 @@ def accuracy_per_class(preds, labels):
 
 ## TraningLoop for BERT
 
-# for loading cpu model on gpu   
+# for loading model on gpu   
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
@@ -162,6 +162,8 @@ random.seed(seed_val)
 np.random.seed(seed_val)
 torch.manual_seed(seed_val)
 torch.cuda.manual_seed_all(seed_val)
+
+# evaluating the model
 
 def evaluate(dataloader_val):
 
@@ -230,6 +232,7 @@ for epoch in tqdm(range(1, epochs+1)):
         progress_bar.set_postfix({'training_loss': '{:.3f}'.format(loss.item()/len(batch))})
          
         
+    # saving the model after each epoch (name as per your choice)
     torch.save(model.state_dict(), f'fine_tuned_bert/finetuned_BERT_epoch_{epoch}.model')
         
     tqdm.write(f'\nEpoch {epoch}')

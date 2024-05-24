@@ -105,13 +105,13 @@ class MessageListView(generics.ListAPIView):
 ## You need to ensure that it doesn't call the dpData function if the dpCond is False
 
     # Fetching urls from model
-    # dpUrls = DpRequest.objects.all()
-    # urlLen = len(dpUrls)
-    # myDpUrl = dpUrls[urlLen-1].url
-    # print(dpUrls)
-    # myOutput = dpData(myDpUrl)
-    # print(myOutput)
-    # dpCond = False
+    dpUrls = DpRequest.objects.all()
+    urlLen = len(dpUrls)
+    myDpUrl = dpUrls[urlLen-1].url
+    print(dpUrls)
+    myOutput = dpData(myDpUrl)
+    print(myOutput)
+    dpCond = False
 
 
 
