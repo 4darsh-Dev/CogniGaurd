@@ -1,4 +1,9 @@
 # CogniGuard 🕵️‍♂️✨
+<div>
+    <img align=top src="https://miro.medium.com/max/1400/1*c4YgRXYQayOVWxV37ourrw.png" width="100%"/>
+
+<div>
+<br>
 
 ## Overview
 
