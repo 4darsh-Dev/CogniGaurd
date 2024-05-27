@@ -1,0 +1,18 @@
+{
+  "builds": [
+    {
+      "src": "cogniguard/wsgi.py",
+      "use": "@vercel/python",
+      "rootDirectory": "django-backend"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "cogniguard/wsgi.py"
+    }
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "cogniguard.settings"
+  }
+}
