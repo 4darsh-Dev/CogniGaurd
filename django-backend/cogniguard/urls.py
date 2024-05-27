@@ -29,3 +29,6 @@ urlpatterns = [
     path("", include("home.urls")),
     path("api/", include("mlApi.urls")),
 ]
+# vercel deployment url configuration
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
