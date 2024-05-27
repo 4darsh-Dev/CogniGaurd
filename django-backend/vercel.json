@@ -3,19 +3,25 @@
   "builds": [
     {
       "src": "cogniguard/wsgi.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.11" }
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
     }
   ],
   "routes": [
     {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/cogniguard/wsgi.py"
+      "dest": "cogniguard/wsgi.py"
     }
-  ],
-  "env": {
-    "VERCEL_ENV": "production",
-    "DJANGO_SETTINGS_MODULE": "cogniguard.settings",
-    "PYTHONUNBUFFERED": "1",
-    "WSGI_WEB_CONCURRENCY": "4" // Adjust this based on your application needs
-  }
+  ]
 }
