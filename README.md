@@ -106,7 +106,7 @@ python manage.py runserver
 2. Turn on Developer Mode.
 3. Click on load unpacked and then select the cogniguard-web folder with manifest.json
 4. Click on extension icon and you will find the CogniGuard.
-5. Open the desired website url (https://snapdeal.com/) on web browswer and then click on Analyze button.
+5. Open the desired website URL (https://snapdeal.com/) on web browser and then click on Analyze button.
 6. The Analyzing process will start running on backend. 
 
 
