@@ -7,6 +7,8 @@ import base64
 from PIL import Image
 
 from .models import DarkPatternReport,FAQData
+from mlApi.models import DarkPatternsData
+
 from django.contrib import messages
 
 # Create your views here.
@@ -66,6 +68,23 @@ def data_url_to_image(data_url):
 
 def about(request):
     return render(request, "about.html")
+
+
+# for searching dark patterns 
+
+def detected_dp(request):
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        query = request.GET.get('query', '')
+        results = DarkPatternsData.objects.filter(website_url__icontains=query) | DarkPatternsData.objects.filter(dark_pattern_label__icontains=query)
+        data = []
+        for result in results:
+            data.append({
+                'website_url': result.website_url,
+                'dark_pattern_label': result.dark_pattern_label,
+                'dark_text': result.dark_text
+            })
+        return JsonResponse({'results': data})
+    return render(request, 'detected_dp.html')
 
 
 

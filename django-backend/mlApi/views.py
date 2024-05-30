@@ -55,9 +55,10 @@ def dpData(url):
 
 
             dp_data = DarkPatternsData.objects.filter(website_url=url).values()
+            print(dp_data)
             return JsonResponse({"message": "Data already exists for this URL","data": list(dp_data)})
 
-            print(dp_data)
+            
             
             
         else:

@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6d^&=3mo$ybhnt4dv^gqjf89c(@$ygco!epa4qb)!m0wiv@z46'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app", ".now.sh"]
+ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1"]
 
 
 # Application definition
@@ -114,10 +114,10 @@ DB_HOST=os.getenv('DB_HOST','')
 DB_PORT=os.getenv('DB_PORT','')
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
     #     'NAME': DB_NAME,

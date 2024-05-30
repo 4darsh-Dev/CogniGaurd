@@ -11,6 +11,7 @@ urlpatterns = [
     path("about/", views.about, name="about"),
     path("terms-conditions/", views.termsConditions, name="terms-conditions"),
     path("know-dp/", views.knowDp, name="knowDp"),
+    path("detected_dp/", views.detected_dp, name="detected_dp"),
     
 ]
 

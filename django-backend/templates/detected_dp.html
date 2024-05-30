@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Search Dark Patterns | Detected Dark Patterns{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/detected_dp.css" %}">
+{% endblock head %}
+
+{% block content %}
+
+<div class="dp-search-box">
+    <div class="dp-header">
+        <h1>Detected <span>Dark Patterns</span></h1>
+        <p>Search for websites that have been found using dark patterns.</p>
+    </div>
+    
+    <div class="search-container">
+        <!-- <h1>Search For Dark Patterns</h1> -->
+        <input type="text" id="search-input" placeholder="Enter website name or URL">
+        <div id="suggestions" class="suggestions"></div>
+        <div id="results" class="results"></div>
+    </div>
+</div>
+
+{% endblock content %}
+
+
+{% block script %}
+<script src="{% static "js/detected_dp.js" %}"></script>
+
+{% endblock script %}
