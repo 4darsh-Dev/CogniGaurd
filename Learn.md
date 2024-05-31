@@ -1,6 +1,6 @@
 # Learn.md ✍
 # CogniGuard 🕵️‍♂️✨
-CogniGuard is a powerful web extension designed to empower users by identifying and combatting dark patterns on various websites, particularly focusing on E-commerce platforms. Ensuring users a transparent and ethical online experience.
+
 <br>
 [About Dark Patterns]( https://www.deceptive.design/)
 
@@ -21,8 +21,7 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 11. [Motivation](#motivation-)
 
 ## Introduction 🖥️
-CogniGuard allows users to calculate their carbon footprint based on various parameters. It provides detailed insights and suggestions on how to reduce their carbon emissions. The name "CogniGuard" is derived from "Prithvi" (Earth) and "We," emphasizing collective action and collaboration. 
-Visit the live application [here](https://CogniGuard.onrender.com).
+CogniGuard is a powerful web extension designed to empower users by identifying and combatting dark patterns on various websites, particularly focusing on E-commerce platforms. Ensuring users a transparent and ethical online experience.
 
 ## Tech Stack 🗃️
 
