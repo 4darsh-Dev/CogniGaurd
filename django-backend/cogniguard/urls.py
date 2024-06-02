@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.views.generic import RedirectView
+from django.conf import settings
+from django.conf.urls.static import static
 
 # Admin panel customization
 admin.site.site_header = "CogniGuard Admin"
@@ -30,5 +32,7 @@ urlpatterns = [
     path("api/", include("mlApi.urls")),
 ]
 # vercel deployment url configuration
-# urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# vercel deployment conf
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
