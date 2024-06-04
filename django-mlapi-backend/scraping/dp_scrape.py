@@ -13,6 +13,7 @@ nltk.download('punkt')
 ## version 1
 
 def get_scrape_data(url):
+    
     # Use a fake user agent to mimic a web browser by adding header
     user_agent = UserAgent()
     headers = {'User-Agent': user_agent.random}
@@ -86,7 +87,7 @@ def dark_sentence_list(url):
 
 
 
-
+# sample url 
 my_url = "https://www.amazon.in/BassHeads-122-Earphones-Tangle-Straight/dp/B07QZ3CZ48/ref=sr_1_1?crid=I50H5USKYCLC&keywords=wired%2Bearphones%2Bboat&qid=1705597770&sprefix=wired%2Bearphones%2B%2Caps%2C2763&sr=8-1&th=1"
 
 

@@ -58,12 +58,11 @@ def dpData(url):
             print(dp_data)
             return JsonResponse({"message": "Data already exists for this URL","data": list(dp_data)})
 
-            
-            
+        
             
         else:
-            # Perform some operations
-            # For example, scrape data from the URL using get_scrape_data function
+            
+            #  scrape data from the URL using get_scrape_data function
             scrape_output, sentenceFile = dark_sentence_list(url)
             print(scrape_output)
 
