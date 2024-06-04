@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'home.apps.HomeConfig',
-    'corsheaders',
+    
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'corsheaders.middleware.CorsMiddleware', # add this middleware
+    
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -59,12 +59,7 @@ MIDDLEWARE = [
 ]
 
 
-# Cors allowed origins
-CORS_ALLOW_ALL_ORIGINS = True
 
-
-# Written by admin
-CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 
 ROOT_URLCONF = 'cogniguard.urls'
 
