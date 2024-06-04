@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static "css/about.css" %}">
+{% endblock head %}
+
+{% block title %}About{% endblock title %}
+
+{% block content %}
+<section class="content-section">
+    <section>
+        <img class="cogniguard-ss" src="{%static "img/cogniguard-popup.png"%}" alt="web-extension-picture">
+        <div>
+            <p class="font-medium">
+                <span class="blue-text font-mid-large font-secondary">Cogniguard</span> is a lightweight but powerful web extension designed to combat
+                deceptive tactics and promote transparency online.
+            </p>
+        </div>
+    </section>
+    <section>
+        <span class="font-medium">
+            <p>It empowers you by</p>
+           <span class="font-mid-medium"> Identifying dark patterns: Uncovers hidden manipulation techniques used by websites, particularly in e-commerce.
+           </span>
+        </span>
+    </section>
+</section>
+{% endblock content %}
+
+{% block script %}
+<script src="{% static "js/about.js"%}"></script>
+{% endblock script %}
