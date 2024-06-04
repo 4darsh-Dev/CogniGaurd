@@ -6,8 +6,8 @@ import io
 import base64
 from PIL import Image
 
-from .models import DarkPatternReport,FAQData
-from mlApi.models import DarkPatternsData
+from .models import DarkPatternReport,FAQData,DarkPatternsData
+
 
 from django.contrib import messages
 

@@ -18,3 +18,13 @@ class FAQData(models.Model):
 
     def __str__(self):
         return self.question
+    
+# saving dark pattern data to the database
+class DarkPatternsData(models.Model):
+    
+    website_url = models.URLField()
+    dark_pattern_label = models.CharField(max_length=255)
+    dark_text = models.TextField()
+
+    def __str__(self):
+        return f"{self.website_url} - Dark Pattern: {self.dark_pattern_label}"
