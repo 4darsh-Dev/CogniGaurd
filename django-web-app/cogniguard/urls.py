@@ -29,7 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path("logout/", RedirectView.as_view(url="/admin/logout/")),
     path("", include("home.urls")),
-    path("api/", include("mlApi.urls")),
+    
 ]
 # vercel deployment url configuration
 
