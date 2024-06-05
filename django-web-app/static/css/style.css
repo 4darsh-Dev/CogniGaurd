@@ -84,6 +84,7 @@ a {
   color: var(--color-primary);
   border: 2px solid var(--color-primary);
   transition: 0.3s;
+  transform: scale(1.1); /* Scale the button up to 110% when hovered */
 }
 .btn-secondary {
   color: var(--color-primary);
@@ -95,6 +96,8 @@ a {
 .btn-secondary:hover {
   background-color: var(--color-primary);
   color: white;
+  transition: 0.3s;
+  transform: scale(1.1); /* Scale the button up to 110% when hovered */
 }
 .flex-cont {
   display: flex;
@@ -171,7 +174,11 @@ a {
 }
 .welcome-img {
   height: 40vh;
-  
+  transition: transform 0.3s ease-in-out; /* Add transition for smooth scaling */
+}
+
+.welcome-img:hover {
+  transform: scale(1.1); /* Scale the image up to 110% when hovered */
 }
 .welcome-btns {
   display: flex;
