@@ -2,11 +2,18 @@
 
 from .models import Visitor
 from django.utils.deprecation import MiddlewareMixin
-import datetime
+from django.utils import timezone
+from datetime import timedelta
 
 class VisitorTrackingMiddleware(MiddlewareMixin):
     def process_request(self, request):
-        if not request.session.get('has_visited'):
+        current_time = timezone.now()
+        last_visit_time = request.session.get('last_visit_time')
+
+        if last_visit_time:
+            last_visit_time = timezone.datetime.fromisoformat(last_visit_time)
+        
+        if not last_visit_time or (current_time - last_visit_time) > timedelta(hours=24):
             ip_address = request.META.get('REMOTE_ADDR')
             user_agent = request.META.get('HTTP_USER_AGENT', '<unknown>')
             referer = request.META.get('HTTP_REFERER', None)
@@ -19,8 +26,8 @@ class VisitorTrackingMiddleware(MiddlewareMixin):
                 referer=referer,
                 path=path,
                 method=method,
-                timestamp=datetime.datetime.now()  # Add timestamp if not already present
+                timestamp=current_time
             )
             
-            request.session['has_visited'] = True
-            request.session['visited_at'] = str(datetime.datetime.now())  # Store visit time
+            request.session['last_visit_time'] = current_time.isoformat()
+
