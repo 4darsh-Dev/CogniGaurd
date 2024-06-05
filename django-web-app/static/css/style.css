@@ -158,10 +158,7 @@ a {
   width: 14rem;
   
 }
-.show {
-  transform: translateX(-100vw);
-  /* transition: ; */
-}
+
 .auth {
   display: flex;
   align-items: center;
@@ -212,7 +209,7 @@ footer {
   flex-direction: column;
   background-color: #2b2d30;
   padding: 7vh 4vh 0;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 .footer-links {
   display: flex;
