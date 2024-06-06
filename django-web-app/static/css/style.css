@@ -34,6 +34,9 @@ a {
 .link {
   color: black;
 }
+.link:hover {
+  color: greenyellow;
+}
 .icons {
   color: black;
 }
@@ -369,3 +372,4 @@ footer {
   cursor: pointer;
   backdrop-filter: blur(10px);
 }
+
