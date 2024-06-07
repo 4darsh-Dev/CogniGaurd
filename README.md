@@ -152,3 +152,18 @@ Special thanks to the open-source community for their continuous support and col
 
 We value your feedback! Report issues at adarsh@onionreads.com 
 Propose features, or submit pull requests. Let's create a fair and transparent digital environment together! 🌐✨
+
+
+Don't forget to leave a star ⭐
+Happy Coding!!❤️
+
+<hr>
+
+<div>
+  <h2 align = "center"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35">Our Contributors</h2>
+  <div align = "center">
+ <h3>Thank you for contributing to our repository</h3>
+
+![Contributors](https://contrib.rocks/image?repo=4darsh-Dev/CogniGaurd)
+
+### Show some ❤️ by starring this awesome repository!
