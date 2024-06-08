@@ -75,6 +75,7 @@ a {
   gap: 0.5rem;
 }
 .btn-primary {
+  font-family: var(--font-primary);
   background-color: var(--color-primary);
   color: white;
   padding: 0.5rem 1rem;
@@ -89,6 +90,7 @@ a {
   transition: 0.3s;
 }
 .btn-secondary {
+  font-family: var(--font-secondary);
   color: var(--color-primary);
   padding: 0.4rem 0.3rem;
   border-radius: 0.625rem;
