@@ -20,6 +20,36 @@
     {% block head %}
     {% endblock head %}
     <title>CogniGuard | {% block title %}{% endblock title %}</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .login-button {
+            background-color: #4CAF50; /* Green */
+        }
+
+        .register-button {
+            background-color: #008CBA; /* Blue */
+        }
+
+        .button i {
+            margin-right: 8px;
+        }
+        .log-buttons{
+            display: flex;
+            flex-direction: row;
+            
+        }
+    </style>
 
 </head>
 
@@ -29,6 +59,17 @@
             <nav class="navbar">
                 <div class="navbar__logo">
                     <img src="{% static "img/logo.png" %}" alt="CogniGuard-logo">
+                </div>
+                <div class="log-buttons">
+                    
+                    <a href="/login" class="button login-button">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                    <a href="/register" class="button register-button">
+                        <i class="fas fa-user-plus"></i> Register
+                    </a>
+
+                    
                 </div>
                 <div class="navbar__links  font-primary">
                     <div class="auth">

@@ -1,0 +1,108 @@
+
+{% load static %}
+
+{% block title %} Register {% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% comment %} <link rel="stylesheet" href="{% static 'css/responsive.css' %}"> {% endcomment %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+{% endblock head %}
+
+{% block main %}
+<div class="mainContainer">
+    {% if error_message %}
+    <div  id="error-message" class="error-message">
+        <p> {{ error_message }} </p>
+        <div id="cross-btn" class="cross-btn">
+            <i class='bx bx-x '></i>
+        </div>
+    </div>
+
+
+    {% endif %}
+    <div class="mc-div">
+        <div class="sub-c">
+        
+            <div class="sub-c-1">
+                <h1 class="head">SignUp</h1>
+                <div class="form">
+                    <form id="my-form" method="post" action="/signup/">
+                        {% csrf_token %}
+                        
+                        <div class="form-c-1">
+                            <label class="sub-head" for="username">
+                                Username
+                            </label>
+                            <!-- <img class="input-img" src="/static/img/user2.png" alt="user"> -->
+                            <i class='bx bxs-user input-img'></i>
+                            <input class="form-f" id="username" name="username" placeholder="Username"  required  type="text">
+                            
+                        </div>
+                        <!-- <div id="flname" class="form-c-1">
+                        
+                            <input class="form-f" id="firstnamae" name="firstname" placeholder="First Name"  required  type="text">
+                    
+                            <input class="form-f" id="lastname" name="lastname" placeholder="Last Name"  type="text">
+                            
+                        </div> -->
+                        <div class="form-c-1">
+                            <label class="sub-head" for="email">
+                                Email
+                            </label>
+                            <!-- <img class="input-img" src="/static/img/email.png" alt="user"> -->
+                            <i class='bx bxs-envelope input-img'></i>
+    
+                            <input class="form-f" id="email" name="email" placeholder="example@email.com" required  type="email">
+                            
+                        </div>
+                        
+    
+                        <div class="form-c-1">
+                            <label class="sub-head" for="password">
+                                Password
+                            </label>
+                            <!-- <img class="input-img" src="/static/img/padlock.png" alt="lock"> -->
+                            <i class='bx bxs-lock input-img'></i>
+                            <input class="form-f" id="password" name="password" placeholder="Password" required type="password">
+    
+                        </div>
+    
+                        <div class="form-c-1">
+                            <label class="sub-head" for="cnf-password">
+                                Password
+                            </label>
+                            <!-- <img class="input-img" src="/static/img/padlock.png" alt="lock"> -->
+                            <i class='bx bxs-lock input-img'></i>
+                            <input class="form-f" id="cnf-password" name="cnf-password" placeholder="Confirm password" required type="password">
+    
+                        </div>
+                        
+                    </form>
+                    <!-- <h4 id="forgot"> <a href="#">By clicking you agree Terms & Conditions. </a></h4> -->
+    
+                    <button id="signup-btn" class="signup-btn">Register</button>
+    
+                </div>
+                <div class="login">
+                    Already have an account! <span> <a href="/login">Login</a></span>.
+                </div>
+            </div>
+        </div>
+
+        <div class="signup-img-box">
+            <img src="{% static 'img/signup-img.webp' %}" alt="SignUp Image NyaySarathi | Guide to simpler laws, vidura chatbot online legal help">
+
+        </div>
+    </div>
+    
+
+</div>
+{% endblock main %}
+
+{% block script %}
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/register.js' %}"></script>
+{% endblock script %}

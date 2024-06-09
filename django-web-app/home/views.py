@@ -32,6 +32,14 @@ def about(request):
     return render(request, "about.html")
 
 
+# for user authentication
+def loginUser(request):
+    return render(request, "login.html")
+
+def registerUser(request):
+    return render(request, "register.html")
+
+
 # for searching dark patterns 
 
 def detected_dp(request):

@@ -1,0 +1,81 @@
+
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% comment %} <link rel="stylesheet" href="{% static 'css/responsive.css' %}"> {% endcomment %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+{% endblock head %}
+
+{% block main %}
+<div class="mainContainer">
+
+    {% if error_message %}
+    <div  id="error-message" class="error-message">
+        <p> {{ error_message }} </p>
+        <div id="cross-btn" class="cross-btn">
+            <i class='bx bx-x '></i>
+        </div>
+    </div>
+
+    {% endif %}
+
+    <div class="mc-div">
+        <div class="sub-c">
+        
+            <div class="sub-c-1">
+                <h1 class="head">Login</h1>
+                <div class="form">
+                    <form id="my-form" method="post" action="/login/">
+                        {% csrf_token %}
+                        
+                        <div class="form-c-1">
+                            <label class="sub-head" for="username">
+                                Username
+                            </label>
+                            <!-- <img class="input-img" src="/static/img/user2.png" alt="user"> -->
+                            <i class='bx bxs-user input-img'></i>
+                            <input class="form-f" id="username" name="username" required  placeholder="Type your username" type="text">
+                            
+                        </div>
+    
+                        <div class="form-c-1">
+                            <label class="sub-head" for="password">
+                                Password
+                            </label>
+                            <!-- <img class="input-img" src="/static/img/padlock.png" alt="lock"> -->
+                            <i class='bx bxs-lock input-img'></i>
+                            <input class="form-f" id="password" name="password" placeholder="Type your Password" type="password" required>
+    
+                        </div>
+                        
+                    </form>
+                    <h4 id="forgot"> <a href="#">Forgot password?</a></h4>
+    
+                    <button id="login-btn" class="login-btn">LOGIN</button>
+    
+                </div>
+                <div class="sign-up">
+                    Don't have an account? <span> <a href="/signup">Signup</a></span>!
+                </div>
+            </div>
+        </div>
+        <div class="login-img-box">
+            <img src="{% static 'img/login-img.webp' %}" alt="Login Image CogniGuard">
+
+        </div>
+
+    </div>
+    
+    
+</div>
+{% endblock main %}
+
+{% block script %}
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/login.js' %}"></script>
+{% endblock script %}
