@@ -34,6 +34,9 @@ a {
 .link {
   color: black;
 }
+.link:hover {
+  color: greenyellow;
+}
 .icons {
   color: black;
 }
@@ -72,6 +75,7 @@ a {
   gap: 0.5rem;
 }
 .btn-primary {
+  font-family: var(--font-primary);
   background-color: var(--color-primary);
   color: white;
   padding: 0.5rem 1rem;
@@ -86,6 +90,7 @@ a {
   transition: 0.3s;
 }
 .btn-secondary {
+  font-family: var(--font-secondary);
   color: var(--color-primary);
   padding: 0.4rem 0.3rem;
   border-radius: 0.625rem;
@@ -155,10 +160,7 @@ a {
   width: 14rem;
   
 }
-.show {
-  transform: translateX(-100vw);
-  /* transition: ; */
-}
+
 .auth {
   display: flex;
   align-items: center;
@@ -209,7 +211,7 @@ footer {
   flex-direction: column;
   background-color: #2b2d30;
   padding: 7vh 4vh 0;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 .footer-links {
   display: flex;
@@ -372,3 +374,4 @@ footer {
   cursor: pointer;
   backdrop-filter: blur(10px);
 }
+

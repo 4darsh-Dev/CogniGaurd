@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="shortcut icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
@@ -95,7 +96,7 @@
                             <i class="material-symbols-outlined icons">
                                 
                             </i>
-                            Home
+                            <i class="fa-solid fa-house"></i> Home
                         </div>
                     </a>
                     <a href="/about" class="link">
@@ -103,7 +104,7 @@
                             <span class="material-symbols-outlined">
                                 
                             </span>
-                            About
+                            <i class="fa-solid fa-circle-info"></i> About
                         </div>
                     </a>
                     <a href="/detected_dp" class="link">
@@ -111,7 +112,7 @@
                             <span class="material-symbols-outlined">
                                 
                             </span>
-                            Detected Dark Patterns
+                            <i class="fa-solid fa-user-secret"></i> Detected Dark Patterns
                         </div>
                     </a>
                     <a target="_blank" href="https://www.deceptive.design/" class="link">
@@ -119,7 +120,7 @@
                             <span class="material-symbols-outlined">
                                 
                             </span>
-                            What are Dark Patterns
+                            <i class="fa-regular fa-lightbulb"></i> What are Dark Patterns
                         </div>
                     </a>
                     <a href="/report-dp" class="link">
@@ -127,7 +128,7 @@
                             <span class="material-symbols-outlined">
                                 
                             </span>
-                            Report Dark Pattern
+                            <i class="fa-solid fa-bug"></i> Report Dark Pattern
                         </div>
                     </a>
                     <a href="/faqs" class="link">
@@ -135,7 +136,7 @@
                             <span class="material-symbols-outlined">
                                 
                             </span>
-                            FAQs
+                            <i class="fa-solid fa-question"></i> FAQs
                         </div>
                     </a>
                 </div>
@@ -179,8 +180,12 @@
                     </div>
                 </div>
             </div>
+            <div>
+                {% include "visitors.html" %}
+            </div>
+
             <div class="footer-bottom">
-                <p>Made with <i class="fa-solid fa-heart"></i> by Team Solve-Ease &copy; 2024</p>
+                <p>Made with <i class="fa-solid fa-heart"></i> by CogniGuardians &copy; 2024</p>
             </div>
 
 
