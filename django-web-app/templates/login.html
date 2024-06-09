@@ -1,7 +1,6 @@
 
 {% load static %}
 
-{% block title %} Login {% endblock title %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -11,18 +10,12 @@
 
 {% endblock head %}
 
+{% comment %} {% block title %} Login {% endblock title %} {% endcomment %}
+
 {% block main %}
 <div class="mainContainer">
 
-    {% if error_message %}
-    <div  id="error-message" class="error-message">
-        <p> {{ error_message }} </p>
-        <div id="cross-btn" class="cross-btn">
-            <i class='bx bx-x '></i>
-        </div>
-    </div>
-
-    {% endif %}
+    {% include 'messages.html' %}
 
     <div class="mc-div">
         <div class="sub-c">
@@ -30,6 +23,7 @@
             <div class="sub-c-1">
                 <h1 class="head">Login</h1>
                 <div class="form">
+                    
                     <form id="my-form" method="post" action="/login/">
                         {% csrf_token %}
                         
@@ -60,14 +54,14 @@
     
                 </div>
                 <div class="sign-up">
-                    Don't have an account? <span> <a href="/signup">Signup</a></span>!
+                    Don't have an account? <span> <a href="/register">Register</a></span>!
                 </div>
             </div>
         </div>
-        <div class="login-img-box">
+        {% comment %} <div class="login-img-box">
             <img src="{% static 'img/login-img.webp' %}" alt="Login Image CogniGuard">
 
-        </div>
+        </div> {% endcomment %}
 
     </div>
     
@@ -78,4 +72,5 @@
 {% block script %}
 <script src="{% static 'js/script.js' %}"></script>
 <script src="{% static 'js/login.js' %}"></script>
+<script src="{% static 'js/messages.js' %}"></script>
 {% endblock script %}

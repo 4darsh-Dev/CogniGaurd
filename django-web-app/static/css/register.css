@@ -3,7 +3,7 @@
     width:100%;
     height: auto;
     
-    margin: 5.2rem 0;
+    margin: 1.2rem 0;
 
 
 }
@@ -28,7 +28,7 @@
 
 }
 .error-message p{
-    color: var(--deep-pink);
+    color: var(--color-primary);
     font-size: 16px;
     font-family: var(--sans);
     padding:12px;
@@ -69,7 +69,7 @@
 .head{
     font-size: 32px;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-primary);
     font-weight: 600;
 }
 .form{
@@ -127,11 +127,11 @@
 .signup-btn{
     font-size: 16px;
     width: 340px;
-    background-color:var(--deep-pink);
+    background-color:var(--color-primary);
     height: 40px;
     color: white;
     font-weight: 600;
-    border: 2px solid var(--deep-pink);
+    border: 2px solid var(--color-primary);
     border-radius: 25px;
     position: relative;
     top: 12px;
@@ -139,8 +139,8 @@
 }
 .signup-btn:hover{
     cursor: pointer;
-    background-color: var(--deep-pink);
-    box-shadow: 0 0 25px var(--deep-pink);
+    background-color: var(--color-primary);
+    box-shadow: 0 0 25px var(--color-primary);
 
 }
 .login{

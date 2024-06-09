@@ -13,8 +13,9 @@ urlpatterns = [
     path("know-dp/", views.knowDp, name="knowDp"),
     path("login/", views.loginUser, name="loginUser"),
     path("register/", views.registerUser, name="registerUser"),
-    path("detected_dp/", views.detected_dp, name="detected_dp"),
-    
+    path("detected-dp/", views.detected_dp, name="detected-dp"),
+    path("dashboard/", views.dashboard, name="dashboard"),
+    path("logout/", views.logoutUser, name="logoutUser"),
 
     
 ]

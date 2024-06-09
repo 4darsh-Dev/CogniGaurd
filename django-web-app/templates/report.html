@@ -9,6 +9,9 @@
 {% endblock head %}
 
 {% block content %}
+
+{% include 'messages.html' %}
+
 <section class="content-section">
     <section class="heading-section">
         <h1 class="font-mid-large">Welcome to <span class="blue-text">CogniGuard</span></h1>
@@ -43,5 +46,6 @@
 
 
 {% block script %}
+<script src="{% static "js/messages.js" %}"></script>
 
 {% endblock script %}

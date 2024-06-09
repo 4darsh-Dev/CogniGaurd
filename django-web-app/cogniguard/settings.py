@@ -141,6 +141,17 @@ SESSION_COOKIE_AGE = 86400  # 24 hrs
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False  
 SESSION_SAVE_EVERY_REQUEST = True  
 
+# messages configuration
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'debug',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.ERROR: 'danger',
+}
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/

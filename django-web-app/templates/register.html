@@ -1,7 +1,7 @@
 
 {% load static %}
 
-{% block title %} Register {% endblock title %}
+{% comment %} {% block title %} Register {% endblock title %} {% endcomment %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -13,23 +13,16 @@
 
 {% block main %}
 <div class="mainContainer">
-    {% if error_message %}
-    <div  id="error-message" class="error-message">
-        <p> {{ error_message }} </p>
-        <div id="cross-btn" class="cross-btn">
-            <i class='bx bx-x '></i>
-        </div>
-    </div>
-
-
-    {% endif %}
+   
+ 
+    {% include 'messages.html' %}
     <div class="mc-div">
         <div class="sub-c">
         
             <div class="sub-c-1">
-                <h1 class="head">SignUp</h1>
+                <h1 class="head">Register</h1>
                 <div class="form">
-                    <form id="my-form" method="post" action="/signup/">
+                    <form id="my-form" method="post" action="/register/">
                         {% csrf_token %}
                         
                         <div class="form-c-1">
@@ -92,10 +85,10 @@
             </div>
         </div>
 
-        <div class="signup-img-box">
-            <img src="{% static 'img/signup-img.webp' %}" alt="SignUp Image NyaySarathi | Guide to simpler laws, vidura chatbot online legal help">
+        {% comment %} <div class="signup-img-box">
+            <img src="{% static 'img/signup-img.webp' %}" alt="Register CogniGuard">
 
-        </div>
+        </div> {% endcomment %}
     </div>
     
 
@@ -105,4 +98,5 @@
 {% block script %}
 <script src="{% static 'js/script.js' %}"></script>
 <script src="{% static 'js/register.js' %}"></script>
+<script src="{% static 'js/messages.js' %}"></script>
 {% endblock script %}

@@ -8,6 +8,7 @@
   --font-secondary: sans-serif;
   --color-primary: #2457c5;
   --color-primary-light: rgba(36, 87, 197, 0.3);
+  --black:#171321;
   --color-secondary: #9393ef;
   --font-ex-small: 0.4rem;
   --font-small: 0.75rem;
@@ -16,6 +17,7 @@
   --font-mid-large: 2.5rem;
   --font-large: 3rem;
   --font-ex-large: 3.5rem;
+
 }
 
 a {
@@ -92,7 +94,7 @@ a {
 .btn-secondary {
   font-family: var(--font-secondary);
   color: var(--color-primary);
-  padding: 0.4rem 0.3rem;
+  padding: 8px 12px;
   border-radius: 0.625rem;
   border: 0.1rem solid var(--color-primary);
   cursor: pointer;
@@ -234,6 +236,7 @@ footer {
 }
 .footer-text a {
   color: white;
+  font-family: var(--font-primary);
 }
 .footer-bottom {
   box-sizing: border-box;
@@ -244,6 +247,7 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
+  font-family: var(--font-secondary);
 }
 .footer-bottom i {
   color: red;
@@ -262,6 +266,10 @@ footer {
   flex-direction: column;
   gap: 1rem;
   
+}
+.cogni-desc h1{
+  font-family: var(--font-primary);
+
 }
 .cogni-desc p {
   letter-spacing: 0.5px;
@@ -375,3 +383,72 @@ footer {
   backdrop-filter: blur(10px);
 }
 
+/* login buttons css */
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.login-button {
+  background-color: #4CAF50; /* Green */
+}
+
+.register-button {
+  background-color: #008CBA; /* Blue */
+}
+
+.button i {
+  margin-right: 8px;
+}
+.log-buttons{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+/* message display css */
+
+
+#message-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.message {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  position: relative;
+  opacity: 1;
+  font-family: var(--font-secondary);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.message.success { background-color: #dff0d8; color: #3c763d; }
+.message.info { background-color: #d9edf7; color: #31708f; }
+.message.warning { background-color: #fcf8e3; color: #8a6d3b; }
+.message.danger { background-color: #f2dede; color: #a94442; }
+
+.message .close {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 20px;
+  color: inherit;
+}
