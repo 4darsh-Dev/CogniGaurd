@@ -49,7 +49,7 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 ### Link of Cogni-BERT Trained Model
 1. Huggingface spaces link --> https://huggingface.co/spaces/4darsh-Dev/dark_pattern_detector_app/tree/main/models
 
-### Setting up Django Backend
+### Setting up project locally
 
 1. clone the git repository locally.
 ```bash 
@@ -63,11 +63,34 @@ pip install virtualenv
 ```bash 
 cd CogniGaurd
 ```
+##### 1. For setting django-web-app
 ```bash 
-cd api
+cd django-web-app
 ```
-
+##### 2. For setting django-mlapi-backend
 ```bash 
+cd django-mlapi-backend
+```
+#### create a sample .env file in root directory
+```ini
+#.env file
+
+
+# Email server configuration
+EMAIL_HOST=smtp.your-email-provider.com
+EMAIL_HOST_USER=your_email@example.com
+EMAIL_HOST_PASSWORD=your_email_password
+
+# database configuration or use default sqlite3 
+DB_NAME=your-database-name
+DB_USER=your-db-user-name
+DB_PASSWORD=your-db-password
+DB_HOST=your-db-host
+DB_PORT=your-db-port
+PJ_SECRET_KEY=your-django-project-secret-key
+
+```
+```bash
 python -m venv myenv 
 ```
 #### Activating virtual environment named as myenv
