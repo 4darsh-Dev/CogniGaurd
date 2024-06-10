@@ -16,6 +16,7 @@ urlpatterns = [
     path("detected-dp/", views.detected_dp, name="detected-dp"),
     path("dashboard/", views.dashboard, name="dashboard"),
     path("logout/", views.logoutUser, name="logoutUser"),
+    path("verify-email/", views.verifyEmail, name="verify-email"),
 
     
 ]

@@ -8,12 +8,23 @@
 
 {% block content %}
 
+{% include 'messages.html' %}
+
+{% if user.is_authenticated %}
+
 <h1>Welcome to your dashboard, {{ username }}!</h1>
     <a href="{% url 'logoutUser' %}">Logout</a>
+
+{% else %}
+    <h1>You are not logged in</h1>
+    <a href="{% url 'loginUser' %}">Login</a> | <a href="{% url 'registerUser' %}">Register</a>
+
+{% endif %}
+
 {% endblock content %}
 
 {% block script %}
 
-<!-- <script src="{% static "js/faqs.js" %}"></script> -->
+ <script src="{% static "js/messages.js" %}"></script> 
 
 {% endblock script %}

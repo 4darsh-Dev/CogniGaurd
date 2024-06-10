@@ -7,6 +7,20 @@ from django.contrib import messages
 from .models import DarkPatternReport, FAQData, DarkPatternsData
 from django.contrib.auth.decorators import login_required
 
+
+from django.core.mail import send_mail
+from django.urls import reverse
+from django.core.signing import Signer, BadSignature
+from django.conf import settings
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.utils import timezone
+
+
+
+
+
 def index(request):
     return render(request, "index.html")
 
@@ -47,6 +61,29 @@ def loginUser(request):
             return render(request, "login.html", {"error_message": error_message})
 
     return render(request, 'login.html')
+
+# email verification
+
+signer = Signer()
+
+def sendVerifyEmail(user, request):
+    
+    token = signer.sign(user.email)
+    verify_url = request.build_absolute_uri(reverse('verify-email') + '?token=' + token)
+    subject = 'Verify your email address'
+
+    context = {
+        'user': user,
+        'verify_url': verify_url,
+        'current_year': timezone.now().year
+    }
+
+    html_content = render_to_string('email_verify.html', context)
+    text_content = strip_tags(html_content)
+
+    email = EmailMultiAlternatives(subject, text_content, settings.DEFAULT_FROM_EMAIL, [user.email])
+    email.attach_alternative(html_content, "text/html")
+    email.send()
 
 def registerUser(request):
     if request.method == "POST":
@@ -91,13 +128,31 @@ def registerUser(request):
             return render(request, 'register.html', {"error_message": error_msg, **context})
 
         myuser = User.objects.create_user(username, email, pass1)
+        myuser.is_active = False  # User is inactive until email is verified
         myuser.save()
-        success_msg = "Your CogniGuard account has been created successfully!"
+
+        sendVerifyEmail(myuser, request)
+
+        success_msg = "Your CogniGuard account has been created successfully! Please check your email to verify your account."
         messages.success(request, success_msg)
-        login(request, myuser)  # Automatically log in the user after registration
-        return redirect('dashboard')
+        return redirect('loginUser')
 
     return render(request, 'register.html')
+
+def verifyEmail(request):
+    token = request.GET.get('token')
+
+    try:
+        email = signer.unsign(token)
+        user = User.objects.get(email=email)
+        user.is_active = True
+        user.save()
+        messages.success(request, "Email verified successfully! You can now log in.")
+        return redirect('loginUser')
+    except (BadSignature, User.DoesNotExist):
+        messages.error(request, "Invalid verification link.")
+        return redirect('registerUser')
+    
 
 
 def logoutUser(request):
