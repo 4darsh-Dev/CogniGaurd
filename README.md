@@ -116,6 +116,8 @@ These steps can be used for working on local device for contribution
 ```python
 # for vercel deployment 
 # SECRET_KEY = os.environ.get("PJ_SECRET_KEY")
+SECRET_KEY="default-development-secret-key"
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -155,6 +157,8 @@ python manage.py migrate
 python manage.py runserver 
 ```
 -- Server will be started at localhost (example: http://127.0.0.1:8000/)
+
+--- Warning! - Ensure to undo the development settings changes before pushing code for vercel production and PRs.
 
 ### Setting up CogniGuard Web Extension
 
