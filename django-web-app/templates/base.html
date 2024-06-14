@@ -18,7 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="{% static "css/tab_responsive.css" %}">
+    <link rel="stylesheet" href="{% static "css/responsive.css" %}">
     {% block head %}
     {% endblock head %}
     <title>CogniGuard | {% block title %}{% endblock title %}</title>
@@ -112,7 +112,110 @@
                         </div>
                     </a>
                 </div>
+
+                <div class="mobile-menu-toggle">
+                    <div class="hamburger-menu">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <div class="mobile-links">
+                    <div class="auth">
+                        <a href="#" class="btn-primary">
+                            <div class="align-items">
+                                <i class="material-symbols-outlined">
+                                    
+                                </i>
+                                <span class="navitem">Login</span>
+                            </div>
+                        </a>
+                        <a href="#" class="btn-secondary">
+                            <div class="align-items">
+                                <span class="material-symbols-outlined">
+                                    
+                                </span>
+                                <span class="navitem">Sign Up</span>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="/" class="link">
+                        <div class="align-items">
+                            <i class="material-symbols-outlined icons">
+                                
+                            </i>
+                            <i class="fa-solid fa-house"></i> <span class="navitem">Home</span>
+                        </div>
+                    </a>
+                    <a href="/about" class="link">
+                        <div class="align-items">
+                            <span class="material-symbols-outlined">
+                                
+                            </span>
+                            <i class="fa-solid fa-circle-info"></i> <span class="navitem">About</span>
+                        </div>
+                    </a>
+                    <a href="/detected-dp" class="link">
+                        <div class="align-items">
+                            <span class="material-symbols-outlined">
+                                
+                            </span>
+                            <i class="fa-solid fa-user-secret"></i> <span class="navitem">Detected Dark Patterns</span>
+                        </div>
+                    </a>
+                    <a target="_blank" href="https://www.deceptive.design/" class="link">
+                        <div class="align-items">
+                            <span class="material-symbols-outlined">
+                                
+                            </span>
+                            <i class="fa-regular fa-lightbulb"></i> <span class="navitem">What are Dark Patterns</span>
+                        </div>
+                    </a>
+                    <a href="/report-dp" class="link">
+                        <div class="align-items">
+                            <span class="material-symbols-outlined">
+                                
+                            </span>
+                            <i class="fa-solid fa-bug"></i> <span class="navitem">Report Dark Pattern</span>
+                        </div>
+                    </a>
+                    <a href="/faqs" class="link">
+                        <div class="align-items">
+                            <span class="material-symbols-outlined">
+                                
+                            </span>
+                            <i class="fa-solid fa-question"></i> <span class="navitem">FAQs</span>
+                        </div>
+                    </a>
+                    <a href="/login" class="link">
+                        <div class="align-items">
+                            <span></span>
+                            <i class="fas fa-sign-in-alt"></i> <span class="navitem">Login</span>
+                        </div>
+                    </a>
+                    <a href="/register" class="link">
+                        <div class="align-items">
+                            <span></span>
+                            <i class="fas fa-user-plus"></i> <span class="navitem">Register</span>
+                        </div>
+                    </a>
+                </div>
             </nav>
+            <script>
+                document.querySelector('.hamburger-menu').addEventListener('click', function() {
+                    var links = document.querySelector(".mobile-links");
+                    var hamburger = document.querySelector(".hamburger-menu");
+                    if (links.style.display === "block") {
+                        links.style.display = "none";
+                        hamburger.classList.remove("cross");
+                    } else {
+                        links.style.display = "block";
+                        hamburger.classList.add("cross");
+                    }
+                });
+            </script>
+            
             
             {% block content%}
             {% endblock content%}

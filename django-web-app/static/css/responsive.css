@@ -129,12 +129,15 @@
     .footer-text{
         flex-direction: column;
     }
+    .content-section{
+        padding-left: 10px;
+    }
     .cogni-desc{
-        width: 80%;
+        width: 90%;
     }
     .cogni-links {
         align-items: baseline;
-        width: 80%;
+        width: 90%;
     }
     .cogni-desc h1,
     .cogni-about-text h1,
@@ -148,5 +151,92 @@
         font-size: 0.9rem;
     }
     
+    /* nvabar */
+    .main-section{
+        flex-direction: column;
+    }
+    .navbar{
+        position: fixed;
+        width: 96vw;
+        height: 10vh;
+        top: 0;
+        margin: 10px;
+        left: 0;
+        right: 0;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .mobile-links,
+    .tab_logo{
+        display: none;
+    }
+    .pc_logo{
+        display: block;
+    }
+    .navbar__logo img{
+        width: 5rem;
+        height: auto;
+    }
+    .navbar__links,
+    .log-buttons{
+        display: none;
+    }
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
     
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 3px 0;
+        transition: 0.4s;
+    }
+    
+    .change .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .change .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .change .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    .cross .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .cross .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .cross .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    .mobile-links{
+        position: absolute;
+        top: 11vh;
+        left: 0;
+        right: 0;
+        width: calc(94vw);
+        padding: 10px;
+        background-color: white;
+        border: 2px solid #d0d2d9;
+        box-shadow: 5px 4px 20px 0px #b7b7c0;
+        border-radius: 1rem;
+    }
+    .navitem{
+        display: block;
+    }
+    .align-items{
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .welcome{
+        margin-top: 13vh;
+    }
 }
