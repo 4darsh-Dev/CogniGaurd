@@ -5,31 +5,50 @@
         padding-right: 10px;
     }
     .welcome {
-        flex-direction: column;
+        flex-direction: row;
         margin: 2vh 0;
         gap: 2rem;
         width: 100%;
-        align-items: baseline;
+        align-items: center;
+        justify-content: space-between;
     }
     .welcome_image{
         width: 100%;
     }
-    .welcome_image img{
+    .welcome_image img,
+    .cogni-about img {
         width: 100%;
+    }
+    .cogni-about-img{
+        width: 100%;
+    }
+    .welcome_image img{
         height: fit-content;
     }
     .cogni-about,
     .dp-about{
-        flex-direction: column;
+        flex-direction: row;
         margin: 2vh 0;
         gap: 2rem;
         width: 100%;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .cogni-about{
+        align-items:flex-start;
+        flex-direction: row-reverse;
     }
     .cogni-about-text{
         width: 100%;
     }
+    .mobile-links{
+        display: none;
+    }
 }
 @media (max-width:769px){
+    .mobile-links{
+        display: none;
+    }
     .navbar__links{
         width: 2rem;
     }
