@@ -37,7 +37,8 @@ a {
   color: black;
 }
 .link:hover {
-  color: greenyellow;
+  color: #2457c5;
+  font-weight: 500;
 }
 .icons {
   color: black;
@@ -225,7 +226,11 @@ footer {
   height: 2.5rem !important;
 }
 .footer-links i {
+  opacity: 0.6;
   font-size: 2rem;
+}
+.footer-links i:hover{
+  opacity: 1;
 }
 .footer-text {
   display: flex;
@@ -236,7 +241,14 @@ footer {
 }
 .footer-text a {
   color: white;
+  opacity: 0.8;
   font-family: var(--font-primary);
+}
+.footer-text a:hover{
+  opacity: 1;
+  text-decoration: underline;
+  font-weight: 520
+  
 }
 .footer-bottom {
   box-sizing: border-box;
@@ -259,6 +271,9 @@ footer {
 }
 .footer-btn a {
   border: 1px solid white;
+}
+.footer-btn a:hover{
+  text-decoration: none;
 }
 .cogni-desc {
   display: flex;
