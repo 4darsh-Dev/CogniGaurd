@@ -20,10 +20,13 @@
     .welcome {
         flex-direction: row;
         margin: 2vh 0;
-        gap: 2rem;
+        gap: 4rem;
         width: 100%;
         align-items: center;
         justify-content: space-between;
+        height: 100vh;
+        padding: 0 2rem;
+
     }
     .welcome .welcome-text{
         width: 70%;
@@ -36,6 +39,9 @@
         width: 100%;
         justify-content: space-between;
         align-items: baseline;
+        padding: 0 2rem;
+        height: 60vh;
+        margin-bottom: 4rem;
     }
     .cogni-about{
         align-items:center;
@@ -62,7 +68,7 @@
         flex-direction: row;
     }
 }
-@media (max-width:1000px) and (min-width:770px){
+@media (max-width:1000px) {
     .content-section{
         gap: 0;
         margin: 0;
@@ -109,7 +115,7 @@
         gap: 1.4rem;
     }
 }
-@media (max-width:769px){
+@media (max-width:900px) and (min-width:559px) {
     .mobile-links{
         display: none;
     }
@@ -121,7 +127,7 @@
         margin-left: 5px;
     }
     .navbar{
-        padding: .5rem;
+        padding: 1rem;
     }
     .navbar__logo img {
         height: 4rem;
@@ -150,12 +156,17 @@
     }
     .button i{
         margin: 0;
+        font-size: 20px;
     }
+    .link i{
+        font-size: 20px;
 
+    }
     /* content styling */
     .content-section{
         margin: 0;
         gap: 0;
+        padding: 0 12px;
     }
     .cogni-about,
     .dp-about,
@@ -174,16 +185,19 @@
     .flex-cont {
         display: flex;
         gap: 2rem;
-        margin: 2vh 0;
-        align-items: revert;
+        margin: 3rem 0;
+    align-items: revert;
+    padding: 2rem 1rem;
     }
     .dp-about{
         width: 100%;
         padding-right: 10px;
+        margin: 2rem 0 4rem 0;
     }
     .cogni-about{
         padding-right: 10px;
         width: 100%;
+        margin: 2rem 0 4rem 0;
     }
     .cogni-about img {
         height: 300px;
@@ -213,7 +227,8 @@
         flex-direction: column;
     }
     .content-section{
-        padding-left: 10px;
+        padding: 0 15px ;
+        
     }
     .cogni-desc{
         width: 90%;
@@ -306,7 +321,7 @@
         left: 0;
         right: 0;
         width: calc(94vw);
-        padding: 10px;
+        padding: 15px;
         background-color: white;
         border: 2px solid #d0d2d9;
         box-shadow: 5px 4px 20px 0px #b7b7c0;
@@ -318,8 +333,10 @@
     .align-items{
         font-size: 18px;
         margin-bottom: 5px;
+        margin: 2rem 0;
     }
     .welcome{
-        margin-top: 13vh;
+        margin-top: 15vh;
+        margin-bottom: 4rem;
     }
 }

@@ -35,9 +35,11 @@ a {
 /* utilities */
 .link {
   color: black;
+  font-family: var(--font-primary);
+
 }
 .link:hover {
-  color: greenyellow;
+  color: var(--color-primary);
 }
 .icons {
   color: black;
