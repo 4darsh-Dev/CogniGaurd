@@ -25,6 +25,9 @@
         align-items: center;
         justify-content: space-between;
     }
+    .welcome .welcome-text{
+        width: 70%;
+    }
     .cogni-about,
     .dp-about{
         flex-direction: row-reverse;
@@ -41,7 +44,7 @@
     .cogni-about-text{
         align-items: flex-start;
         gap: 1rem;
-        width: 100%;
+        width: 50%;
     }
     .welcome-img{
         height: 220px;
