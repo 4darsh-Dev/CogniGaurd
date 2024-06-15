@@ -7,7 +7,7 @@
 {% block content %}
 <section class="content-section">
     <header class="welcome flex-cont">
-        <div><img src="{% static 'img/home-img.png' %}" class="welcome-img" alt="shield-and-security"></div>
+        <div class="welcome_image"><img src="{% static 'img/home-img.png' %}" class="welcome-img" alt="shield-and-security"></div>
 
         <div class="welcome-text">
             <div>
@@ -26,8 +26,27 @@
         </div> -->
         </div>
     </header>
+
+    <section class="cogni-about flex-cont">
+        <div class="cogni-about-img">
+            <img class="slide-left animate-img" src={% static "img/cogni-about.jpg"%} alt="shield-and-security">
+        </div>
+        <div class="cogni-about-text slide-right animate-p">
+            <h1 class="font-mid-large font-primary">Why <span class="blue-text">CogniGuard</span> Exists...
+            </h1>
+            <div class="list">
+                <p>Provides on time Dark Pattern detection</p>
+                <p>Transparency Score, shows the reality of the website</p>
+                <p>Alerts you for Red Flag websites</p>
+                <p>Lightweight extension, easy installation and setup</p>
+                <p>Helps in eradication of Dark Patterns</p>
+                <a href="/about" class="btn-secondary">Know More</a>
+            </div>
+        </div>
+    </section>
     <section class="dp-about flex-cont">
         <h1 class="font-mid-large font-primary">
+            <hr style="margin: 10px;">
             What <span class="blue-text">Dark Patterns</span> are and How these affect you?
         </h1>
         <div class="list">
@@ -42,21 +61,7 @@
             <a href="/know-dp" class="btn-secondary">Know More</a>
 
         </div>
-    </section>
-    <section class="cogni-about flex-cont">
-        <img class="slide-left animate-img" src={% static "img/cogni-about.jpg"%} alt="shield-and-security">
-        <div class="cogni-about-text slide-right animate-p">
-            <h1 class="font-mid-large font-primary">Why <span class="blue-text">CogniGuard</span> Exists...
-            </h1>
-            <div class="list">
-                <p>Provides on time Dark Pattern detection</p>
-                <p>Transparency Score, shows the reality of the website</p>
-                <p>Alerts you for Red Flag websites</p>
-                <p>Lightweight extension, easy installation and setup</p>
-                <p>Helps in eradication of Dark Patterns</p>
-                <a href="/about" class="btn-secondary">Know More</a>
-            </div>
-        </div>
+        <hr style="margin: 10px;" class="line-bottom">
     </section>
 </section>
 {% endblock content %}
