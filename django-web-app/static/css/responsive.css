@@ -1,4 +1,17 @@
-@media (min-width:770px){
+@media (max-width:1220px){
+    .welcome-img{
+        height: 300px;
+    }
+}
+@media (max-width:1120px){
+    .welcome-img{
+        height: 250px;
+    }
+}
+@media (min-width:1000px){
+    .mobile-links{
+        display: none;
+    }
     .content-section{
         gap: 0;
         margin: 0;
@@ -12,22 +25,9 @@
         align-items: center;
         justify-content: space-between;
     }
-    .welcome_image{
-        width: 100%;
-    }
-    .welcome_image img,
-    .cogni-about img {
-        width: 100%;
-    }
-    .cogni-about-img{
-        width: 100%;
-    }
-    .welcome_image img{
-        height: fit-content;
-    }
     .cogni-about,
     .dp-about{
-        flex-direction: row;
+        flex-direction: row-reverse;
         margin: 2vh 0;
         gap: 2rem;
         width: 100%;
@@ -35,14 +35,75 @@
         align-items: baseline;
     }
     .cogni-about{
-        align-items:flex-start;
+        align-items:center;
         flex-direction: row-reverse;
+    }
+    .cogni-about-text{
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+    }
+    .welcome-img{
+        height: 220px;
+    }
+    .cogni-about img{
+        height: 300px;
+    }
+    .line-bottom{
+        display: none;
+    }
+    .list{
+        gap: 8px;
+    }
+    .dp-about{
+        flex-direction: row;
+    }
+}
+@media (max-width:1000px) and (min-width:770px){
+    .content-section{
+        gap: 0;
+        margin: 0;
+        padding-right: 10px;
+    }
+    .welcome {
+        flex-direction: column;
+        margin: 2vh 0;
+        gap: 2rem;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .welcome_image{
+        width: 100%;
+    }
+    .welcome_image img,
+    .cogni-about img {
+        width: 100%;
+    }
+    .welcome_image img{
+        height: fit-content;
+    }
+    .cogni-about,
+    .dp-about{
+        flex-direction: column;
+        margin: 2vh 0;
+        gap: 2rem;
+        width: 100%;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .cogni-about{
+        align-items:center;
+        flex-direction: column;
     }
     .cogni-about-text{
         width: 100%;
     }
     .mobile-links{
         display: none;
+    }
+    .navbar__links{
+        gap: 1.4rem;
     }
 }
 @media (max-width:769px){
@@ -122,7 +183,7 @@
         width: 100%;
     }
     .cogni-about img {
-        height: 60vh;
+        height: 300px;
         width: auto;
     }
     .cogni-about-img{
