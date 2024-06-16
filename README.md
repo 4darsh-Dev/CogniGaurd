@@ -71,7 +71,7 @@ cd django-web-app
 ```bash 
 cd django-mlapi-backend
 ```
-#### create a sample .env file in root directory
+#### create a sample .env file in root directory (OPTIONAL)
 ```ini
 #.env file
 
@@ -108,7 +108,45 @@ python -m venv myenv
  pip install -r requirements.txt 
  ```
 
-4. Running Django Development Server
+4. Running Django Development Server 
+Do the following task for contributing to project and you have to revert these changes before committing
+These steps can be used for working on local device for contribution
+
+##### In cogniguard/settings.py
+```python
+# for vercel deployment 
+# SECRET_KEY = os.environ.get("PJ_SECRET_KEY")
+SECRET_KEY="default-development-secret-key"
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+DATABASES = {
+    #  setting default sqlite3 configuration for development server
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+    # for vercel deployment
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': os.environ.get("DB_NAME"),
+    #     'USER': os.environ.get("DB_USER"),
+    #     'PASSWORD': os.environ.get("DB_PASSWORD"),
+    #     'HOST': os.environ.get("DB_HOST"),
+    #     'PORT': os.environ.get("DB_PORT"),
+    # }
+}
+```
+##### In cogniguard/urls.py
+```python
+
+
+# # vercel deployment configuration
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+```
 ```bash 
 python manage.py makemigrations 
 ```
@@ -119,6 +157,8 @@ python manage.py migrate
 python manage.py runserver 
 ```
 -- Server will be started at localhost (example: http://127.0.0.1:8000/)
+
+--- Warning! - Ensure to undo the development settings changes before pushing code for vercel production and PRs.
 
 ### Setting up CogniGuard Web Extension
 
