@@ -35,9 +35,11 @@ a {
 /* utilities */
 .link {
   color: black;
+  font-family: var(--font-primary);
+
 }
 .link:hover {
-  color: greenyellow;
+  color: var(--color-primary);
 }
 .icons {
   color: black;
@@ -139,15 +141,18 @@ a {
   padding: 1.87rem;
   border: 2px solid #d0d2d9;
   box-shadow: 5px 4px 20px 0px #b7b7c0;
-  margin: 1rem;
+  margin: 2vh;
   border-radius: 1rem;
   gap: 2rem;
   position: sticky;
-  top: 20px;
+  top: 2vh;
   background: white;
   gap: 2rem;
-  height: 558px;
+  height: 96vh;
   
+}
+.tab_logo{
+  display: none;
 }
 .navbar__logo img {
   height: 5.75rem;
