@@ -1,10 +1,4 @@
 # CogniGuard 🕵️‍♂️✨
-<div>
-    <img align=top src="https://miro.medium.com/max/1400/1*c4YgRXYQayOVWxV37ourrw.png" width="100%"/>
-
-<div>
-<br>
-
 ## Overview
 
 CogniGuard is a powerful web extension designed to empower users by identifying and combatting dark patterns on various websites, particularly focusing on E-commerce platforms. Ensuring users a transparent and ethical online experience.
@@ -33,6 +27,30 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 <!-- ![GitHub Release](https://img.shields.io/github/v/release/4darsh-Dev/CogniGaurd) -->
 ![GitHub forks](https://img.shields.io/github/forks/4darsh-Dev/CogniGaurd)
 ![GitHub Repo stars](https://img.shields.io/github/stars/4darsh-Dev/CogniGaurd)
+
+## Open Source Programs
+
+<table>
+  <tr>
+    <td width="250px">
+      <img src="https://onionreads.com/wp-content/uploads/2024/06/gssoc-program.png" alt="GSSoC '24 Image" width=400 height=auto>
+    </td>
+    <td>
+      <b>**GSSoC'24**</b>
+      GirlScript Summer Of Code is a three-month-long Open-Source Program conducted every summer by the Girlscript Foundation. Timeline : 10th May - 10th August 2024 
+    </td>
+  </tr>
+  <tr>
+    <td width="250px">
+      <img  src="https://onionreads.com/wp-content/uploads/2024/06/vsoc-program.webp" alt="VSoC '24 Image" width=auto height="100">
+    </td>
+    <td>
+        <b>**VSoC'24**</b>
+      Vinyasa Summer of Code is an immersive program designed to elevate your coding skills and provide hands-on experience with real-world open-source projects. Collaborate with experienced mentors, build an impressive portfolio, and become a vital part of a vibrant coding community.
+    </td>
+  </tr>
+</table>
+
 
 ## Cogni-BERT Model Scores
 
