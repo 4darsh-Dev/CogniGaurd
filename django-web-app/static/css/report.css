@@ -40,4 +40,41 @@
   font-family: monospace;
   
 }
-
+.main-section{
+  gap: 0;
+}
+.content-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width:561px){
+  .heading-section{
+    margin-top: 2vh;
+  }
+  .report-form{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .report-form form textarea,
+  .report-form form input{
+    width: 100%;
+  }
+}
+@media (max-width:560px){
+  .heading-section{
+    margin-top: 15vh;
+    align-items:baseline;
+  }
+  .heading-section h1:nth-child(2){
+    margin-top: 20px;
+  }
+  .report-form{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .report-form form textarea,
+  .report-form form input{
+    width: 100%;
+  }
+}

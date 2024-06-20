@@ -96,3 +96,16 @@
     margin-bottom: 10px;
     font-size: 16px;
 }
+
+.content-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width:560px){
+  .faqs-heading h1{
+    margin-top: 10px;
+    font-size: var(--font-medium);
+  }
+}

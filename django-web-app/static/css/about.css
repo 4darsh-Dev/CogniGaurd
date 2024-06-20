@@ -10,3 +10,68 @@
   height: 30rem;
   border: 1px solid var(--color-primary);
 }
+@media (min-width:1000px){
+  .content-section-about{
+    margin-top: 2vh;
+  }
+  .content-section-about section{
+    gap: 3rem;
+  }
+  .content-section section:nth-child(2){
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width:999px) and (min-width:700px){
+  .content-section-about{
+    margin-top: 2vh;
+  }
+  .content-section section{
+    gap: 2rem;
+  }
+  .content-section section:nth-child(2) p,
+  .content-section section:nth-child(1) p{
+    font-size: var(--font-mid-medium);
+  }
+  .content-section section:nth-child(2){
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width:699px) and (min-width:561px){
+  .content-section-about{
+    margin-top: 2vh;
+  }
+  .content-section section{
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .content-section section:nth-child(2) p,
+  .content-section section:nth-child(1) p{
+    font-size: var(--font-mid-medium);
+  }
+  .content-section section:nth-child(2){
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width:560px){
+  .content-section section:nth-child(1){
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .cogniguard-ss{
+    margin-top: 15vh;
+  }
+  .content-section section:nth-child(2) p,
+  .content-section section:nth-child(1) p{
+    font-size: var(--font-mid-medium);
+  }
+  .content-section section:nth-child(2){
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
