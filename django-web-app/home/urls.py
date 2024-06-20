@@ -4,6 +4,8 @@ from home import views
 
 from django.views.generic import RedirectView
 
+app_name="home"
+
 urlpatterns = [
     path("", views.index, name="home"),
     path("faqs/", views.faqs, name="faqs"),

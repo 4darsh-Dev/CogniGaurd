@@ -35,10 +35,10 @@
                 </div>
                 <div class="log-buttons">
                     
-                    <a href="/login" class="button login-button align-items">
+                    <a href="{% url 'home:loginUser' %}" class="button login-button align-items">
                         <i class="fas fa-sign-in-alt"></i> <span class="navitem">Login</span>
                     </a>
-                    <a href="/register" class="button register-button align-items">
+                    <a href="{% url 'home:registerUser' %}" class="button register-button align-items">
                         <i class="fas fa-user-plus"></i> <span class="navitem">Register</span>
                     </a>
 
@@ -46,7 +46,7 @@
                 </div>
                 <div class="navbar__links  font-primary">
                     <div class="auth">
-                        <a href="#" class="btn-primary">
+                        <a href="{% url 'home:loginUser' %}" class="btn-primary">
                             <div class="align-items">
                                 <i class="material-symbols-outlined">
                                     
@@ -54,7 +54,7 @@
                                 <span class="navitem">Login</span>
                             </div>
                         </a>
-                        <a href="#" class="btn-secondary">
+                        <a href="{% url 'home:registerUser' %}" class="btn-secondary">
                             <div class="align-items">
                                 <span class="material-symbols-outlined">
                                     
@@ -63,7 +63,7 @@
                             </div>
                         </a>
                     </div>
-                    <a href="/" class="link">
+                    <a href="{% url 'home:home' %}" class="link">
                         <div class="align-items">
                             <i class="material-symbols-outlined icons">
                                 
@@ -71,7 +71,7 @@
                             <i class="fa-solid fa-house"></i> <span class="navitem">Home</span>
                         </div>
                     </a>
-                    <a href="/about" class="link">
+                    <a href="{% url 'home:about' %}" class="link">
                         <div class="align-items">
                             <span class="material-symbols-outlined">
                                 
@@ -79,7 +79,7 @@
                             <i class="fa-solid fa-circle-info"></i> <span class="navitem">About</span>
                         </div>
                     </a>
-                    <a href="/detected-dp" class="link">
+                    <a href="{% url 'home:detected-dp' %}" class="link">
                         <div class="align-items">
                             <span class="material-symbols-outlined">
                                 
@@ -95,7 +95,7 @@
                             <i class="fa-regular fa-lightbulb"></i> <span class="navitem">What are Dark Patterns</span>
                         </div>
                     </a>
-                    <a href="/report-dp" class="link">
+                    <a href="{% url 'home:report-dp' %}" class="link">
                         <div class="align-items">
                             <span class="material-symbols-outlined">
                                 
@@ -103,7 +103,7 @@
                             <i class="fa-solid fa-bug"></i> <span class="navitem">Report Dark Pattern</span>
                         </div>
                     </a>
-                    <a href="/faqs" class="link">
+                    <a href="{% url 'home:faqs' %}" class="link">
                         <div class="align-items">
                             <span class="material-symbols-outlined">
                                 
@@ -123,7 +123,7 @@
 
                 <div class="mobile-links">
                     <div class="auth">
-                        <a href="#" class="btn-primary">
+                        <a href="{% url 'home:loginUser' %}" class="btn-primary">
                             <div class="align-items">
                                 <i class="material-symbols-outlined">
                                     
@@ -131,7 +131,7 @@
                                 <span class="navitem">Login</span>
                             </div>
                         </a>
-                        <a href="#" class="btn-secondary">
+                        <a href="{% url 'home:registerUser' %}" class="btn-secondary">
                             <div class="align-items">
                                 <span class="material-symbols-outlined">
                                     
@@ -140,7 +140,7 @@
                             </div>
                         </a>
                     </div>
-                    <a href="/" class="link">
+                    <a href="{% url 'home:home' %}" class="link">
                         <div class="align-items">
                             <i class="material-symbols-outlined icons">
                                 
@@ -148,7 +148,7 @@
                             <i class="fa-solid fa-house"></i> <span class="navitem">Home</span>
                         </div>
                     </a>
-                    <a href="/about" class="link">
+                    <a href="{% url 'home:about' %}" class="link">
                         <div class="align-items">
                             <span class="material-symbols-outlined">
                                 
@@ -156,7 +156,7 @@
                             <i class="fa-solid fa-circle-info"></i> <span class="navitem">About</span>
                         </div>
                     </a>
-                    <a href="/detected-dp" class="link">
+                    <a href="{% url 'home:detected-dp' %}" class="link">
                         <div class="align-items">
                             <span class="material-symbols-outlined">
                                 
@@ -172,7 +172,7 @@
                             <i class="fa-regular fa-lightbulb"></i> <span class="navitem">What are Dark Patterns</span>
                         </div>
                     </a>
-                    <a href="/report-dp" class="link">
+                    <a href="{% url 'home:report-dp' %}" class="link">
                         <div class="align-items">
                             <span class="material-symbols-outlined">
                                 
@@ -180,7 +180,7 @@
                             <i class="fa-solid fa-bug"></i> <span class="navitem">Report Dark Pattern</span>
                         </div>
                     </a>
-                    <a href="/faqs" class="link">
+                    <a href="{% url 'home:faqs' %}" class="link">
                         <div class="align-items">
                             <span class="material-symbols-outlined">
                                 
@@ -188,13 +188,13 @@
                             <i class="fa-solid fa-question"></i> <span class="navitem">FAQs</span>
                         </div>
                     </a>
-                    <a href="/login" class="link">
+                    <a href="{% url 'home:loginUser' %}" class="link">
                         <div class="align-items">
                             <span></span>
                             <i class="fas fa-sign-in-alt"></i> <span class="navitem">Login</span>
                         </div>
                     </a>
-                    <a href="/register" class="link">
+                    <a href="{% url 'home:registerUser' %}" class="link">
                         <div class="align-items">
                             <span></span>
                             <i class="fas fa-user-plus"></i> <span class="navitem">Register</span>
