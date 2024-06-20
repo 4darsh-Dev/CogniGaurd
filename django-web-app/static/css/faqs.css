@@ -83,7 +83,9 @@
     height: 25px;
 
 }
-
+.content-section{
+  margin-top: 2vh;
+}
 .form-f{
   width: 400px;
     height: 40px;
@@ -107,5 +109,11 @@
   .faqs-heading h1{
     margin-top: 10px;
     font-size: var(--font-medium);
+  }
+  .content-section{
+    margin-top: 15vh;
+  }
+  .faqs{
+    width: 100%;
   }
 }
