@@ -77,4 +77,8 @@
   .report-form form input{
     width: 100%;
   }
+  .report-form button{
+    font-size: 18px;
+    padding: 10px 30px;
+  }
 }

@@ -106,14 +106,21 @@
 }
 
 @media (max-width:560px){
+  .faqs-heading{
+    align-items: baseline;
+  }
   .faqs-heading h1{
     margin-top: 10px;
     font-size: var(--font-medium);
   }
   .content-section{
+    margin: 0;
     margin-top: 15vh;
   }
-  .faqs{
+  .faqs-section,
+  .faqs,
+  .faqs-div,
+  .faq{
     width: 100%;
   }
 }

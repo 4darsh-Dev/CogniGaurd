@@ -61,17 +61,21 @@
 @media (max-width:560px){
   .content-section section:nth-child(1){
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
   }
   .cogniguard-ss{
-    margin-top: 15vh;
+    margin-top: 16vh;
+    width: 100%;
   }
   .content-section section:nth-child(2) p,
   .content-section section:nth-child(1) p{
-    font-size: var(--font-mid-medium);
+    font-size: 18px;
+  }
+  .blue-text{
+    font-size: 22px;
   }
   .content-section section:nth-child(2){
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
