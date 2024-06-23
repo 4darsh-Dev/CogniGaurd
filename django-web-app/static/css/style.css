@@ -307,7 +307,8 @@ footer {
 }
 .cogni-links div:first-child {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 .base-design {
   width: 27rem;

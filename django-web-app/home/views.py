@@ -31,8 +31,8 @@ def faqs(request):
 def termsConditions(request):
     return render(request, "termsConditions.html")
 
-def knowDp(request):
-    return redirect("/")
+def knowAboutDp(request):
+    return render(request, "know_about_dp.html")
 
 def about(request):
     return render(request, "about.html")
@@ -54,7 +54,7 @@ def loginUser(request):
 
         if user is not None:
             login(request, user)
-            return redirect('dashboard') 
+            return redirect('home:dashboard') 
         else:
             error_message = "Invalid username or password! Please try again."
             messages.error(request, error_message)
@@ -69,7 +69,7 @@ signer = Signer()
 def sendVerifyEmail(user, request):
     
     token = signer.sign(user.email)
-    verify_url = request.build_absolute_uri(reverse('verify-email') + '?token=' + token)
+    verify_url = request.build_absolute_uri(reverse('home:verify-email') + '?token=' + token)
     subject = 'Verify your email address'
 
     context = {
@@ -135,7 +135,7 @@ def registerUser(request):
 
         success_msg = "Your CogniGuard account has been created successfully! Please check your email to verify your account."
         messages.success(request, success_msg)
-        return redirect('loginUser')
+        return redirect('home:loginUser')
 
     return render(request, 'register.html')
 
@@ -148,16 +148,16 @@ def verifyEmail(request):
         user.is_active = True
         user.save()
         messages.success(request, "Email verified successfully! You can now log in.")
-        return redirect('loginUser')
+        return redirect('home:loginUser')
     except (BadSignature, User.DoesNotExist):
         messages.error(request, "Invalid verification link.")
-        return redirect('registerUser')
+        return redirect('home:registerUser')
     
 
 
 def logoutUser(request):
     auth.logout(request)
-    return redirect("home")
+    return redirect("home:home")
 
 # For searching dark patterns
 def detected_dp(request):

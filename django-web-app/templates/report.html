@@ -12,36 +12,37 @@
 
 {% include 'messages.html' %}
 
-<section class="content-section">
-    <section class="heading-section">
-        <h1 class="font-mid-large">Welcome to <span class="blue-text">CogniGuard</span></h1>
-        <h1 class="font-mid-large">Report Center</h1>
-        <h4 class="blue-text">Eradicate Dark Patterns</h4>
+<div class="content-container">
+    <section class="content-section">
+        <section class="heading-section">
+            <h1 class="font-mid-large">Welcome to <span class="blue-text">CogniGuard</span></h1>
+            <h1 class="font-mid-large">Report Center</h1>
+            <h4 class="blue-text">Eradicate Dark Patterns</h4>
+        </section>
+        <section class="report-form">
+            <form method="post" action="{% url 'home:report-dp' %}">
+                {% csrf_token %}
+                <label  for="name" class="sub-head">Name</label>
+                <input required type="text" name="name" id="name" placeholder="Enter Your Name" class="form-f">
+    
+                <label for="email" class="sub-head">Email</label>
+                <input required type="email" name="email" id="email" placeholder="example@gmail.com" class="form-f">
+    
+                <label  for="website-name" class="sub-head">Website Name</label>
+                <input required type="text" name="website-name" id="website-name" placeholder="Enter the website's name" class="form-f">
+    
+                <label for="dark-pattern-type" class="sub-head">Dark Pattern Type</label>
+                <input type="text" name="dark-pattern-type" id="dark-pattern-type"
+                    placeholder="Enter the Dark Pattern Type (optional)" class="form-f">
+    
+                <label for="description" class="sub-head">Description</label>
+                <textarea required name="description" id="description" placeholder="Describe the Dark Pattern" class="form-f"></textarea>
+    
+                <button type="submit" class="btn-primary">Report</button>
+            </form>
+        </section>
     </section>
-    <section class="report-form">
-        <form method="post" action="{% url 'report-dp' %}">
-            {% csrf_token %}
-            <label  for="name" class="sub-head">Name</label>
-            <input required type="text" name="name" id="name" placeholder="Enter Your Name" class="form-f">
-
-            <label for="email" class="sub-head">Email</label>
-            <input required type="email" name="email" id="email" placeholder="example@gmail.com" class="form-f">
-
-            <label  for="website-name" class="sub-head">Website Name</label>
-            <input required type="text" name="website-name" id="website-name" placeholder="Enter the website's name" class="form-f">
-
-            <label for="dark-pattern-type" class="sub-head">Dark Pattern Type</label>
-            <input type="text" name="dark-pattern-type" id="dark-pattern-type"
-                placeholder="Enter the Dark Pattern Type (optional)" class="form-f">
-
-            <label for="description" class="sub-head">Description</label>
-            <textarea required name="description" id="description" placeholder="Describe the Dark Pattern" class="form-f"></textarea>
-
-            <button type="submit" class="btn-primary">Report</button>
-        </form>
-    </section>
-</section>
-
+</div>
 {% endblock content %}
 
 

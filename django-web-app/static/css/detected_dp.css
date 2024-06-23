@@ -60,3 +60,15 @@
     font-size: 16px;
 
 }
+.dp-search-box{
+    margin-top: 2vh;
+}
+@media (max-width:560px){
+    .search-container{
+        width: 70%;
+    }
+    .dp-search-box{
+        padding: 10px;
+        margin-top: 15vh;
+    }
+}
