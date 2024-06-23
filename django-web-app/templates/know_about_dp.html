@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}More About Dark Patterns{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/know_about_dp.css" %}">
+{% endblock head %}
+
+{% block content %}
+
+{% include 'messages.html' %}
+
+<div id="top-div" style="display:block">
+
+<section  id="hero">
+    <div class="hero-text">
+        <h1>Know About Dark Patterns</h1>
+        <p>Understand the different types of dark patterns and how to recognize them.</p>
+    </div>
+</section>
+
+<section class="section-cls" id="dark-patterns">
+    <div class="container">
+        <h2>Types of Dark Patterns</h2>
+        <div class="patterns-grid">
+            <div class="pattern">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Bait and Switch</h3>
+                <p>Users think they are doing one thing, but something else happens instead.</p>
+                <p><strong>Example:</strong> Clicking a button to close a popup but it opens a new page instead.</p>
+            </div>
+            <div class="pattern">
+                <i class="fas fa-user-shield"></i>
+                <h3>Privacy Zuckering</h3>
+                <p>Tricking users into publicly sharing more information than they intended.</p>
+                <p><strong>Example:</strong> Automatically making user profiles public without explicit consent.</p>
+            </div>
+            <div class="pattern">
+                <i class="fas fa-lock"></i>
+                <h3>Roach Motel</h3>
+                <p>Easy to get into a situation, but hard to get out of it (e.g., subscription).</p>
+                <p><strong>Example:</strong> Subscribing to a service easily but having to call customer service to cancel.</p>
+            </div>
+            <div class="pattern">
+                <i class="fas fa-eye"></i>
+                <h3>Sneak into Basket</h3>
+                <p>Adding additional products to your cart without your consent.</p>
+                <p><strong>Example:</strong> Adding insurance to a product purchase without asking.</p>
+            </div>
+            <div class="pattern">
+                <i class="fas fa-question-circle"></i>
+                <h3>Confirmshaming</h3>
+                <p>Guilt-tripping users into opting into something.</p>
+                <p><strong>Example:</strong> "No, I don't want to save money" as an option to decline an offer.</p>
+            </div>
+            <div class="pattern">
+                <i class="fas fa-bell-slash"></i>
+                <h3>Forced Continuity</h3>
+                <p>Making it difficult to cancel a service or subscription.</p>
+                <p><strong>Example:</strong> Free trials that automatically convert to paid subscriptions without reminder.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+
+
+{% endblock content %}
+
+
+{% block script %}
+<script src="{% static "js/messages.js" %}"></script>
+<script src="{% static "js/know_about_dp.js" %}"></script>
+
+{% endblock script %}

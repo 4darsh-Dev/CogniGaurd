@@ -31,8 +31,8 @@ def faqs(request):
 def termsConditions(request):
     return render(request, "termsConditions.html")
 
-def knowDp(request):
-    return redirect("home:home")
+def knowAboutDp(request):
+    return render(request, "know_about_dp.html")
 
 def about(request):
     return render(request, "about.html")
