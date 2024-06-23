@@ -7,7 +7,7 @@
 {% block title %}About{% endblock title %}
 
 {% block content %}
-<section class="content-section content-section-about">
+{% comment %} <section class="content-section content-section-about">
     <section>
         <img class="cogniguard-ss" src="{%static "img/cogniguard-popup.png"%}" alt="web-extension-picture">
         <div>
@@ -15,6 +15,7 @@
                 <span class="blue-text font-mid-large font-secondary">Cogniguard</span> is a lightweight but powerful web extension designed to combat
                 deceptive tactics and promote transparency online.
             </p>
+            <a target="_blank" href="https://github.com/4darsh-Dev/CogniGaurd/" class="download-btn"><i class="fab fa-chrome"></i> Download for Chrome</a>
         </div>
     </section>
     <section>
@@ -24,7 +25,79 @@
            </p>
         </span>
     </section>
-</section>
+</section> {% endcomment %}
+
+<div>
+    <section class="description">
+        <h2>What is CogniGuard?</h2>
+        <div class="description-sub">
+            <img src="{% static 'img/cogniguard-popup.png' %}" alt="Image">
+            <div>
+                <p>CogniGuard is a powerful web extension designed to empower users by identifying and combatting dark patterns on various websites, particularly focusing on E-commerce platforms. Ensuring users a transparent and ethical online experience.</p>
+                <a target="_blank" href="https://github.com/4darsh-Dev/CogniGaurd/" class="download-btn"><i class="fab fa-chrome"></i> Download for Chrome</a>
+                
+            </div>
+        
+
+        </div>
+        
+    </section>
+    <section class="features">
+        <h2>Features</h2>
+        <div class="grid-container">
+            <div class="feature-box">
+                <h3>Transparency Score</h3>
+                <p>This web extension is powered by Fine-Tuned Deep Learning model BERT for classifiying dark patterns.</p>
+                <p>Provides Transparency score for websites. </p>
+            </div>
+            <div class="feature-box">
+                <h3>Dark Pattern Detection</h3>
+                <p>Dark Pattern it detects: Urgency, Scarcity, Misdirection, Social-Proof, Obstruction, Sneaking, Forced Action + Not Dark Pattern.</p>
+                <a href="#" class="download-btn">Know More</a>
+            </div>
+        </div>
+    </section>
+    <section class="subscription">
+        <h2>Freemium Subscription Model</h2>
+        <div class="grid-container">
+            <div class="feature-box">
+                <h3>Free Features</h3>
+                <ul>
+                    <li>Basic dark pattern detection</li>
+                    <li>Weekly reports</li>
+                    <li>Access to community forum</li>
+                </ul>
+            </div>
+            <div class="feature-box">
+                <h3>Premium Features</h3>
+                <ul>
+                    <li>Advanced dark pattern detection</li>
+                    <li>24x7 non-stop service</li>
+                    <li>Website transparency scores</li>
+                    <li>Priority support</li>
+                    <li>Advanced search</li>
+                </ul>
+                <button onclick="redirectToPayment()">Upgrade Now</button>
+            </div>
+        </div>
+    </section>
+    <section class="download">
+        <h2>Download CogniGuard</h2>
+        <div class="grid-container">
+            <div class="feature-box">
+                <h3>Version 1.0</h3>
+                <p>Released Stable</p>
+                <a target="_blank" href="https://github.com/4darsh-Dev/CogniGaurd/" class="download-btn"><i class="fab fa-chrome"></i> Download for Chrome</a>
+            </div>
+            <div class="feature-box">
+                <h3>Version 2.0</h3>
+                <p>In Progress</p>
+                <button style="background-color: #333;" disabled >Coming Soon</button>
+            </div>
+        </div>
+    </section>
+
+</div>
 {% endblock content %}
 
 {% block script %}
