@@ -8,7 +8,11 @@
 
 {% block content %}
 
+{% include 'messages.html' %}
+
 <div class="content-container">
+
+
     <section class="content-section">
         <section class="faqs-heading font-secondary">
             <!-- <h1 class="font-mid-large">Need Help?</h1> -->
@@ -50,5 +54,6 @@
 {% block script %}
 
 <script src="{% static "js/faqs.js" %}"></script>
+<script src="{% static 'js/messages.js' %}"></script>
 
 {% endblock script %}

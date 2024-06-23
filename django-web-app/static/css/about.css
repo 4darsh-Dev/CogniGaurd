@@ -198,8 +198,7 @@ button:hover {
 
 @media (max-width:560px){
   .description{
-    position: relative;
-    top: 6rem;
+    margin-top: 5rem;
   }
   .description img{
     width: 80vw;

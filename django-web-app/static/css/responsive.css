@@ -85,9 +85,12 @@
     .welcome_image{
         width: 100%;
     }
-    .welcome_image img,
-    .cogni-about img {
+    .welcome_image img{
         width: 100%;
+    }
+    .cogni-about img {
+        height: 300px;
+        width: auto;
     }
     .welcome_image img{
         height: fit-content;

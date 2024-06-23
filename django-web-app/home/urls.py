@@ -3,6 +3,7 @@ from django.urls import path,include
 from home import views
 
 from django.views.generic import RedirectView
+from home.views import ResetPasswordView
 
 app_name="home"
 
@@ -19,7 +20,7 @@ urlpatterns = [
     path("dashboard/", views.dashboard, name="dashboard"),
     path("logout/", views.logoutUser, name="logoutUser"),
     path("verify-email/", views.verifyEmail, name="verify-email"),
-    
+    path('password-reset/', ResetPasswordView.as_view(), name='password_reset'),
 
 
     
