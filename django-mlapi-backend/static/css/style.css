@@ -86,18 +86,14 @@ a {
   transition: 0.3s;
 }
 .btn-secondary {
-  background-color: var(--color-primary);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
+  color: var(--color-primary);
+  padding: 0.4rem 0.3rem;
+  border-radius: 0.625rem;
+  border: 0.1rem solid var(--color-primary);
 }
 .btn-secondary:hover {
-  background-color: white;
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
-  transition: 0.3s;
+  background-color: var(--color-primary);
+  color: white;
 }
 .flex-cont {
   display: flex;
