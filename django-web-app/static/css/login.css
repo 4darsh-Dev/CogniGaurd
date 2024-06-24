@@ -212,18 +212,35 @@ body {
     color: var(--color-primary);
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 940px) {
     .mc-div {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem; 
+        padding: 2rem 1rem; 
     }
 
-    .login-img-box, .sub-c {
-        max-width: 100%;
+    .login-img-box {
+        max-width: 100%; 
+        margin-bottom: 1.5rem; 
+    }
+
+    .sub-c {
+        max-width: 100%; 
+        padding: 2rem 1.5rem; 
     }
 
     .form-f, .login-btn {
         width: 100%;
+    }
+
+    .form-c-1 {
+        margin: 1rem 0;
+        width: 80%;
+    }
+
+    .login-img-box img {
+        width: 100%;
+        height: auto; 
     }
 }
 
@@ -239,6 +256,7 @@ body {
 
     .form-c-1 {
         margin: 0.5rem 0;
+        width: 70%;
     }
     
 }
