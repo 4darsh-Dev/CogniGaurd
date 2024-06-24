@@ -217,7 +217,7 @@ body {
     gap: 1rem;
 }
 
-@media (max-width: 940px) {
+@media only screen and (max-width: 940px) {
     .mc-div {
         padding: 2rem 1rem;
         gap: 1rem;
@@ -247,7 +247,7 @@ body {
     }
 }
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 500px) {
     .signup-img-box {
         display: none;
     }
