@@ -24,11 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # PJ_SECRET_KEY=os.getenv('PJ_SECRET_KEY','')
 
 # for vercel deployment
-SECRET_KEY = os.environ.get('PJ_SECRET_KEY')
+#SECRET_KEY = os.environ.get('PJ_SECRET_KEY')
+SECRET_KEY = "default-development-secret-key"
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1"]
 
@@ -90,14 +92,21 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.postgresql_psycopg2',
+   #     'NAME': os.environ.get("DB_NAME"),
+    #    'USER': os.environ.get("DB_USER"),
+     #   'PASSWORD': os.environ.get("DB_PASSWORD"),
+      #  'HOST': os.environ.get("DB_HOST"),
+       # 'PORT': os.environ.get("DB_PORT"),
+    #}
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get("DB_NAME"),
-        'USER': os.environ.get("DB_USER"),
-        'PASSWORD': os.environ.get("DB_PASSWORD"),
-        'HOST': os.environ.get("DB_HOST"),
-        'PORT': os.environ.get("DB_PORT"),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
