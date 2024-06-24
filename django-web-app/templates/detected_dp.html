@@ -10,6 +10,8 @@
 
 {% block content %}
 
+{% include 'messages.html' %}
+
 <div class="dp-search-box">
     <div class="dp-header">
         <h1>Detected <span>Dark Patterns</span></h1>
@@ -29,5 +31,6 @@
 
 {% block script %}
 <script src="{% static "js/detected_dp.js" %}"></script>
+<script src="{% static 'js/messages.js' %}"></script>
 
 {% endblock script %}

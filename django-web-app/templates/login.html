@@ -7,6 +7,7 @@
 {% comment %} <link rel="stylesheet" href="{% static 'css/responsive.css' %}"> {% endcomment %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 {% endblock head %}
 
@@ -48,8 +49,8 @@
                         </div>
                         
                     </form>
-                    <h4 id="forgot"> <a href="#">Forgot password?</a></h4>
-    
+                    <h4 id="forgot"> <a href="{% url 'home:password_reset' %}">Forgot password?</a></h4>
+                    
                     <button id="login-btn" class="login-btn">LOGIN</button>
     
                 </div>

@@ -5,6 +5,9 @@
  {% block title %}Home{% endblock title %}
 
 {% block content %}
+
+{% include 'messages.html' %}
+
 <section class="content-section">
     <header class="welcome flex-cont">
         <div class="welcome_image"><img src="{% static 'img/home-img.png' %}" class="welcome-img" alt="shield-and-security"></div>
@@ -71,5 +74,5 @@
 
 
 {% block script %}
-
+<script src="{% static 'js/messages.js' %}"></script>
 {% endblock script %}

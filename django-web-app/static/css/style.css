@@ -411,22 +411,39 @@ footer {
 
 .button {
   display: inline-block;
-  padding: 10px 20px;
-  margin: 10px;
+  padding: 10px 8px;
+  margin: 6px;
   font-size: 16px;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
   color: #fff;
   border-radius: 5px;
+  font-family: var(--font-secondary);
+  transition: all 0.3s ease-in-out;
+
 }
 
 .login-button {
-  background-color: #4CAF50; /* Green */
+  
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+.login-button:hover{
+  background-color: var(--color-primary);
+  color: white;
+
+}
+.register-button {
+  background-color: var(--color-primary)
+
 }
 
-.register-button {
-  background-color: #008CBA; /* Blue */
+.register-button:hover{
+  background-color: #fff;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+
 }
 
 .button i {

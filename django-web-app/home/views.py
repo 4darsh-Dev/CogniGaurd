@@ -18,6 +18,11 @@ from django.utils.html import strip_tags
 from django.utils import timezone
 
 
+#password reset
+from django.urls import reverse_lazy
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.messages.views import SuccessMessageMixin
+
 
 
 
@@ -201,3 +206,13 @@ def reportDp(request):
         return render(request, "report.html", {"error_message": error_message})
 
     return render(request, "report.html")
+
+
+# password reset class
+class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
+    template_name = 'password_reset.html'
+    email_template_name = 'password_reset_email.html'
+    subject_template_name = 'password_reset_subject.txt'
+    success_message = "We've emailed you instructions for setting your password, " \
+                      "if an account exists with the email you entered. You should receive them shortly."
+    success_url = reverse_lazy('home:home')
