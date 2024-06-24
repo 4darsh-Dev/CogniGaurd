@@ -212,7 +212,7 @@ body {
     color: var(--color-primary);
 }
 
-@media (max-width: 940px) {
+@media only screen and (max-width: 940px) {
     .mc-div {
         flex-direction: column;
         gap: 1.5rem; 
@@ -244,7 +244,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
     .login-img-box {
         display: none;
     }
