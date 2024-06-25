@@ -36,6 +36,16 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
   transition: transform 0.3s;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.left,
+.right {
+  flex: 1;
+  max-width: 48%; /* Adjust to make sure there's a small gap between columns */
+  margin-bottom: 1rem;
 }
 
 .main-text {
@@ -60,11 +70,11 @@ body {
 }
 .welcome-btns .btn:hover {
   background-color: #1558b8;
-  transform: translateY(-5px);
+  transform: translateY(-2px);
 }
 .blue-text {
   color: #1a73e8;
-  font-weight: bold;
+  font-weight: 900;
 }
 .card {
   margin: 1rem 0;
@@ -79,7 +89,7 @@ button {
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
 }
 .card-body {
   animation: slideUp 1s ease-out;
@@ -95,7 +105,7 @@ button {
   }
 }
 .right img {
-  width: 100%;
+  width: 90%;
   border-radius: 10px;
 }
 .right img:hover {
@@ -106,9 +116,17 @@ button {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.03);
+    transform: scale(1.02);
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 992px) {
+  .left,
+  .right {
+    max-width: 100%;
+    margin-bottom: 1rem;
   }
 }
