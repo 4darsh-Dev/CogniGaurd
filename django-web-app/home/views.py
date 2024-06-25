@@ -18,6 +18,11 @@ from django.utils.html import strip_tags
 from django.utils import timezone
 
 
+#password reset
+from django.urls import reverse_lazy
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.messages.views import SuccessMessageMixin
+
 
 
 
@@ -31,8 +36,8 @@ def faqs(request):
 def termsConditions(request):
     return render(request, "termsConditions.html")
 
-def knowDp(request):
-    return redirect("/")
+def knowAboutDp(request):
+    return render(request, "know_about_dp.html")
 
 def about(request):
     return render(request, "about.html")
@@ -54,7 +59,7 @@ def loginUser(request):
 
         if user is not None:
             login(request, user)
-            return redirect('dashboard') 
+            return redirect('home:dashboard') 
         else:
             error_message = "Invalid username or password! Please try again."
             messages.error(request, error_message)
@@ -69,7 +74,7 @@ signer = Signer()
 def sendVerifyEmail(user, request):
     
     token = signer.sign(user.email)
-    verify_url = request.build_absolute_uri(reverse('verify-email') + '?token=' + token)
+    verify_url = request.build_absolute_uri(reverse('home:verify-email') + '?token=' + token)
     subject = 'Verify your email address'
 
     context = {
@@ -135,7 +140,7 @@ def registerUser(request):
 
         success_msg = "Your CogniGuard account has been created successfully! Please check your email to verify your account."
         messages.success(request, success_msg)
-        return redirect('loginUser')
+        return redirect('home:loginUser')
 
     return render(request, 'register.html')
 
@@ -148,16 +153,16 @@ def verifyEmail(request):
         user.is_active = True
         user.save()
         messages.success(request, "Email verified successfully! You can now log in.")
-        return redirect('loginUser')
+        return redirect('home:loginUser')
     except (BadSignature, User.DoesNotExist):
         messages.error(request, "Invalid verification link.")
-        return redirect('registerUser')
+        return redirect('home:registerUser')
     
 
 
 def logoutUser(request):
     auth.logout(request)
-    return redirect("home")
+    return redirect("home:home")
 
 # For searching dark patterns
 def detected_dp(request):
@@ -201,3 +206,13 @@ def reportDp(request):
         return render(request, "report.html", {"error_message": error_message})
 
     return render(request, "report.html")
+
+
+# password reset class
+class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
+    template_name = 'password_reset.html'
+    email_template_name = 'password_reset_email.html'
+    subject_template_name = 'password_reset_subject.txt'
+    success_message = "We've emailed you instructions for setting your password, " \
+                      "if an account exists with the email you entered. You should receive them shortly."
+    success_url = reverse_lazy('home:home')

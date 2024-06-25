@@ -3,10 +3,12 @@
 
 
 {% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% comment %} <link rel="stylesheet" href="{% static 'css/responsive.css' %}"> {% endcomment %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 {% endblock head %}
 
@@ -32,7 +34,7 @@
                                 Username
                             </label>
                             <!-- <img class="input-img" src="/static/img/user2.png" alt="user"> -->
-                            <i class='bx bxs-user input-img'></i>
+<!--                             <i class='bx bxs-user input-img'></i> -->
                             <input class="form-f" id="username" name="username" required  placeholder="Type your username" type="text">
                             
                         </div>
@@ -42,26 +44,26 @@
                                 Password
                             </label>
                             <!-- <img class="input-img" src="/static/img/padlock.png" alt="lock"> -->
-                            <i class='bx bxs-lock input-img'></i>
+<!--                             <i class='bx bxs-lock input-img'></i> -->
                             <input class="form-f" id="password" name="password" placeholder="Type your Password" type="password" required>
     
                         </div>
                         
                     </form>
-                    <h4 id="forgot"> <a href="#">Forgot password?</a></h4>
-    
+                    <h4 id="forgot"> <a href="{% url 'home:password_reset' %}">Forgot password?</a></h4>
+                    
                     <button id="login-btn" class="login-btn">LOGIN</button>
     
                 </div>
                 <div class="sign-up">
-                    Don't have an account? <span> <a href="/register">Register</a></span>!
+                    Don't have an account? <span> <a href="{% url 'home:registerUser' %}">Register</a></span>!
                 </div>
             </div>
         </div>
-        {% comment %} <div class="login-img-box">
-            <img src="{% static 'img/login-img.webp' %}" alt="Login Image CogniGuard">
+        <div class="login-img-box">
+            <img src="{% static 'img/login.webp' %}" alt="Login Image CogniGuard">
 
-        </div> {% endcomment %}
+        </div> 
 
     </div>
     

@@ -16,7 +16,10 @@
     <link rel="stylesheet" href="../static/css/faqs.css" />
   </head>
   <body>
-    <section class="content-section">
+    
+{% include 'messages.html' %}
+
+<section class="content-section">
       <header class="welcome flex-cont">
         <div class="welcome_image">
           <img
@@ -37,7 +40,7 @@
             </p>
           </div>
           <div class="welcome-btns">
-            <a href="{% url 'loginUser' %}" class="btn-primary">Get Started</a>
+            <a href="{% url 'home:loginUser' %}" class="btn-primary">Get Started</a>
             <a href="#" class="btn-secondary">Give Feedback</a>
           </div>
           <!-- <div class="dp-search">
@@ -53,15 +56,16 @@
           "img/cogni-about.jpg"%} alt="shield-and-security">
         </div>
         <div class="cogni-about-text slide-right animate-p">
-          <h1 class="font-mid-large font-primary">Why CogniGuard Exists ?</h1>
-          <div class="list">
-            <p>Provides on time Dark Pattern detection</p>
-            <p>Transparency Score, shows the reality of the website</p>
-            <p>Alerts you for Red Flag websites</p>
-            <p>Lightweight extension, easy installation and setup</p>
-            <p>Helps in eradication of Dark Patterns</p>
-            <a href="/about" class="btn-secondary">Know More</a>
-          </div>
+            <h1 class="font-mid-large font-primary">Why <span class="blue-text">CogniGuard</span> Exists...
+            </h1>
+            <div class="list">
+                <p>Provides on time Dark Pattern detection</p>
+                <p>Transparency Score, shows the reality of the website</p>
+                <p>Alerts you for Red Flag websites</p>
+                <p>Lightweight extension, easy installation and setup</p>
+                <p>Helps in eradication of Dark Patterns</p>
+                <a href="{% url 'home:about' %}" class="btn-secondary">Know More</a>
+            </div>
         </div>
       </section>
       <section class="dp-about flex-cont">
@@ -69,27 +73,23 @@
           What are Dark Patterns and How do they affect you?
         </h1>
         <div class="list">
-          <p>Designed to mislead users into making unintended choices</p>
-          <p>
-            Gathering user data or tracking them without clear consent or making
-            it difficult to opt out.
-          </p>
-          <p>
-            Luring users with attractive offers that change or disappear upon
-            closer look.
-          </p>
-          <p>
-            Making it hard to cancel subscriptions, often with hidden fees or
-            confusing procedures.
-          </p>
-          <p>
-            Creating a sense of false scarcity or pressure to act quickly, like
-            countdown timers or limited-time offers.
-          </p>
-          <a href="/know-dp" class="btn-secondary">Know More</a>
+            <p> Designed to mislead users into making unintended choices</p>
+            <p>Gathering user data or tracking them without clear consent or making it difficult to opt
+                out.</p>
+            <p>Luring users with attractive offers that change or disappear upon closer look.</p>
+            <p> Making it hard to cancel subscriptions, often with hidden fees or confusing procedures.
+            </p>
+            <p>Creating a sense of false scarcity or pressure to act quickly, like countdown timers or
+                limited-time offers.</p>
+            <a href="{% url 'home:know-about-dp' %}" class="btn-secondary">Know More</a>
+
         </div>
       </section>
     </section>
-    <!-- {% endblock content %} {% block script %} {% endblock script %} -->
-  </body>
-</html>
+</section>
+{% endblock content %}
+
+
+{% block script %}
+<script src="{% static 'js/messages.js' %}"></script>
+{% endblock script %}
