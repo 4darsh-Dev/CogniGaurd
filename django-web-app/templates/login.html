@@ -3,6 +3,7 @@
 
 
 {% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% comment %} <link rel="stylesheet" href="{% static 'css/responsive.css' %}"> {% endcomment %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
@@ -33,7 +34,7 @@
                                 Username
                             </label>
                             <!-- <img class="input-img" src="/static/img/user2.png" alt="user"> -->
-                            <i class='bx bxs-user input-img'></i>
+<!--                             <i class='bx bxs-user input-img'></i> -->
                             <input class="form-f" id="username" name="username" required  placeholder="Type your username" type="text">
                             
                         </div>
@@ -43,7 +44,7 @@
                                 Password
                             </label>
                             <!-- <img class="input-img" src="/static/img/padlock.png" alt="lock"> -->
-                            <i class='bx bxs-lock input-img'></i>
+<!--                             <i class='bx bxs-lock input-img'></i> -->
                             <input class="form-f" id="password" name="password" placeholder="Type your Password" type="password" required>
     
                         </div>
@@ -59,10 +60,10 @@
                 </div>
             </div>
         </div>
-        {% comment %} <div class="login-img-box">
-            <img src="{% static 'img/login-img.webp' %}" alt="Login Image CogniGuard">
+        <div class="login-img-box">
+            <img src="{% static 'img/login.webp' %}" alt="Login Image CogniGuard">
 
-        </div> {% endcomment %}
+        </div> 
 
     </div>
     

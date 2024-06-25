@@ -1,236 +1,276 @@
-
-.mainContainer{
-    width:100%;
-    height: auto;
-    
-    margin: 1.2rem 0;
-
-
+:root {
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-white: #ffffff;
+    --color-gray: #6c757d;
+    --color-light-gray: #f8f9fa;
+    --color-black: #343a40;
+    --font-primary: 'Arial', sans-serif;
+    --font-secondary: 'Courier New', monospace;
+    --border-radius: 0.5rem;
+    --transition-speed: 0.3s;
 }
-.mc-div{
-    width:calc(100%-80px);
-    padding: 2rem 40px;
-    height: auto;
+
+body {
+    font-family: var(--font-primary);
+    background: linear-gradient(135deg, #2b7ed5, #004997);
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15%;
-
+    min-height: 100vh;
 }
-.error-message{
+
+.mainContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 1.2rem 0;
+    padding: 0 1rem;
+}
+
+.mc-div {
+    width: calc(100% - 80px);
+    padding: 2rem 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow var(--transition-speed);
+}
+
+.mc-div:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.error-message {
     width: 100%;
     background-color: aliceblue;
     display: flex;
-    flex-direction: row;
     align-items: center;
-
-    
-
+    padding: 12px;
+    margin: 6px 0;
 }
-.error-message p{
+
+.error-message p {
     color: var(--color-primary);
     font-size: 16px;
-    font-family: var(--sans);
-    padding:12px;
-    margin: 6px;
-
+    font-family: var(--font-primary);
+    margin: 0;
 }
 
-.signup-img-box{
-    
-    width: 40%;
-
-
+.signup-img-box {
+    flex: 1;
+    max-width: 50%;
 }
-.signup-img-box img{
+
+.signup-img-box img {
     width: 100%;
-
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-speed);
 }
 
-.sub-c{
-    width: 35%;
-    height: 450px;
-    background-color: white;
-    color: black;
-    border: 2px solid white;
-    box-shadow: 0 0 25px gray;
-    border-radius: 9px;
-    
-    
+.signup-img-box img:hover {
+    transform: scale(1.05);
 }
-.sub-c-1{
-    width: auto;
+
+.sub-c {
+    flex: 1;
+    max-width: 50%;
     height: auto;
-    /* background-color: salmon; */
-    margin: 20px 40px 20px 40px;
-
-
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-white);
+    box-shadow: 0 0 25px var(--color-gray);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow var(--transition-speed);
+    position: relative;
+    overflow: hidden;
 }
-.head{
-    font-size: 32px;
+
+.sub-c:hover {
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.5);
+}
+
+.sub-c-1 {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.head {
+    font-size: 2rem;
     text-align: center;
     font-family: var(--font-primary);
     font-weight: 600;
+    margin-bottom: 1rem;
 }
-.form{
-    /* background-color: #35bda4; */
-    width: 100%;
-    height: 275px;
-    margin-top: 25px;
 
-
-}
-.form-c-1{
+.form {
     width: 100%;
-    margin: 8px 0px 8px 0px;
+    margin-top: 1rem;
 }
-.sub-head{
-    color: black;
+
+.form-c-1 {
+    width: 100%;
+    margin: 8px 0;
+}
+
+.sub-head {
+    color: var(--color-black);
     display: block;
-    font-family: sans-serif,monospace;
+    font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 500;
-    width: 90px;
-    height: 22px;
+    margin-bottom: 0.5rem;
 }
-.form-f{
-    width: 309px;
-    height: 22px;
+
+.form-f {
+    width: 90%;
     border: none;
-    padding: 6px;
-    padding-left: 27px;
-    /* background-color:royalblue; */
-    border-bottom: 2px solid gray;
-    margin-bottom: 10px;
-    font-size: 16px;
+    padding: 0.75rem;
+    border-bottom: 2px solid var(--color-gray);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed);
 }
 
-#forgot a{
-    font-family: sans-serif;
-    font-size: 13px;
-    /* display: inline-block; */
-    color:var(--black);
-    float: right;
+.form-f:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+#forgot a {
+    font-family: var(--font-primary);
+    font-size: 0.875rem;
+    color: var(--color-black);
     text-decoration: none;
-    position: relative;
-    top: -10px;
-    
-
-
+    float: right;
+    margin-top: -0.5rem;
+    transition: color var(--transition-speed);
 }
 
-#forgot a:hover{
+#forgot a:hover {
+    color: var(--color-primary);
     text-decoration: underline;
-
 }
 
-.signup-btn{
-    font-size: 16px;
-    width: 340px;
-    background-color:var(--color-primary);
+.signup-btn {
+    font-size: 1rem;
+    width: 100%;
+    background-color: var(--color-primary);
     height: 40px;
-    color: white;
+    color: var(--color-white);
     font-weight: 600;
     border: 2px solid var(--color-primary);
     border-radius: 25px;
-    position: relative;
-    top: 12px;
-    
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
-.signup-btn:hover{
+
+.signup-btn:hover {
     cursor: pointer;
-    background-color: var(--color-primary);
-    box-shadow: 0 0 25px var(--color-primary);
-
+    background-color: #0056b3;
+    box-shadow: 0 0 25px rgba(0, 123, 255, 1);
 }
-.login{
-    width:  100%;
-    height: auto;
+
+.login {
+    width: 100%;
     text-align: center;
-    position: relative;
-    top: 108px;
+    margin-top: 1.5rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
 }
-.login span a{
-    color: #157ad8;
+
+.login span a {
+    color: var(--color-primary);
     text-decoration: none;
-    
-    
-
+    transition: color var(--transition-speed);
 }
-.login span a:hover{
-    text-decoration: underline;
-    color: var(--black);
+
+.login span a:hover {
+    color: var(--color-black);
     font-weight: 600;
+    text-decoration: underline;
 }
 
-.input-img{
+.input-img {
     height: 20px;
     position: absolute;
-    transform: translateY(2px);
-    margin-left: -1px;
-
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    color: var(--color-gray);
+    transition: color var(--transition-speed);
 }
 
-#flname{
-    display: inline-flex;
-    flex-direction: row;
-
+.form-f:focus + .input-img {
+    color: var(--color-primary);
 }
-@media only screen and (max-width:1020px) and (min-width:800px){
-    .mc-div{
-        padding: 4rem 20px;
-        gap:5%;
-    }
-    .sub-c{
-        width: 45%;
-        margin: 0;
-    }
-    .sub-c-1{
-        width: auto;
-        margin: 40px 20px;
 
-    }
-    .form-f{
-        width: 300px;
+#flname {
+    display: flex;
+    gap: 1rem;
+}
 
+@media only screen and (max-width: 940px) {
+    .mc-div {
+        padding: 2rem 1rem;
+        gap: 1rem;
+        flex-direction: column;
     }
-    .signup-btn{
-        width: 300px;
 
+     .sub-c {
+        max-width: 90%;
+        width: 100%;
+        margin: 0 auto;
     }
     .signup-img-box{
-        width: 45%;
-
+        width: 100%;
+        margin: 2px;
     }
-
     
+    .signup-img-box img:hover {
+        transform: scale(1.05);
+    }
+
+    .form-f {
+        width: 90%;
+    }
+
+    .signup-btn {
+        width: 100%;
+    }
 }
 
-
-
-@media only screen and (max-width:480px) and (min-width:280px){
-    .signup-img-box{
+@media only screen and (max-width: 500px) {
+    .signup-img-box {
         display: none;
-
     }
-    
-    .mc-div{
-        padding: 2rem 12px;
-        gap: 0%;
 
+    .mc-div {
+        padding: 1rem;
+        gap: 0;
+        flex-direction: column;
     }
-    .sub-c{
-        width: auto;
+
+    .sub-c {
+        width: 90%;
+        padding: 1.5rem;
         margin: 0;
     }
-    .sub-c-1{
-        width: auto;
-        margin: 40px 12px;
 
+    .sub-c-1 {
+        width: 100%;
+        margin: 0;
     }
 
-
-    
+    .form-c-1 {
+        margin: 0.5rem 0;
+        width: 100%;
+    }
 }
