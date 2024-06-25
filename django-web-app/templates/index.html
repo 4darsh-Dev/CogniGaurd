@@ -1,72 +1,95 @@
- {% extends "base.html" %}
- {% load static %}
- {% block head %}{% endblock head %}
+<!-- {% extends "base.html" %} {% load static %} {% block head %}{% endblock head %}
+{% block title %}Home{% endblock title %} {% block content %} -->
 
- {% block title %}Home{% endblock title %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CogniGuard</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/responsive.css" />
+    <link rel="stylesheet" href="../static/css/faqs.css" />
 
-{% block content %}
-<section class="content-section">
-    <header class="welcome flex-cont">
-        <div class="welcome_image"><img src="{% static 'img/home-img.png' %}" class="welcome-img" alt="shield-and-security"></div>
+    <link rel="stylesheet" href="../static/css/detected_dp.css" />
+    <link rel="stylesheet" href="../static/css/report.css" />
+    <link rel="stylesheet" href="../static/css/faqs.css" />
+  </head>
+  <body>
+    <section class="content-section">
+      <header class="welcome flex-cont">
+        <div class="welcome_image">
+          <img
+            src="{% static 'img/home-img.png' %}"
+            class="welcome-img"
+            alt="shield-and-security"
+          />
+        </div>
 
         <div class="welcome-text">
-            <div>
-                <h1 class="font-mid-large font-primary">Welcome to <span class="blue-text">Cogniguard</span>
-                    Customer Service
-                </h1>
-                <p class="font-primary font-light">Turning the Lights on Dark Patterns</p>
-            </div>
-            <div class="welcome-btns">
-                <a href="{% url 'loginUser' %}" class="btn-primary">Get Started</a>
-                <a href="#" class="btn-secondary">Give Feedback</a>
-            </div>
-            <!-- <div class="dp-search">
+          <div>
+            <h1 class="font-mid-large font-primary">
+              Welcome to <span class="blue-text">Cogniguard</span>
+              Customer Service
+            </h1>
+            <p class="font-primary font-light">
+              Turning the Lights on Dark Patterns
+            </p>
+          </div>
+          <div class="welcome-btns">
+            <a href="{% url 'loginUser' %}" class="btn-primary">Get Started</a>
+            <a href="#" class="btn-secondary">Give Feedback</a>
+          </div>
+          <!-- <div class="dp-search">
             <img src="./public/img/Search.svg" alt="search-icon">
             <input type="text">
         </div> -->
         </div>
-    </header>
+      </header>
 
-    <section class="cogni-about flex-cont">
+      <section class="cogni-about flex-cont">
         <div class="cogni-about-img">
-            <img class="slide-left animate-img" src={% static "img/cogni-about.jpg"%} alt="shield-and-security">
+          <img class="slide-left animate-img" src={% static
+          "img/cogni-about.jpg"%} alt="shield-and-security">
         </div>
         <div class="cogni-about-text slide-right animate-p">
-            <h1 class="font-mid-large font-primary">Why <span class="blue-text">CogniGuard</span> Exists...
-            </h1>
-            <div class="list">
-                <p>Provides on time Dark Pattern detection</p>
-                <p>Transparency Score, shows the reality of the website</p>
-                <p>Alerts you for Red Flag websites</p>
-                <p>Lightweight extension, easy installation and setup</p>
-                <p>Helps in eradication of Dark Patterns</p>
-                <a href="/about" class="btn-secondary">Know More</a>
-            </div>
+          <h1 class="font-mid-large font-primary">Why CogniGuard Exists ?</h1>
+          <div class="list">
+            <p>Provides on time Dark Pattern detection</p>
+            <p>Transparency Score, shows the reality of the website</p>
+            <p>Alerts you for Red Flag websites</p>
+            <p>Lightweight extension, easy installation and setup</p>
+            <p>Helps in eradication of Dark Patterns</p>
+            <a href="/about" class="btn-secondary">Know More</a>
+          </div>
         </div>
-    </section>
-    <section class="dp-about flex-cont">
+      </section>
+      <section class="dp-about flex-cont">
         <h1 class="font-mid-large font-primary">
-            <hr style="margin: 10px;">
-            What are <span class="blue-text">Dark Patterns</span> and How these affect you?
+          What are Dark Patterns and How do they affect you?
         </h1>
         <div class="list">
-            <p> Designed to mislead users into making unintended choices</p>
-            <p>Gathering user data or tracking them without clear consent or making it difficult to opt
-                out.</p>
-            <p>Luring users with attractive offers that change or disappear upon closer look.</p>
-            <p> Making it hard to cancel subscriptions, often with hidden fees or confusing procedures.
-            </p>
-            <p>Creating a sense of false scarcity or pressure to act quickly, like countdown timers or
-                limited-time offers.</p>
-            <a href="/know-dp" class="btn-secondary">Know More</a>
-
+          <p>Designed to mislead users into making unintended choices</p>
+          <p>
+            Gathering user data or tracking them without clear consent or making
+            it difficult to opt out.
+          </p>
+          <p>
+            Luring users with attractive offers that change or disappear upon
+            closer look.
+          </p>
+          <p>
+            Making it hard to cancel subscriptions, often with hidden fees or
+            confusing procedures.
+          </p>
+          <p>
+            Creating a sense of false scarcity or pressure to act quickly, like
+            countdown timers or limited-time offers.
+          </p>
+          <a href="/know-dp" class="btn-secondary">Know More</a>
         </div>
-        <hr style="margin: 10px;" class="line-bottom">
+      </section>
     </section>
-</section>
-{% endblock content %}
-
-
-{% block script %}
-
-{% endblock script %}
+    <!-- {% endblock content %} {% block script %} {% endblock script %} -->
+  </body>
+</html>
