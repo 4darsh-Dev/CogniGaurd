@@ -139,7 +139,7 @@
 .login-btn:hover{
     cursor: pointer;
     background-color: var(--color-primary);
-    box-shadow: 0 0 25px var(--color-primary);
+    box-shadow: 0 0 30px var(--color-primary);
 }
 .sign-up{
     width:  100%;

@@ -4,18 +4,21 @@
   box-sizing: border-box;
 }
 :root {
-  --font-primary: 'Ubuntu', sans-serif;
-  --font-secondary: sans-serif;
-  --color-primary: #2457c5;
-  --color-primary-light: rgba(36, 87, 197, 0.3);
-  --color-secondary: #9393ef;
-  --font-ex-small: 0.4rem;
-  --font-small: 0.75rem;
-  --font-mid-medium: 1.5rem;
-  --font-medium: 2rem;
-  --font-mid-large: 2.5rem;
-  --font-large: 3rem;
-  --font-ex-large: 3.5rem;
+  background-color: #fcf8e3;
+  --font-primary: Trattatello, fantasy;
+    --font-secondary: Cursive;
+    --color-primary: darkorange;
+    --color-primary-light: rgba(36, 87, 197, 0.3);
+    --black: midnightblue;
+    --color-secondary: royalblue;
+    --font-ex-small: 0.9rem;
+    --font-small: 1.5rem;
+    --font-mid-medium: 2rem;
+    --font-medium: 3rem;
+    --font-mid-large: 4rem;
+    --font-large: 5rem;
+    --font-ex-large: 6rem;
+ 
 }
 
 a {
@@ -125,21 +128,22 @@ a {
 }
 /* navbar */
 .navbar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1.87rem;
-  border: 2px solid #d0d2d9;
-  box-shadow: 5px 4px 20px 0px #b7b7c0;
-  margin: 1rem;
-  border-radius: 1rem;
-  gap: 2rem;
-  position: sticky;
-  top: 20px;
-  background: white;
-  gap: 2rem;
-  height: 558px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.87rem;
+    border: 2px solid #f0a00b;
+    box-shadow: 5px 4px 20px 0px #b7b7c0;
+    margin: 2vh;
+    border-radius: 1rem;
+    gap: 2rem;
+    position: sticky;
+    top: 2vh;
+    background: #dbe6f5;
+    gap: 2rem;
+    height: 96vh;
+  
   
 }
 .navbar__logo img {
@@ -177,9 +181,13 @@ a {
   
 }
 .welcome-btns {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  color: mediumblue;
+    height: 15rem;
+    width: 40rem;
+    display: inline-block;
+    align-items: center;
+    gap: 2rem;
+  
 }
 .dp-search {
   display: flex;
