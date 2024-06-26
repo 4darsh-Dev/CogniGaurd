@@ -22,9 +22,9 @@ jobs:
         
         # Loop through each issue and post a comment
         for issue in $issues; do
-          curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          curl -s -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
             -X POST \
-            -d "{\"body\": \" ⚠️[URGENT]⚠️ Reminder for GSSoC 24' Contributors Please join our CogniGuard Project #general GSSoC'24 Discord channel: See #109 issues section. \"}" \
+            -d "{\"body\": \" ⚠️[URGENT]⚠️ Reminder for GSSoC 24' Contributors Please join our CogniGuard Project #general GSSoC'24 Discord channel:\n Here you can discuss your queries and doubts with your mentors.  \n See #109 issues section. \"}" \
             "https://api.github.com/repos/${{ github.repository }}/issues/$issue/comments"
         done
 
