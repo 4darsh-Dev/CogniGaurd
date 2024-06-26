@@ -1,0 +1,32 @@
+name: Comment on All Issues
+
+on:
+  workflow_dispatch:
+
+jobs:
+  comment-on-issues:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Comment on all open issues
+      run: |
+        # Install jq for JSON parsing
+        sudo apt-get install jq
+        
+        # Get all open issues
+        issues=$(curl -s -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+          "https://api.github.com/repos/${{ github.repository }}/issues?state=open" | jq -r '.[].number')
+        
+        # Loop through each issue and post a comment
+        for issue in $issues; do
+          curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -X POST \
+            -d "{\"body\": \"Please join our Discord channel: [Discord Link](https://discord.gg/your-discord-invite-link)\"}" \
+            "https://api.github.com/repos/${{ github.repository }}/issues/$issue/comments"
+        done
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
