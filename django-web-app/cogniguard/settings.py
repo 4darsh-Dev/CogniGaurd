@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # PJ_SECRET_KEY=os.getenv('PJ_SECRET_KEY','')
 
 # for vercel deployment
-SECRET_KEY = os.environ.get('PJ_SECRET_KEY')
+SECRET_KEY = os.getenv('PJ_SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -92,6 +92,7 @@ load_dotenv()
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get("DB_NAME"),
         'USER': os.environ.get("DB_USER"),
         'PASSWORD': os.environ.get("DB_PASSWORD"),
@@ -153,11 +154,12 @@ MESSAGE_TAGS = {
 # email backend configuration
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.environ.get("EMAIL_HOST")
+EMAIL_HOST = os.getenv("EMAIL_HOST")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")  
-EMAIL_HOST_PASSWORD =  os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Default sender email
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
@@ -178,5 +180,7 @@ STATICFILES_DIRS = [
     
 ]
 
-# for staticfiles 
+# Static files configuration
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
