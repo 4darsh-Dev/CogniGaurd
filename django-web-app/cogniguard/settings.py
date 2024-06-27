@@ -27,6 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('PJ_SECRET_KEY')
 
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -44,6 +45,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    # all-auth configuration
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google'
 ]
 
 MIDDLEWARE = [
@@ -55,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware', # allauth-oauth
 ]
 
 
@@ -162,6 +171,35 @@ EMAIL_HOST_PASSWORD =  os.environ.get("EMAIL_HOST_PASSWORD")
 
 # Default sender email
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+# authentical backend configuration
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+]
+
+# social-auth providers
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE' : [
+            'profile',
+            'email'
+        ],
+        'APP': {
+            'client_id': os.environ['CLIENT_ID'],
+            'secret': os.environ['CLIENT_SECRET'],
+        },
+        'AUTH_PARAMS': {
+            'access_type':'online',
+        }
+    }
+}
+
+SITE_ID = 2
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
