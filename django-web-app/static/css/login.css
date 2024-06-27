@@ -250,13 +250,17 @@ body {
     }
 
     .sub-c {
-        width: 90%;
-        padding: 1.5rem;
+        width: 100%;
+        padding: 0;
     }
 
     .form-c-1 {
         margin: 0.5rem 0;
-        width: 70%;
+        width: 100%;
+    }
+    .mc-div{
+        
+    padding: 2rem 0;
     }
     
 }

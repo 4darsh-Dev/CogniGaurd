@@ -216,3 +216,9 @@ class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
     success_message = "We've emailed you instructions for setting your password, " \
                       "if an account exists with the email you entered. You should receive them shortly."
     success_url = reverse_lazy('home:home')
+
+
+
+# page not found
+def handler404(request, exception):
+    return render(request, 'custom_404.html', status=404)

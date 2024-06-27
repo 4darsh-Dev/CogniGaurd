@@ -32,9 +32,12 @@ urlpatterns = [
 
      path('accounts/', include('allauth.urls')), # all OAuth operations will be performed under this route
         
-    
+     
 ]
 # vercel deployment url configuration
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# custom 404 page 
+handler404 = 'home.views.handler404'

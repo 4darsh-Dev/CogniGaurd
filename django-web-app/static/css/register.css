@@ -253,9 +253,10 @@ body {
     }
 
     .mc-div {
-        padding: 1rem;
+        padding: 1rem 0;
         gap: 0;
         flex-direction: column;
+        width: 100%;
     }
 
     .sub-c {
