@@ -1,5 +1,6 @@
 
 {% load static %}
+{% load socialaccount %}
 
 
 {% block head %}
@@ -53,6 +54,8 @@
                     <h4 id="forgot"> <a href="{% url 'home:password_reset' %}">Forgot password?</a></h4>
                     
                     <button id="login-btn" class="login-btn">LOGIN</button>
+
+                    <a href="{% provider_login_url 'google' %}">Login with Google</a>
     
                 </div>
                 <div class="sign-up">
