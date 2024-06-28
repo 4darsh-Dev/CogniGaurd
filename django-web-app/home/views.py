@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import DarkPatternReport, FAQData, DarkPatternsData
+from .models import DarkPatternReport, FAQData
+from api.models import DarkPatternsData
 from django.contrib.auth.decorators import login_required
 
 

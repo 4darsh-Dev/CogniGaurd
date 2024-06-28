@@ -23,8 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # PJ_SECRET_KEY=os.getenv('PJ_SECRET_KEY','')
 
-# for vercel deployment
+# # for vercel deployment
 SECRET_KEY = os.environ.get('PJ_SECRET_KEY')
+
 
 
 
@@ -40,18 +41,26 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'home.apps.HomeConfig',
+    'api.apps.ApiConfig',
     
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
-
+    
+    #drf configuration
+    'rest_framework',
+    'corsheaders', 
+    
     # all-auth configuration
+    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google'
+
+    
+
 ]
 
 MIDDLEWARE = [
@@ -64,6 +73,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware', # allauth-oauth
+    'corsheaders.middleware.CorsMiddleware', # drf cors
+
 ]
 
 
@@ -89,6 +100,25 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'cogniguard.wsgi.application'
+
+
+
+# REST api settings configuration
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+}
+
+# Cors allowed origins
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+# Written by admin
+CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 
 
 # Database
