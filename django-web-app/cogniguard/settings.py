@@ -31,8 +31,7 @@ SECRET_KEY = os.environ.get('PJ_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
-ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1"]
+ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1", "cogniguard.onrender.com"]
 
 
 # Application definition
@@ -65,6 +64,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # serving staticfiles whitenoise
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'home.middleware.VisitorTrackingMiddleware', # visitor count
@@ -249,3 +249,6 @@ STATICFILES_DIRS = [
 
 # for staticfiles 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
+# Enable WhiteNoise compression and caching support
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
