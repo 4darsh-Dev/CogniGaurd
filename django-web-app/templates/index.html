@@ -9,28 +9,77 @@
 {% include 'messages.html' %}
 
 <section class="content-section">
-    <header class="welcome flex-cont">
-        <div class="welcome_image"><img src="{% static 'img/home-img.png' %}" class="welcome-img" alt="shield-and-security"></div>
-
-        <div class="welcome-text">
-            <div>
-                <h1 class="font-mid-large font-primary">Welcome to <span class="blue-text">Cogniguard</span>
-                    Customer Service
-                </h1>
-                <p class="font-primary font-light">Turning the Lights on Dark Patterns</p>
-            </div>
-            <div class="welcome-btns">
-                <a href="{% url 'home:loginUser' %}" class="btn-primary">Get Started</a>
-                <a href="#" class="btn-secondary">Give Feedback</a>
-            </div>
-            <!-- <div class="dp-search">
-            <img src="./public/img/Search.svg" alt="search-icon">
-            <input type="text">
-        </div> -->
+    <section class="elastic-section">
+        <div class="container-first">
+          <div class="logo-container">
+            <img src="{% static 'img/cogniguard-logo.png' %}" alt="CogniGaurd" class="home-logo">
+            <span>CogniGuard</span>
+          </div>
+          <h1 class="title">Your Shield against <span class="highlight">Dark Patterns</span></h1>
+          <p class="description">
+            CogniGuard is a powerful web-extension which is capable of detecting Dark Patterns on E-commerce websites. Powered by Fine-Tuned Deep Learning Models for classifcation tasks on large and contextual datasets, CogniGuard is your shield against deceptive practices.
+          </p>
+          <div class="cta-container">
+            <a href="{% url 'home:registerUser' %}" class="btn btn-primary">Start free trial</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=1DoYa1wVWhA&t=8s&ab_channel=AdarshGeeksLab" class="btn btn-secondary">
+              YouTube Demo <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <a target="_blank" href="https://github.com/4darsh-Dev/CogniGaurd" class="download-link"><i fab fa-chrome></i>Download for Chrome</a>
         </div>
-    </header>
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </section>
 
-    <section class="cogni-about flex-cont">
+
+      <section class="scalability-section">
+        <div class="container-second">
+          <div class="content">
+            <h2 class="subtitle">SCALABILITY</h2>
+            <h1 class="title">Run it on your laptop. Or hundreds of servers with petabytes of data.</h1>
+            <p class="description">
+              Go from prototype to production seamlessly; you talk to Elasticsearch running on a single node the same way you would in a 300-node cluster.
+            </p>
+            <p class="description">
+              It scales horizontally to handle kajillions of events per second, while automatically managing how indices and queries are distributed across the cluster for oh-so-smooth operations.
+            </p>
+          </div>
+          <div class="visual">
+            <div class="hexagon">
+              <div class="laptop-icon"></div>
+            </div>
+            <div class="server server-1"></div>
+            <div class="server server-2"></div>
+            <div class="server server-3"></div>
+            <div class="server server-4"></div>
+            <div class="server server-5"></div>
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="flexibilty-section">
+        <div class="text-content">
+            <h2>FLEXIBILITY</h2>
+            <h1>Store and explore data to fit your needs.</h1>
+            <p>Data is constantly evolving, and it can become expensive to store and search all of it. With Elasticsearch you can balance performance and cost. Store data locally for fast queries or <a href="#">remotely on low-cost S3</a> for unlimited data. With <a href="#">runtime fields</a>, you can also quickly onboard your data — and adapt to changes.</p>
+        </div>
+        <div class="image-content">
+            <img src="{% static 'img/flexibility-img.png' %}" alt="flexibility-img">
+        </div>
+        <div class="animated-shapes">
+            <i class="fas fa-circle"></i>
+            <i class="fas fa-square"></i>
+            <i class="fas fa-triangle"></i>
+        </div>
+    </section>
+
+    <!-- <section class="cogni-about flex-cont">
         <div class="cogni-about-img">
             <img class="slide-left animate-img" src={% static "img/cogni-about.jpg"%} alt="shield-and-security">
         </div>
@@ -65,7 +114,7 @@
 
         </div>
         <hr style="margin: 10px;" class="line-bottom">
-    </section>
+    </section> -->
 </section>
 {% endblock content %}
 
