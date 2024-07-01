@@ -1320,6 +1320,150 @@ footer {
 }
 
 
+/* esre section css */
+
+.esre-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  /* background: #f5f5f5; */
+  position: relative;
+  overflow: hidden;
+}
+
+.esre-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.esre-illustration {
+  max-width: 500px;
+  width: 100%;
+  margin-right: 50px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.esre-text {
+  max-width: 600px;
+}
+
+.esre-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.esre-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.esre-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.esre-link:hover {
+  color: var(--color-primary);
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+/* Animated shapes */
+#animated-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.shape-esre {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: move 10s linear infinite;
+}
+
+.shape-esre:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  background: #ff007f;
+  top: 10%;
+  left: 20%;
+}
+
+.shape-esre:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  background: #00c3ff;
+  top: 50%;
+  left: 70%;
+}
+
+.shape-esre:nth-child(3) {
+  width: 120px;
+  height: 120px;
+  background: #00ff73;
+  top: 80%;
+  left: 30%;
+}
+
+.shape-esre:nth-child(4) {
+  width: 90px;
+  height: 90px;
+  background: #ffc300;
+  top: 30%;
+  left: 50%;
+}
+
+@keyframes move {
+  0% {
+      transform: translateY(0) translateX(0);
+  }
+  50% {
+      transform: translateY(-20px) translateX(20px);
+  }
+  100% {
+      transform: translateY(0) translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .esre-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .esre-illustration {
+      margin: 0 0 30px 0;
+  }
+
+  .esre-text h1 {
+      font-size: 2rem;
+  }
+
+  .esre-text p {
+      font-size: 0.9rem;
+  }
+}
+
+
 
 /* login buttons css */
 

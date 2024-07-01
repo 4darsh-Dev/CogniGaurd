@@ -123,6 +123,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// esre section js
+// document.addEventListener('DOMContentLoaded', function() {
+//   const shapesContainer = document.getElementById('animated-shapes');
+
+//   // Create shapes
+//   for (let i = 0; i < 4; i++) {
+//       const shape = document.createElement('div');
+//       shape.classList.add('shape-esre');
+//       shapesContainer.appendChild(shape);
+//   }
+// });
 
 
 // footer js
