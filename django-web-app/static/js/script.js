@@ -136,6 +136,29 @@ document.addEventListener('DOMContentLoaded', function () {
 // });
 
 
+// Hamburger menu button changes
+let menuBtnCond = true;
+let checkLabel = document.getElementById("check-label");
+
+const menuBtnChanger = function(){
+
+    if (menuBtnCond){
+        checkLabel.innerHTML = `<i class="fas fa-times close-icon"></i>`;
+        menuBtnCond = false;
+    }
+
+    else{
+        checkLabel.innerHTML = `<i class="fas fa-bars menu-icon"></i>`;
+
+        menuBtnCond = true;
+    }
+
+}
+
+let menuBtn = document.getElementById("check");
+menuBtn.addEventListener("click", menuBtnChanger);
+
+
 // footer js
 document.addEventListener('DOMContentLoaded', function () {
     const ctaButton = document.querySelector('.cta-button');

@@ -30,10 +30,16 @@
             <nav>
                 <input type="checkbox" id="check">
                 <label id="check-label" for="check" class="checkbtn">
-                    <i class="fa-regular fa-bars"></i>
+                    <!-- <i class="fa-regular fa-bars"></i> -->
+                    <i class="fas fa-bars menu-icon"></i>
                 </label>
                 <div class="logo">
                     <h1><a href="/"><img class="logo-img" src="{% static 'img/cogniguard-logo.png' %}" alt="Logo"><span>CogniGuard</span></a></h1>
+                </div>
+                <div class="mobile-side-items-1">
+                    <i class="fas fa-search side-icons"></i>
+                    <!-- <i class="fas fa-globe side-icons"></i> -->
+                    <a style="color: black;" target="_blank" href="https://github.com/4darsh-Dev/CogniGuard"><i class="fa-brands fa-github side-icons"></i></a>
                 </div>
                 <ul class="menu-list">
                     <li> <a class="menu-items" href=" {% url 'home:home' %}">Home</a> </li>
@@ -50,6 +56,11 @@
                     </li>
                     <li> <a class="menu-items" target="_blank" href="https://github.com/4darsh-Dev/CogniGaurd/wiki">Docs</a></li>
                     <li> <a class="menu-items" href="{% url 'home:faqs' %}">FAQs</a></li>
+
+                    <div class="mobile-side-items-2">
+                        <a id="side-login" href="{% url 'home:loginUser' %}">Login</a>
+                    <a class="nav-btn" id="side-register" href="{% url 'home:registerUser' %}">Get Started</a>
+                    </div>
                     
                 </ul>
                 <div class="side-items">
@@ -116,7 +127,7 @@
                     <h3>Follow Us</h3>
                     <ul class="social-icons">
                         <li><a target="_blank" href="https://github.com/4darsh-Dev/CogniGuard"><i class="fab fa-github"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/adarsh-maurya-dev/"><i class="fab fa-linkedin"></i></a></li>
                         <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                         <li><a href="#"><i class="fab fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>

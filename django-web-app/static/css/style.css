@@ -319,6 +319,12 @@ nav h1 [class*="bxl-"] {
   color: var(--white);
 }
 
+
+/* mobile side items  */
+
+.mobile-side-items-1, .mobile-side-items-2{
+  display: none;
+}
 nav li [class="nav-btn"] {
   font-weight: 500;
   /*   color:var(--white); */
