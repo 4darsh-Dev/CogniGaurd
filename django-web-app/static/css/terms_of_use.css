@@ -1,0 +1,64 @@
+.terms-of-use {
+    margin-top: 5rem !important;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.terms-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.terms-header h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+.terms-content h2 {
+    color: #2c3e50;
+    margin-top: 30px;
+}
+
+.terms-content p {
+    margin-bottom: 20px;
+}
+
+.terms-acceptance {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .terms-of-use {
+        padding: 10px;
+    }
+
+    .terms-header h1 {
+        font-size: 2em;
+    }
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--color-primary);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#backToTop:hover {
+    background-color: #34495e;
+}
