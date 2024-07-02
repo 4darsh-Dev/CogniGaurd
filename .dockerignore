@@ -1,0 +1,87 @@
+.git
+.gitignore
+.dockerignore
+Dockerfile
+db.sqlite3
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+myenv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git
+.mypy_cache
+.pytest_cache
+.hypothesis
+
+# Exclude macOS .DS_Store files
+**/.DS_Store
+
+# Exclude Python cache directories
+**/__pycache__
+
+# Exclude Python virtual environment
+**/.venv
+
+# Exclude Eclipse files
+**/.classpath
+**/.project
+**/.settings
+
+# Exclude Visual Studio Code files
+**/.vscode
+
+# Exclude Visual Studio files
+**/.vs
+**/*.dbmdl
+**/*.jfm
+**/*.*proj.user
+
+# Exclude compiled binaries
+**/bin
+**/obj
+
+# Exclude Helm charts
+**/charts
+
+# Exclude Docker Compose files
+**/docker-compose*
+**/compose*
+
+# Exclude Dockerfile
+**/Dockerfile*
+
+# Exclude Node.js modules
+**/node_modules
+**/npm-debug.log
+
+# Exclude secrets and values files
+**/secrets.dev.yaml
+**/values.dev.yaml
+
+# Exclude license and README files
+LICENSE
+README.md
+SECURITY.md
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+Learn.md
+
+# Exclude documentation files
+**/docs
+
+# Exclude extra files
+django-mlapi-backend/
+django-web-extension/
+

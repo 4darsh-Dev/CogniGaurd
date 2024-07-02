@@ -1,0 +1,23 @@
+services:
+  web:
+    build:
+      context: ./django-web-app
+    volumes:
+      - static-volume:/home/djanog-web-app/web/staticfiles
+      - media-volume:/home/djanog-web-app/web/media
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env
+  nginx:
+    build: ./nginx
+    volumes:
+      - static-volume:/home/djanog-web-app/web/static
+      - media-volume:/home/djanog-web-app/web/media
+    ports:
+      - 80:80
+    depends_on:
+      - web
+volumes:
+  static-volume:
+  media-volume:
