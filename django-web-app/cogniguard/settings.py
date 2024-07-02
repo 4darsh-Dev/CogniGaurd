@@ -29,9 +29,10 @@ SECRET_KEY = os.environ.get('PJ_SECRET_KEY')
 
 
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1", "cognigaurd.onrender.com"]
+ALLOWED_HOSTS = ["congniguard.onionreads.com", ".vercel.app", ".now.sh", "127.0.0.1", "*.onrender.com", "cognigaurd.onrender.com"]
 
 
 # Application definition
@@ -138,6 +139,11 @@ DATABASES = {
         'HOST': os.environ.get("DB_HOST"),
         'PORT': os.environ.get("DB_PORT"),
     }
+    # sqlite3 development database
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 

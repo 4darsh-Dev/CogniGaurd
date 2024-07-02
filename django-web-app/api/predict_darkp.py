@@ -12,7 +12,8 @@ def find_dark_pattern(sentence):
         text_to_predict=sentence,
         api_name="/predict"
     )
-    output = result
+    return result
+
     
 
 

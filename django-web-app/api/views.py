@@ -63,6 +63,8 @@ class MessageListView(generics.ListAPIView):
 
 # For viewing the details of a specific URL
 ## You need to ensure that it doesn't call the dpData function if the dpCond is False
+
+
 dpUrls = DpRequest.objects.all()
 urlLen = len(dpUrls)
 if urlLen > 0:
