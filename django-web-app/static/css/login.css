@@ -212,6 +212,20 @@ body {
     color: var(--color-primary);
 }
 
+.sign-up p{
+    padding: 6px 0;
+
+}
+
+
+
+.sign-up p a:hover{
+    color: var(--dark-primary) !important;
+    border-bottom: 2px solid var(--dark-primary) !important;
+    font-weight: 600;
+    transform: 0.5s ease;
+}
+
 @media only screen and (max-width: 940px) {
     .mc-div {
         flex-direction: column;
@@ -262,5 +276,7 @@ body {
         
     padding: 2rem 0;
     }
-    
+    .sub-c-1{
+        padding: 3rem 1rem;
+    }
 }

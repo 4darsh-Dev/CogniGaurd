@@ -469,7 +469,7 @@
   .elastic-section{
     height: 60vh;
     padding: 6rem 2rem;
-    
+
   }
 }
 
@@ -690,5 +690,10 @@
   .server-5 {
     top: 57%;
     right: 0%;
+  }
+
+  .hexagon{
+    top: -68%;
+  left: 22%;
   }
 }

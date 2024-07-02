@@ -217,6 +217,19 @@ body {
     gap: 1rem;
 }
 
+.login p{
+    padding: 6px 0;
+
+}
+
+.login p a:hover{
+    color: var(--dark-primary) !important;
+    border-bottom: 2px solid var(--dark-primary) !important;
+    font-weight: 600;
+    transform: 0.5s ease;
+}
+
+
 @media only screen and (max-width: 940px) {
     .mc-div {
         padding: 2rem 1rem;

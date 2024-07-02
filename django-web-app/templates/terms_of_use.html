@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static "css/terms_of_use.css" %}">
+{% endblock head %}
+
+{% block title %}Terms Of Use{% endblock title %}
+
+{% block content %}
+{% include 'messages.html' %}
+
+<section class="terms-of-use">
+    <section class="terms-header">
+        <h1>Terms of Use</h1>
+        <p>Last updated: July 2, 2024</p>
+    </section>
+
+    <section class="terms-content">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing and using CogniGuard, you accept and agree to be bound by the terms and provision of this agreement.</p>
+
+        <h2>2. Description of Service</h2>
+        <p>CogniGuard is a web extension designed to detect and alert users about dark patterns on e-commerce websites. We provide this service to you subject to the following Terms of Use.</p>
+
+        <h2>3. User Conduct</h2>
+        <p>You agree to use CogniGuard only for lawful purposes. You are responsible for all of your activity in connection with the Service.</p>
+
+        <h2>4. Intellectual Property Rights</h2>
+        <p>The Service and its original content, features, and functionality are owned by CogniGuard and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
+
+        <h2>5. Termination</h2>
+        <p>We may terminate or suspend your access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.</p>
+
+        <h2>6. Limitation of Liability</h2>
+        <p>In no event shall CogniGuard, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+
+        <h2>7. Changes to Terms</h2>
+        <p>We reserve the right to modify or replace these Terms at any time. If a revision is material we will provide at least 30 days' notice prior to any new terms taking effect.</p>
+
+        <h2>8. Contact Us</h2>
+        <p>If you have any questions about these Terms, please contact us at:</p>
+        <p>Email: cogniguard.official@gmail.com</p>
+        
+    </section>
+
+    <section class="terms-acceptance">
+        <h2>Your Acceptance of These Terms</h2>
+        <p>By using CogniGuard, you signify your acceptance of this policy. If you do not agree to this policy, please do not use our Service. Your continued use of the Service following the posting of changes to these terms will be deemed your acceptance of those changes.</p>
+    </section>
+</section>
+
+
+
+{% endblock content %}
+
+{% block script %}
+<script src="{% static "js/terms_of_use.js"%}"></script>
+<script src="{% static 'js/messages.js' %}"></script>
+{% endblock script %}

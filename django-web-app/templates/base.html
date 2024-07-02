@@ -68,7 +68,7 @@
                 <div class="mobile-side-items-1">
                     <i class="fas fa-search side-icons"></i>
                     <!-- <i class="fas fa-globe side-icons"></i> -->
-                    <a style="color: black;" target="_blank" href="https://github.com/4darsh-Dev/CogniGuard"><i class="fa-brands fa-github side-icons"></i></a>
+                    <a style="color: black;" target="_blank" href="https://github.com/4darsh-Dev/CogniGaurd"><i class="fa-brands fa-github side-icons"></i></a>
                 </div>
                 <ul class="menu-list">
                     <li> <a class="menu-items" href=" {% url 'home:home' %}">Home</a> </li>
@@ -119,7 +119,11 @@
             <div class="footer-main">
                 <h1>CogniGuard Browse Safe</h1>
                 <p>A web extension which is capable of identifying dark patterns.</p>
-                <button class="cta-button-footer">Getting started</button>
+                <a href="{% url 'home:loginUser' %}">
+                    <button class="cta-button-footer">Getting started</button>
+
+                </a>
+                
             </div>
             <div class="footer-links">
                 <div class="footer-column">
@@ -138,17 +142,17 @@
                     <ul>
                         <li><a href="#">Sponsor login</a></li>
                         <li><a href="#">Request access</a></li>
-                        <li><a target="_blank" href="https://github.com/4darsh-Dev/CogniGuard">Become a Sponsor</a></li>
+                        <li><a target="_blank" href="https://github.com/4darsh-Dev/CogniGaurd">Become a Sponsor</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Pages</h3>
                     <ul>
-                        <li><a href="#">What are Dark Patterns</a></li>
-                        <li><a href="#">Detected Dark Patterns</a></li>
-                        <li><a href="#">Report Dark Patterns</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms Of Use</a></li>
+                        <li><a href="{% url "home:know-about-dp" %}">What are Dark Patterns</a></li>
+                        <li><a href="{% url "home:detected-dp" %}">Detected Dark Patterns</a></li>
+                        <li><a href="{% url "home:report-dp" %}">Report Dark Patterns</a></li>
+                        <li><a href="{% url "home:privacy-policy" %}">Privacy Policy</a></li>
+                        <li><a href="{% url "home:terms-of-use" %}">Terms Of Use</a></li>
                         <li><a href="#">Disclaimer</a></li>
                     </ul>
                 </div>

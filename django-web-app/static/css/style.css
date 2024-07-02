@@ -8,6 +8,7 @@
   --font-secondary: sans-serif;
   --color-primary: #2457c5;
   --color-primary-light: rgba(36, 87, 197, 0.3);
+  --dark-primary:#34495e;
   --black: #171321;
   --color-secondary: #00bfb3;
   --color-white: #fff;
@@ -20,7 +21,6 @@
   --mono: Montserrat, monospace;
   --sans: Poppins, sans-serif;
   --white: #fff;
-  --black: #171321;
   --text-color: #343741;
   --background-color: #f5f7fa;
   --font-head: Montserrat, monopsace;
@@ -638,8 +638,8 @@ body {
   background-color: var(--color-primary);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 19%;
+  left: 34%;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
@@ -1730,4 +1730,26 @@ footer {
   font-size: 20px;
   line-height: 20px;
   color: inherit;
+}
+
+
+/* back to top css */
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: var(--color-primary);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#backToTop:hover {
+  background-color: var(--dark-primary);
 }

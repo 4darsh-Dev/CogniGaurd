@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static "css/privacy_policy.css" %}">
+{% endblock head %}
+
+{% block title %}Privacy Policy{% endblock title %}
+
+{% block content %}
+{% include 'messages.html' %}
+
+<section class="privacy-policy">
+    <section class="policy-header">
+        <h1>Privacy Policy</h1>
+        <p>Last updated: July 2, 2024</p>
+    </section>
+
+    <section class="policy-content">
+        <h2>1. Introduction</h2>
+        <p>Welcome to CogniGuard. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data and tell you about your privacy rights.</p>
+
+        <h2>2. Data We Collect</h2>
+        <p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
+        <ul>
+            <li>Identity Data</li>
+            <li>Contact Data</li>
+            <li>Technical Data</li>
+            <li>Usage Data</li>
+        </ul>
+
+        <h2>3. How We Use Your Data</h2>
+        <p>We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy.</p>
+
+        <h2>4. Data Security</h2>
+        <p>We have implemented appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed.</p>
+
+        <h2>5. Your Rights</h2>
+        <p>Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to request access, correction, erasure, restriction, transfer, or to object to processing.</p>
+
+        <h2>6. Contact Us</h2>
+        <p>If you have any questions about this privacy policy or our privacy practices, please contact us at:</p>
+        <p>Email: cogniguard.official@gmail.com</p>
+        {% comment %} <p>Address: 123 Tech Street, Web City, 12345, Country</p> {% endcomment %}
+    </section>
+
+    <section class="policy-updates">
+        <h2>Policy Updates</h2>
+        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top of this Privacy Policy.</p>
+    </section>
+
+    <section class="policy-acceptance">
+        <h2>Your Acceptance of These Terms</h2>
+        <p>By using this Site, you signify your acceptance of this policy. If you do not agree to this policy, please do not use our Site. Your continued use of the Site following the posting of changes to this policy will be deemed your acceptance of those changes.</p>
+    </section>
+</section>
+
+{% endblock content %}
+
+{% block script %}
+<script src="{% static "js/privacy_policy.js"%}"></script>
+<script src="{% static 'js/messages.js' %}"></script>
+{% endblock script %}
