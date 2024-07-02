@@ -1,36 +1,59 @@
-# Use Python 3.12 as the base image
-FROM python:3.12-slim
+# Pull python base image
+FROM python:3.12.0-slim-bullseye
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Set the working directory in the container
-WORKDIR /app
+ENV HOME=/home/django-web-app
+ENV APP_HOME=${HOME}/web
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
+# Create app user and necessary directories
+RUN mkdir -p $HOME && \
+    addgroup --system app && \
+    adduser --system --group app && \
+    mkdir $APP_HOME ${APP_HOME}/staticfiles ${APP_HOME}/media
 
-# Copy the dependencies file to the working directory
-COPY requirements.txt .
+# Set work directory
+WORKDIR $APP_HOME
 
-# Install any dependencies
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+# Copy requirements.txt
+COPY ./requirements.txt $APP_HOME
 
-# Copy the content of the local src directory to the working directory
-COPY . .
+# Install python dependencies
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+
+# Install other dependencies (Debian)
+RUN apt-get update && apt-get install -y --no-install-recommends netcat && rm -rf /var/lib/apt/lists/*
+
+# Copy entrypoint.sh
+COPY ./entrypoint.sh $APP_HOME
+
+# Remove Windows line endings and make entrypoint.sh executable
+RUN sed -i 's/\r$//g' ${APP_HOME}/entrypoint.sh && chmod +x ${APP_HOME}/entrypoint.sh
+
+# Copy project
+COPY . $APP_HOME
+
+# Set ownership and permissions for app user on app directory
+RUN chown -R app:app $APP_HOME && chmod -R 777 $APP_HOME
+
+# Switch to app user
+USER django-web-app
 
 # Collect static files
-RUN python manage.py collectstatic --noinput
+RUN python manage.py collectstatic --no-input --clear
 
-# Run migrations
-RUN python manage.py migrate
-
-# Expose the port the app runs on
+# Expose port 8000
 EXPOSE 8000
 
-# Specify the command to run on container start
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "cogniguard.wsgi:application"]
+# Healthcheck
+HEALTHCHECK --interval=5s \
+            --timeout=3s \
+            CMD curl --fail http://localhost:8000/health-check || exit 1
+
+# Run entrypoint.sh
+ENTRYPOINT ["/home/django-web-app/web/entrypoint.sh"]
+
+# Run application
+CMD ["gunicorn", "--workers", "3", "--bind", "0.0.0.0:8000", "--timeout", "90", "--access-logfile", "/home/django-web-app/web/access.log", "--error-logfile", "/home/django-web-app/web/error.log", "cogniguard.wsgi:application"]

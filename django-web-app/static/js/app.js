@@ -11,8 +11,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-const redirectToLogin = () => {
-    window.location.href = "{% url 'home:loginUser' %}";
-    
-}
 
