@@ -39,6 +39,12 @@ def faqs(request):
 def termsConditions(request):
     return render(request, "termsConditions.html")
 
+def termsOfUse(request):
+    return render(request, "terms_of_use.html")
+
+def privacyPolicy(request):
+    return render(request, "privacy_policy.html")
+
 def knowAboutDp(request):
     return render(request, "know_about_dp.html")
 
