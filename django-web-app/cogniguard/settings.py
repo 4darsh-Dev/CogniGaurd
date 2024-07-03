@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('PJ_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ["*.onionreads.com", ".vercel.app", ".now.sh", "127.0.0.1", "*.onrender.com", "cognigaurd.onrender.com", "13.201.23.57"]
+ALLOWED_HOSTS = ["cogniguard.onionreads.com","*.onionreads.com", ".vercel.app", ".now.sh", "127.0.0.1", "*.onrender.com", "cognigaurd.onrender.com", "13.201.23.57"]
 
 
 # Application definition
