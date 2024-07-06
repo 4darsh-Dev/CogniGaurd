@@ -51,6 +51,12 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
   </tr>
 </table>
 
+## Website SS
+
+  ![Screenshot 2024-07-02 190608](https://github.com/4darsh-Dev/CogniGaurd/assets/109789509/83497dcb-1908-4925-8829-ba1e2138c92f)
+
+
+
 
 ## Cogni-BERT Model Scores
 
