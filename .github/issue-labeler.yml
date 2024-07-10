@@ -1,0 +1,67 @@
+# Basic issue types
+bug:
+  - '(bug|fix|error|issue|crash|problem|failure)'
+enhancement:
+  - '(feature|enhancement|improvement|request|idea)'
+documentation:
+  - '(doc|docs|documentation|typo|spelling|grammar)'
+
+# Severity and priority
+critical:
+  - '(critical|urgent|emergency|severe)'
+high-priority:
+  - '(high priority|important|significant)'
+low-priority:
+  - '(low priority|minor|trivial)'
+
+# Component or area
+frontend:
+  - '(frontend|ui|ux|user interface|css|html)'
+backend:
+  - '(backend|server|database|api)'
+performance:
+  - '(performance|speed|optimization|memory|cpu)'
+security:
+  - '(security|vulnerability|exploit|auth|authentication)'
+
+# Community and contribution
+"good first issue":
+  - '(good first issue|beginner friendly|easy)'
+"help wanted":
+  - '(help wanted|looking for help|assistance needed)'
+discussion:
+  - '(discussion|question|clarification|opinion)'
+
+# Project management
+blocked:
+  - '(blocked|blocker|dependency)'
+"in progress":
+  - '(in progress|working on it|started)'
+
+# Type of change
+"breaking change":
+  - '(breaking change|backwards incompatible)'
+maintenance:
+  - '(maintenance|cleanup|refactor|technical debt)'
+
+# Specific technologies (adjust based on your project)
+javascript:
+  - '(javascript|js|ecmascript)'
+python:
+  - '(python|py|pip)'
+react:
+  - '(react|jsx|component)'
+
+# Testing and quality
+test:
+  - '(test|testing|unit test|integration test)'
+qa:
+  - '(qa|quality assurance|manual testing)'
+
+# Platforms
+windows:
+  - '(windows|win|microsoft)'
+mac:
+  - '(mac|macos|apple)'
+linux:
+  - '(linux|ubuntu|debian|fedora)'
