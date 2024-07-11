@@ -1,4 +1,3 @@
-
 {% load static %}
 {% load socialaccount %}
 
@@ -34,20 +33,16 @@
                             <label class="sub-head" for="username">
                                 Username
                             </label>
-                            <!-- <img class="input-img" src="/static/img/user2.png" alt="user"> -->
-<!--                             <i class='bx bxs-user input-img'></i> -->
-                            <input class="form-f" id="username" name="username" required  placeholder="Type your username" type="text">
-                            
+                            <input class="form-f" id="username" name="username" required placeholder="Type your username" type="text">
                         </div>
     
                         <div class="form-c-1">
                             <label class="sub-head" for="password">
                                 Password
                             </label>
-                            <!-- <img class="input-img" src="/static/img/padlock.png" alt="lock"> -->
-<!--                             <i class='bx bxs-lock input-img'></i> -->
                             <input class="form-f" id="password" name="password" placeholder="Type your Password" type="password" required>
-    
+                            <input type="checkbox" id="show-password">
+                            <label for="show-password">Show Password</label>
                         </div>
                         
                     </form>
@@ -66,12 +61,8 @@
         </div>
         <div class="login-img-box">
             <img src="{% static 'img/login.webp' %}" alt="Login Image CogniGuard">
-
         </div> 
-
     </div>
-    
-    
 </div>
 {% endblock main %}
 
@@ -79,4 +70,14 @@
 <script src="{% static 'js/script.js' %}"></script>
 <script src="{% static 'js/login.js' %}"></script>
 <script src="{% static 'js/messages.js' %}"></script>
+<script>
+    document.getElementById('show-password').addEventListener('change', function() {
+        var passwordInput = document.getElementById('password');
+        if (this.checked) {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    });
+</script>
 {% endblock script %}
