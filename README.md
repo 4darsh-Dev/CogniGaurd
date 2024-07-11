@@ -1,4 +1,12 @@
 # CogniGuard 🕵️‍♂️✨
+<br>
+<br>
+
+![Labeler](https://github.com/4darsh-Dev/CogniGaurd/actions/workflows/label.yml/badge.svg)
+![Greetings](https://github.com/4darsh-Dev/CogniGaurd/actions/workflows/greetings.yml/badge.svg)
+![CodeQL](https://github.com/4darsh-Dev/CogniGaurd/actions/workflows/codeql.yml/badge.svg)
+![Issue Close Greet](https://github.com/4darsh-Dev/CogniGaurd/actions/workflows/issue_close_greet.yml/badge.svg)
+![Dependencies](https://github.com/4darsh-Dev/CogniGaurd/actions/workflows/dependency-review.yml/badge.svg)
 ## Overview
 
 CogniGuard is a powerful web extension designed to empower users by identifying and combatting dark patterns on various websites, particularly focusing on E-commerce platforms. Ensuring users a transparent and ethical online experience.
