@@ -367,6 +367,7 @@ nav li [class="nav-btn"]:hover {
 
 .dropdown-menu li {
   padding: 12px 16px;
+  list-style: none;
 }
 
 .dropdown-menu li a {
