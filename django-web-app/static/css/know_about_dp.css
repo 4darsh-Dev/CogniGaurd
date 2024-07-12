@@ -41,7 +41,10 @@
 }
 .patterns-grid {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+    height: 1000px;
     flex-wrap: wrap;
     margin-top: 2rem;
 }
@@ -139,4 +142,13 @@
         font-size: 2.5rem;
     }
     
+}
+
+@media only screen and (max-width:1250px){
+    .patterns-grid{
+        height: auto;
+    }
+    .pattern {
+        max-width: 80%;
+    }
 }
