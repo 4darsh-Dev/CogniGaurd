@@ -29,50 +29,55 @@ const fetchTransparencyScore = () => {
 
 // Sending the url to the api
 function sendUrlToAPI(url) {
-  // Construct the Basic Auth header
+  const username = 'adarsh';
+  const password = 'adarsh@123';
+  const credentials = btoa(`${username}:${password}`);
 
-  // Checking for erroneous url
-  // url = encodeURIComponent(url);
-  console.log(url);
-
-  var username = 'cogni';
-  var password = 'Mycogni@420';
-  var credentials = username + ':' + password;
-  var base64Credentials = btoa(credentials);
-
-  // Make an AJAX request to your Django Rest Framework API
-  fetch(apiUrl + 'dp-request/', {
+  fetch(apiUrl + 'analyze-url/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Basic ' + base64Credentials
+      'Authorization': 'Basic ' + credentials
     },
     body: JSON.stringify({ url: url })
-
   })
-    .then(response => {
-      if (response.ok) {
-        console.log('URL sent successfully');
-        // Handle success as needed
-        let respondseJson = response.json();
-        console.log(respondseJson);
-        // Display the dark patterns
-        displayDp(respondseJson, respondseJson.length);
-
-
+    .then(response => response.json())
+    .then(data => {
+      console.log('Response:', data);
+      if (data.status === 'processing') {
+        pollForResults(data.task_id);
       } else {
-        console.error('Failed to send URL');
-        // Handle error as needed
+        displayDp(data.data, data.data.length);
       }
     })
     .catch(error => {
       console.error('Error:', error);
-      // Handle error as needed
     });
-
-
 }
 
+function pollForResults(taskId) {
+  const pollInterval = setInterval(() => {
+    fetch(apiUrl + `task-status/${taskId}/`, {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Basic ' + btoa('adarsh:adarsh@123')
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'completed') {
+          clearInterval(pollInterval);
+          displayDp(data.data, data.data.length);
+        } else if (data.status === 'failed') {
+          clearInterval(pollInterval);
+          console.error('Task failed:', data.error);
+        }
+      })
+      .catch(error => {
+        console.error('Error polling for results:', error);
+      });
+  }, 5000); // Poll every 5 seconds
+}
 
 
 
@@ -80,7 +85,11 @@ function sendUrlToAPI(url) {
 
 // Displaying dark patterns
 let scanResultBox = document.getElementsByClassName("scan-result-box")[0];
-const displayDp = (response, length) => {
+
+const displayDp = (response) => {
+  // Clear previous results
+  scanResultBox.innerHTML = '';
+
   let head = document.createElement('h2');
   head.innerText = "What we have found so far:";
   scanResultBox.appendChild(head);
@@ -89,16 +98,24 @@ const displayDp = (response, length) => {
   scanList.classList.add("scan-list");
   scanResultBox.appendChild(scanList);
 
-  let responseArr = [];
-
-  for (let i = 0; i < length; i++) {
-    let scanItems = document.createElement("li");
-    scanItems.classList.add("scan-items");
-    scanItems.innerText = `${responseArr[0]}`;
-    scanList.appendChild(scanItems);
+  if (response && response.length > 0) {
+    response.forEach(item => {
+      let scanItem = document.createElement("li");
+      scanItem.classList.add("scan-item");
+      scanItem.innerHTML = `
+        <strong>${item.dark_pattern_label}</strong>: ${item.dark_text}
+        <br>
+        <small>URL: ${item.website_url}</small>
+      `;
+      scanList.appendChild(scanItem);
+    });
+  } else {
+    let noResultItem = document.createElement("li");
+    noResultItem.classList.add("scan-item");
+    noResultItem.innerText = "No dark patterns found.";
+    scanList.appendChild(noResultItem);
   }
 };
-
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -117,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Base url
-  let baseUrl = "http://127.0.0.1:8000/";
+  let baseUrl = "https://cogniguard.onionreads.com/";
   let reportBtn = document.getElementById("report-btn");
 
   reportBtn.addEventListener("click", function () {
@@ -139,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let tandcBtn = document.getElementById("tandc-btn");
   tandcBtn.addEventListener("click", function () {
-    let newTabUrl = baseUrl + "terms-conditions/";
+    let newTabUrl = baseUrl + "terms-of-use/";
 
     chrome.tabs.create({ url: newTabUrl });
 
@@ -147,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let knowDp = document.getElementById("know-dp");
   knowDp.addEventListener("click", () => {
-    let newTabUrl = baseUrl + "know-dp/";
+    let newTabUrl = baseUrl + "know-about-dp/";
 
     chrome.tabs.create({ url: newTabUrl });
   })
