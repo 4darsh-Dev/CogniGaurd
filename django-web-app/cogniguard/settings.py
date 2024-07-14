@@ -64,7 +64,8 @@ INSTALLED_APPS = [
 
     # serving sitemap
     'django.contrib.sitemaps',
-    
+
+
 
 ]
 
