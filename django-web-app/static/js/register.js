@@ -46,3 +46,28 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.removeItem('register_email');
     }
 });
+
+
+// show password
+
+
+function togglePasswordVisibility(passwordField, toggleIcon) {
+    const isPasswordVisible = passwordField.type === 'password';
+    passwordField.type = isPasswordVisible ? 'text' : 'password';
+    toggleIcon.textContent = isPasswordVisible ? '🙈' : '👁️';
+    console.log("I am toggled!");
+}
+
+const passFieldFirst = document.getElementById('password');
+const eyeIconOne = document.getElementById("eye-icon-one");
+eyeIconOne.addEventListener("click", function() {
+    togglePasswordVisibility(passFieldFirst, eyeIconOne);
+});
+
+const passFieldTwo = document.getElementById('cnf-password');
+const eyeIconTwo = document.getElementById("eye-icon-two");
+eyeIconTwo.addEventListener("click", function() {
+    togglePasswordVisibility(passFieldTwo, eyeIconTwo);
+});
+
+

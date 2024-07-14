@@ -229,6 +229,21 @@ body {
     transform: 0.5s ease;
 }
 
+/* show password  */
+.password-container {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 999;
+}
+
 
 @media only screen and (max-width: 940px) {
     .mc-div {
@@ -286,5 +301,8 @@ body {
     .form-c-1 {
         margin: 0.5rem 0;
         width: 100%;
+    }
+    .eye-icon{
+        right: 25px;
     }
 }

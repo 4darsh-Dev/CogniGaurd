@@ -226,6 +226,21 @@ body {
     transform: 0.5s ease;
 }
 
+
+.password-container {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 999;
+}
+
 @media only screen and (max-width: 940px) {
     .mc-div {
         flex-direction: column;
@@ -278,5 +293,11 @@ body {
     }
     .sub-c-1{
         padding: 3rem 1rem;
+    }
+    .form-f{
+        padding: 0.75rem 1rem;
+    }
+    .mainContainer{
+        padding: 0;
     }
 }

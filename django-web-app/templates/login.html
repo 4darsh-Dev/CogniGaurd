@@ -1,15 +1,18 @@
 
 {% load static %}
 {% load socialaccount %}
-
+<!DOCTYPE html>
+<html lang="en">
 
 {% block head %}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% comment %} <link rel="stylesheet" href="{% static 'css/responsive.css' %}"> {% endcomment %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>CogniGuard |Login {% block title %}{% endblock title %}</title>
 
 {% endblock head %}
 
@@ -40,14 +43,15 @@
                             
                         </div>
     
+
                         <div class="form-c-1">
                             <label class="sub-head" for="password">
                                 Password
                             </label>
-                            <!-- <img class="input-img" src="/static/img/padlock.png" alt="lock"> -->
-<!--                             <i class='bx bxs-lock input-img'></i> -->
-                            <input class="form-f" id="password" name="password" placeholder="Type your Password" type="password" required>
-    
+                            <div class="password-container">
+                                <input class="form-f" id="password" name="password" placeholder="Type your Password" type="password" required>
+                                <i class="eye-icon" id="togglePassword" onclick="togglePasswordVisibility()">👁️</i>
+                            </div>
                         </div>
                         
                     </form>
