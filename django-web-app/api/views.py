@@ -10,8 +10,12 @@ from rest_framework.response import Response
 from rest_framework import status
 from .tasks import process_url
 
-from celery_progress.backend import Progress
+# from celery_progress.backend import Progress
 from celery.result import AsyncResult
+
+# jwt 
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.tokens import RefreshToken
 
 
 import csv
@@ -39,8 +43,18 @@ def transparencyCalc(request):
     return tScore
 
 
+class GenerateTokenView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        user = request.user
+        refresh = RefreshToken.for_user(user)
+        return Response({
+            'token': str(refresh.access_token),
+        })
 
 class AnalyzeURLView(APIView):
+    permission_classes = [IsAuthenticated]
     def post(self, request):
         url = request.data.get('url')
         if not url:
@@ -55,20 +69,10 @@ class AnalyzeURLView(APIView):
         task = process_url.delay(url)
         return Response({"status": "processing", "task_id": task.id})
 
-class TaskStatusView(APIView):
-    def get(self, request, task_id):
-        task = process_url.AsyncResult(task_id)
-        if task.ready():
-            result = task.result
-            dp_data = DarkPatternsData.objects.filter(website_url=result['url'])
-            serializer = DarkPatternsDataSerializer(dp_data, many=True)
-            return Response({"status": "completed", "data": serializer.data})
-        elif task.failed():
-            return Response({"status": "failed", "error": str(task.result)})
-        else:
-            return Response({"status": "processing"})
+
         
 class TaskStatusView(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request, task_id):
         task = AsyncResult(task_id)
         if task.ready():

@@ -1,8 +1,11 @@
 from django.urls import path
-from . import views
+from .views import GenerateTokenView, AnalyzeURLView, TaskStatusView
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
-    path('analyze-url/', views.AnalyzeURLView.as_view(), name='analyze-url'),
-    path('task-status/<str:task_id>/', views.TaskStatusView.as_view(), name='task-status'),
-    path('dp-request-list/', views.MessageListView.as_view(), name='dp-request-list'),
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('generate-token/', GenerateTokenView.as_view(), name='generate_token'),
+    path('analyze-url/', AnalyzeURLView.as_view(), name='analyze_url'),
+    path('task-status/<str:task_id>/', TaskStatusView.as_view(), name='task_status'),
 ]
