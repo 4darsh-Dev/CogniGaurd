@@ -27,145 +27,141 @@ const fetchTransparencyScore = () => {
     });
 };
 
-// Sending the url to the api
+// // Sending the url to the api
 let progressArea = document.getElementById("progress-area");
 let statusMessage = document.getElementById("status-message");
 let progressBar = document.getElementById("progress-bar");
 
-let scanResultBox;
 
-document.addEventListener('DOMContentLoaded', function () {
-  scanResultBox = document.getElementsByClassName("scan-result-box")[0];
-  // ... rest of your initialization code
+
+document.addEventListener('DOMContentLoaded', function() {
+  const tokenInput = document.getElementById('token-input');
+  const analyzeBtn = document.getElementById('analyze-btn');
+  const resultDiv = document.getElementById('result');
+
+  analyzeBtn.addEventListener('click', function() {
+      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+          const url = tabs[0].url;
+          const token = tokenInput.value;
+
+          if (!token) {
+              resultDiv.innerHTML = `<p>Please enter your API token.<p> <br> <a href="https://cogniguard.onionreads.com/" target="_blank"><strong>Get your API token </strong></a>`;
+              return;
+          }
+
+            // Show progress area and reset progress
+          progressArea.style.display = 'block';
+          updateProgress("Sending URL for analysis...", 10);
+
+          fetch('https://cogniguard.onionreads.com/api/analyze-url/', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${token}`
+              },
+              body: JSON.stringify({ url: url })
+          })
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('Network response was not ok');
+              }
+              return response.json();
+          })
+          .then(data => {
+              if (data.status === 'processing') {
+                updateProgress("Analysis started. Waiting for results...", 20);
+                pollForResults(data.task_id, token);
+              } else {
+                  displayResults(data.data);
+              }
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              resultDiv.textContent = 'Error analyzing URL. Please try again.';
+          });
+          
+//     
+      });
+  });
+
+  function pollForResults(taskId, token) {
+      resultDiv.textContent = 'Processing...';
+      const pollInterval = setInterval(() => {
+          fetch(`https://cogniguard.onionreads.com/api/task-status/${taskId}/`, {
+              method: 'GET',
+              headers: {
+                  'Authorization': `Bearer ${token}`
+              }
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (data.status === 'completed') {
+                  clearInterval(pollInterval);
+                  displayResults(data.data);
+              } else if (data.status === 'failed') {
+                  clearInterval(pollInterval);
+                  resultDiv.textContent = 'Analysis failed. Please try again.';
+              }
+          })
+          .catch(error => {
+              clearInterval(pollInterval);
+              console.error('Error polling for results:', error);
+              resultDiv.textContent = 'Error checking results. Please try again.';
+          });
+      }, 5000);
+  }
+
+  function updateProgress(message, percentage) {
+          statusMessage.textContent = message;
+          progressBar.value = percentage;
+        }
+
+
+  function displayResults(results) {
+      
+        
+        const scanResultBox = resultDiv;
+          if (!scanResultBox) {
+              console.error('scanResultBox not found');
+              return;
+          }
+        
+          // Clear previous results
+          scanResultBox.innerHTML = '';
+        
+          let head = document.createElement('h2');
+          head.innerText = "Analysis Results:";
+          scanResultBox.appendChild(head);
+        
+          let scanList = document.createElement("ul");
+          scanList.classList.add("scan-list");
+          scanResultBox.appendChild(scanList);
+          
+          const response = results;
+          if (response && response.length > 0) {
+              response.forEach(item => {
+                  let scanItem = document.createElement("li");
+                  scanItem.classList.add("scan-item");
+                  scanItem.innerHTML = `
+                      <strong>${item.dark_pattern_label}</strong>
+                      <p>${item.dark_text}</p>
+                      <small>URL: ${item.website_url}</small>
+                  `;
+                  scanList.appendChild(scanItem);
+              });
+          } else {
+              let noResultItem = document.createElement("li");
+              noResultItem.classList.add("scan-item");
+              noResultItem.innerText = "No dark patterns found.";
+              scanList.appendChild(noResultItem);
+          }
+        
+          // Hide progress area after displaying results
+          if (progressArea) {
+              progressArea.style.display = 'none';
+          }
+  }
 });
-
-function sendUrlToAPI(url) {
-  const username = 'adarsh';
-  const password = 'adarsh@123';
-  const credentials = btoa(`${username}:${password}`);
-
-  // Show progress area and reset progress
-  progressArea.style.display = 'block';
-  updateProgress("Sending URL for analysis...", 10);
-
-  fetch(apiUrl + 'analyze-url/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Basic ' + credentials
-    },
-    body: JSON.stringify({ url: url })
-  })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Response:', data);
-      if (data.status === 'processing') {
-        updateProgress("Analysis started. Waiting for results...", 20);
-        pollForResults(data.task_id);
-      } else if (data.status === 'completed') {
-        updateProgress("Analysis complete!", 100);
-        displayDp(data.data);
-      } else {
-        updateProgress("Unexpected response. Please try again.", 0);
-        console.error('Unexpected response:', data);
-      }
-    })
-    .catch(error => {
-      updateProgress("Error occurred. Please try again.", 0);
-      console.error('Error:', error);
-    });
-}
-
-function pollForResults(taskId) {
-  let pollCount = 0;
-  const maxPolls = 60; // Maximum number of polling attempts (5 minutes at 5-second intervals)
-
-  const pollInterval = setInterval(() => {
-      pollCount++;
-      updateProgress(`Checking results... Attempt ${pollCount}`, 20 + (pollCount / maxPolls) * 60);
-
-      if (pollCount > maxPolls) {
-          clearInterval(pollInterval);
-          updateProgress("Analysis is taking longer than expected. Please check back later.", 0);
-          return;
-      }
-
-      fetch(apiUrl + `task-status/${taskId}/`, {
-          method: 'GET',
-          headers: {
-              'Authorization': 'Basic ' + btoa('adarsh:adarsh@123')
-          }
-      })
-      .then(response => response.json())
-      .then(data => {
-          console.log('Poll response:', data);  // Add this line for debugging
-          if (data.status === 'completed') {
-              clearInterval(pollInterval);
-              updateProgress("Analysis complete!", 100);
-              displayDp(data.data);
-          } else if (data.status === 'failed') {
-              clearInterval(pollInterval);
-              updateProgress("Analysis failed. Please try again.", 0);
-              console.error('Task failed:', data.error);
-          } else if (data.status === 'processing') {
-              updateProgress("Still processing...", 20 + (pollCount / maxPolls) * 60);
-          }
-      })
-      .catch(error => {
-          clearInterval(pollInterval);
-          updateProgress("Error checking results. Please try again.", 0);
-          console.error('Error polling for results:', error);
-      });
-  }, 5000); // Poll every 5 seconds
-}
-
-
-function updateProgress(message, percentage) {
-  statusMessage.textContent = message;
-  progressBar.value = percentage;
-}
-
-
-function displayDp(response) {
-  if (!scanResultBox) {
-      console.error('scanResultBox not found');
-      return;
-  }
-
-  // Clear previous results
-  scanResultBox.innerHTML = '';
-
-  let head = document.createElement('h2');
-  head.innerText = "Analysis Results:";
-  scanResultBox.appendChild(head);
-
-  let scanList = document.createElement("ul");
-  scanList.classList.add("scan-list");
-  scanResultBox.appendChild(scanList);
-
-  if (response && response.length > 0) {
-      response.forEach(item => {
-          let scanItem = document.createElement("li");
-          scanItem.classList.add("scan-item");
-          scanItem.innerHTML = `
-              <strong>${item.dark_pattern_label}</strong>
-              <p>${item.dark_text}</p>
-              <small>URL: ${item.website_url}</small>
-          `;
-          scanList.appendChild(scanItem);
-      });
-  } else {
-      let noResultItem = document.createElement("li");
-      noResultItem.classList.add("scan-item");
-      noResultItem.innerText = "No dark patterns found.";
-      scanList.appendChild(noResultItem);
-  }
-
-  // Hide progress area after displaying results
-  if (progressArea) {
-      progressArea.style.display = 'none';
-  }
-}
 
 
 

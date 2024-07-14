@@ -287,3 +287,10 @@
 
 }
 
+
+#token-input {
+    width: 100%;
+    margin: 2rem 0;
+    height: 2.5rem;
+    padding: 6px;
+}
