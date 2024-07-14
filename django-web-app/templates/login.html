@@ -1,4 +1,3 @@
-
 {% load static %}
 {% load socialaccount %}
 <!DOCTYPE html>
@@ -37,10 +36,7 @@
                             <label class="sub-head" for="username">
                                 Username
                             </label>
-                            <!-- <img class="input-img" src="/static/img/user2.png" alt="user"> -->
-<!--                             <i class='bx bxs-user input-img'></i> -->
-                            <input class="form-f" id="username" name="username" required  placeholder="Type your username" type="text">
-                            
+                            <input class="form-f" id="username" name="username" required placeholder="Type your username" type="text">
                         </div>
     
 
@@ -48,10 +44,12 @@
                             <label class="sub-head" for="password">
                                 Password
                             </label>
+
                             <div class="password-container">
                                 <input class="form-f" id="password" name="password" placeholder="Type your Password" type="password" required>
                                 <i class="eye-icon" id="togglePassword" onclick="togglePasswordVisibility()">👁️</i>
                             </div>
+
                         </div>
                         
                     </form>
@@ -70,12 +68,8 @@
         </div>
         <div class="login-img-box">
             <img src="{% static 'img/login.webp' %}" alt="Login Image CogniGuard">
-
         </div> 
-
     </div>
-    
-    
 </div>
 {% endblock main %}
 
@@ -83,4 +77,5 @@
 <script src="{% static 'js/script.js' %}"></script>
 <script src="{% static 'js/login.js' %}"></script>
 <script src="{% static 'js/messages.js' %}"></script>
+
 {% endblock script %}

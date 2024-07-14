@@ -1,0 +1,58 @@
+# Add 'documentation' label to any changes in documentation files
+documentation:
+  - '**/*.md'
+  - 'docs/**/*'
+
+# Add 'bug' label to any bug fix
+bug:
+  - '**/*bug*'
+  - '**/*fix*'
+
+# Add 'enhancement' label to any feature or improvement
+enhancement:
+  - '**/*feature*'
+  - '**/*improve*'
+  - '**/*enhance*'
+
+# Add 'dependencies' label to any changes in dependency files
+dependencies:
+  - 'package.json'
+  - 'package-lock.json'
+  - 'yarn.lock'
+  - '**/requirements.txt'
+  - '**/Gemfile'
+  - '**/Gemfile.lock'
+
+# Add 'tests' label to any changes in test files
+tests:
+  - 'tests/**/*'
+  - '**/*test*'
+  - '**/*spec*'
+
+# Add 'ci' label to any changes in CI configuration files
+ci:
+  - '.github/workflows/*'
+  - '.travis.yml'
+  - '.circleci/*'
+
+# Add 'security' label to any changes in security-related files
+security:
+  - 'SECURITY.md'
+  - '**/security/**/*'
+
+# Add 'config' label to any changes in configuration files
+config:
+  - '**/*.config.js'
+  - '**/*.json'
+  - '.eslintrc*'
+  - '.prettier*'
+  - '.editorconfig'
+
+# Add 'core' label to any changes in the src or lib directories
+core:
+  - 'src/**/*'
+  - 'lib/**/*'
+
+# Add 'help wanted' label to any issue or PR
+'help wanted':
+  - '**/*'

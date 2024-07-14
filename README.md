@@ -1,13 +1,20 @@
 # CogniGuard 🕵️‍♂️✨
+<br>
+<br>
+
+![Labeler](https://github.com/4darsh-Dev/CogniGaurd/actions/workflows/label.yml/badge.svg)
+![Greetings](https://github.com/4darsh-Dev/CogniGaurd/actions/workflows/greetings.yml/badge.svg)
+![CodeQL](https://github.com/4darsh-Dev/CogniGaurd/actions/workflows/codeql.yml/badge.svg)
+![Issue Close Greet](https://github.com/4darsh-Dev/CogniGaurd/actions/workflows/issue_close_greet.yml/badge.svg)
+![Dependencies](https://github.com/4darsh-Dev/CogniGaurd/actions/workflows/dependency-review.yml/badge.svg)
 ## Overview
 
 CogniGuard is a powerful web extension designed to empower users by identifying and combatting dark patterns on various websites, particularly focusing on E-commerce platforms. Ensuring users a transparent and ethical online experience.
 
 ##### About Dark Patterns => https://www.deceptive.design/
 
-<p align="center">
-  <img src="https://onionreads.com/wp-content/uploads/2024/01/Screenshot-2024-01-15-014420.png" alt="CogniGuard" width="600px" />
-</p>
+![Screenshot 2024-07-13 024617](https://github.com/user-attachments/assets/e7c2dbe5-7c9c-4759-ab72-042c90fe3b2c)
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1DoYa1wVWhA?si=FCnzDxHuiJs5_Q4P" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -50,6 +57,12 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
     </td>
   </tr>
 </table>
+
+## Website SS
+
+  ![Screenshot 2024-07-02 190608](https://github.com/4darsh-Dev/CogniGaurd/assets/109789509/83497dcb-1908-4925-8829-ba1e2138c92f)
+
+
 
 
 ## Cogni-BERT Model Scores
