@@ -2,16 +2,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input');
     const suggestions = document.getElementById('suggestions');
     const results = document.getElementById('results');
-
+    
     searchInput.addEventListener('keyup', function() {
         const query = searchInput.value;
         if (query.length > 2) {
-            fetch(`/detected_dp/?query=${query}`, {
+            fetch(`/detected-dp/?query=${encodeURIComponent(query)}`, {
                 headers: {
                     'X-Requested-With': 'XMLHttpRequest'
                 }
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 suggestions.innerHTML = '';
                 data.results.forEach(item => {
@@ -21,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     suggestionItem.addEventListener('click', () => displayResult(item));
                     suggestions.appendChild(suggestionItem);
                 });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                suggestions.innerHTML = '<div>Error fetching results</div>';
             });
         } else {
             suggestions.innerHTML = '';
@@ -31,9 +40,18 @@ document.addEventListener('DOMContentLoaded', function() {
         results.innerHTML = '';
         const resultItem = document.createElement('div');
         resultItem.classList.add('result-item');
-        resultItem.innerHTML = `<strong>URL:</strong> ${item.website_url}<br>
-                                <strong>Dark Pattern:</strong> ${item.dark_pattern_label}<br>
-                                <strong>Details:</strong> ${item.dark_text}`;
+        resultItem.innerHTML = `<strong>URL:</strong> ${escapeHtml(item.website_url)}<br>
+                                <strong>Dark Pattern:</strong> ${escapeHtml(item.dark_pattern_label)}<br>
+                                <strong>Details:</strong> ${escapeHtml(item.dark_text)}`;
         results.appendChild(resultItem);
+    }
+
+    function escapeHtml(unsafe) {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
     }
 });

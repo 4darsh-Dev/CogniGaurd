@@ -24,6 +24,10 @@ from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
 
+# detected dp func()
+from django.views.decorators.http import require_GET
+from django.http import HttpResponseBadRequest
+
 
 # health check path
 def health_check(request):
@@ -174,9 +178,13 @@ def logoutUser(request):
     return redirect("home:home")
 
 # For searching dark patterns
+@require_GET
 def detected_dp(request):
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
         query = request.GET.get('query', '')
+        if len(query) < 3:
+            return HttpResponseBadRequest("Query must be at least 3 characters long")
+        
         results = DarkPatternsData.objects.filter(website_url__icontains=query) | DarkPatternsData.objects.filter(dark_pattern_label__icontains=query)
         data = []
         for result in results:
