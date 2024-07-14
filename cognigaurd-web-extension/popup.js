@@ -3,7 +3,7 @@
 console.log("CogniGuard Popup working!");
 
 // api endpoint
-const apiUrl = "http://127.0.0.1:8000/api/";
+const apiUrl = "https://cogniguard.onionreads.com/api/";
 
 // Function to fetch transparency score
 const fetchTransparencyScore = () => {
@@ -27,77 +27,141 @@ const fetchTransparencyScore = () => {
     });
 };
 
-// Sending the url to the api
-function sendUrlToAPI(url) {
-  // Construct the Basic Auth header
-
-  // Checking for erroneous url
-  // url = encodeURIComponent(url);
-  console.log(url);
-
-  var username = 'cogni';
-  var password = 'Mycogni@420';
-  var credentials = username + ':' + password;
-  var base64Credentials = btoa(credentials);
-
-  // Make an AJAX request to your Django Rest Framework API
-  fetch(apiUrl + 'dp-request/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Basic ' + base64Credentials
-    },
-    body: JSON.stringify({ url: url })
-
-  })
-    .then(response => {
-      if (response.ok) {
-        console.log('URL sent successfully');
-        // Handle success as needed
-        let respondseJson = response.json();
-        console.log(respondseJson);
-        // Display the dark patterns
-        displayDp(respondseJson, respondseJson.length);
-
-
-      } else {
-        console.error('Failed to send URL');
-        // Handle error as needed
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      // Handle error as needed
-    });
-
-
-}
+// // Sending the url to the api
+let progressArea = document.getElementById("progress-area");
+let statusMessage = document.getElementById("status-message");
+let progressBar = document.getElementById("progress-bar");
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const tokenInput = document.getElementById('token-input');
+  const analyzeBtn = document.getElementById('analyze-btn');
+  const resultDiv = document.getElementById('result');
 
+  analyzeBtn.addEventListener('click', function() {
+      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+          const url = tabs[0].url;
+          const token = tokenInput.value;
 
+          if (!token) {
+              resultDiv.innerHTML = `<p>Please enter your API token.<p> <br> <a href="https://cogniguard.onionreads.com/" target="_blank"><strong>Get your API token </strong></a>`;
+              return;
+          }
 
-// Displaying dark patterns
-let scanResultBox = document.getElementsByClassName("scan-result-box")[0];
-const displayDp = (response, length) => {
-  let head = document.createElement('h2');
-  head.innerText = "What we have found so far:";
-  scanResultBox.appendChild(head);
+            // Show progress area and reset progress
+          progressArea.style.display = 'block';
+          updateProgress("Sending URL for analysis...", 10);
 
-  let scanList = document.createElement("ul");
-  scanList.classList.add("scan-list");
-  scanResultBox.appendChild(scanList);
+          fetch('https://cogniguard.onionreads.com/api/analyze-url/', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${token}`
+              },
+              body: JSON.stringify({ url: url })
+          })
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('Network response was not ok');
+              }
+              return response.json();
+          })
+          .then(data => {
+              if (data.status === 'processing') {
+                updateProgress("Analysis started. Waiting for results...", 20);
+                pollForResults(data.task_id, token);
+              } else {
+                  displayResults(data.data);
+              }
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              resultDiv.textContent = 'Error analyzing URL. Please try again.';
+          });
+          
+//     
+      });
+  });
 
-  let responseArr = [];
-
-  for (let i = 0; i < length; i++) {
-    let scanItems = document.createElement("li");
-    scanItems.classList.add("scan-items");
-    scanItems.innerText = `${responseArr[0]}`;
-    scanList.appendChild(scanItems);
+  function pollForResults(taskId, token) {
+      resultDiv.textContent = 'Processing...';
+      const pollInterval = setInterval(() => {
+          fetch(`https://cogniguard.onionreads.com/api/task-status/${taskId}/`, {
+              method: 'GET',
+              headers: {
+                  'Authorization': `Bearer ${token}`
+              }
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (data.status === 'completed') {
+                  clearInterval(pollInterval);
+                  displayResults(data.data);
+              } else if (data.status === 'failed') {
+                  clearInterval(pollInterval);
+                  resultDiv.textContent = 'Analysis failed. Please try again.';
+              }
+          })
+          .catch(error => {
+              clearInterval(pollInterval);
+              console.error('Error polling for results:', error);
+              resultDiv.textContent = 'Error checking results. Please try again.';
+          });
+      }, 5000);
   }
-};
+
+  function updateProgress(message, percentage) {
+          statusMessage.textContent = message;
+          progressBar.value = percentage;
+        }
+
+
+  function displayResults(results) {
+      
+        
+        const scanResultBox = resultDiv;
+          if (!scanResultBox) {
+              console.error('scanResultBox not found');
+              return;
+          }
+        
+          // Clear previous results
+          scanResultBox.innerHTML = '';
+        
+          let head = document.createElement('h2');
+          head.innerText = "Analysis Results:";
+          scanResultBox.appendChild(head);
+        
+          let scanList = document.createElement("ul");
+          scanList.classList.add("scan-list");
+          scanResultBox.appendChild(scanList);
+          
+          const response = results;
+          if (response && response.length > 0) {
+              response.forEach(item => {
+                  let scanItem = document.createElement("li");
+                  scanItem.classList.add("scan-item");
+                  scanItem.innerHTML = `
+                      <strong>${item.dark_pattern_label}</strong>
+                      <p>${item.dark_text}</p>
+                      <small>URL: ${item.website_url}</small>
+                  `;
+                  scanList.appendChild(scanItem);
+              });
+          } else {
+              let noResultItem = document.createElement("li");
+              noResultItem.classList.add("scan-item");
+              noResultItem.innerText = "No dark patterns found.";
+              scanList.appendChild(noResultItem);
+          }
+        
+          // Hide progress area after displaying results
+          if (progressArea) {
+              progressArea.style.display = 'none';
+          }
+  }
+});
 
 
 
@@ -117,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Base url
-  let baseUrl = "http://127.0.0.1:8000/";
+  let baseUrl = "https://cogniguard.onionreads.com/";
   let reportBtn = document.getElementById("report-btn");
 
   reportBtn.addEventListener("click", function () {
@@ -139,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let tandcBtn = document.getElementById("tandc-btn");
   tandcBtn.addEventListener("click", function () {
-    let newTabUrl = baseUrl + "terms-conditions/";
+    let newTabUrl = baseUrl + "terms-of-use/";
 
     chrome.tabs.create({ url: newTabUrl });
 
@@ -147,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let knowDp = document.getElementById("know-dp");
   knowDp.addEventListener("click", () => {
-    let newTabUrl = baseUrl + "know-dp/";
+    let newTabUrl = baseUrl + "know-about-dp/";
 
     chrome.tabs.create({ url: newTabUrl });
   })

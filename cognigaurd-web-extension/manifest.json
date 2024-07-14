@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "CogniGuard",
-    "version": "0.1.0",
+    "version": "0.0.2",
     "description": "Detects dark patterns on websites.",
     "permissions": [
       "activeTab",

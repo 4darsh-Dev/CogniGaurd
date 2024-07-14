@@ -4,7 +4,7 @@ from django.contrib import admin
 
 from .models import DarkPatternReport, FAQData
 from django.contrib import admin
-from .models import Visitor
+# from .models import Visitor
 
 # visitor model
 
@@ -16,7 +16,7 @@ class VisitorAdmin(admin.ModelAdmin):
 
 # registering the models
 
-admin.site.register(Visitor, VisitorAdmin)
+# admin.site.register(Visitor, VisitorAdmin)
 
 admin.site.register(DarkPatternReport)
 admin.site.register(FAQData)

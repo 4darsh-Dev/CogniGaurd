@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block head %}
-<!-- <link rel="stylesheet" href="{% static "css/faqs.css" %}"> -->
+<link rel="stylesheet" href="{% static "css/dashboard.css" %}">
 {% endblock head %}
 
 {% block title %}Dashboard{% endblock title %}
@@ -10,21 +10,55 @@
 
 {% include 'messages.html' %}
 
-{% if user.is_authenticated %}
 
-<h1>Welcome to your dashboard, {{ username }}!</h1>
-    <a href="{% url 'home:logoutUser' %}">Logout</a>
+<div class="dashboard-container">
+    <h3>Welcome, {{ username }}!</h3>
+    <h1>Default API Keys</h1>
+    <button id="create-api-key" class="btn btn-primary">+ Create API Key</button>
+    
+    <table class="api-key-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Value</th>
+                <th>Expires At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="api-key-list">
+            {% for key in api_keys %}
+            <tr data-key-id="{{ key.id }}">
+                <td>{{ key.name }}</td>
+                <td>{{ key.key|slice:":8" }}************************</td>
+                <td>{{ key.expires_at|date:"Y-m-d H:i" }}</td>
+                <td>
+                    <button class="copy-key" data-key="{{ key.key }}">Copy</button>
+                    <button class="refresh-key">Refresh</button>
+                    <button class="delete-key">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="instructions">
+        <h3>How to use your token:</h3>
+        <ol>
+            <li>Generate a new token using the button above.</li>
+            <li>Copy the token and keep it secure.</li>
+            <li>Insert the token in your CogniGuard web extension.</li>
+            <li>The token will be used for authenticating API requests.</li>
+        </ol>
+    </div>
+    <a href="{% url 'home:logoutUser' %}" class="logout-btn">Logout</a>
+</div>
 
-{% else %}
-    <h1>You are not logged in</h1>
-    <a href="{% url 'home:loginUser' %}">Login</a> | <a href="{% url 'home:registerUser' %}">Register</a>
 
-{% endif %}
 
 {% endblock content %}
 
 {% block script %}
 
  <script src="{% static "js/messages.js" %}"></script> 
+ <script src="{% static "js/dashboard.js" %}"></script> 
 
 {% endblock script %}

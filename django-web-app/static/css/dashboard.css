@@ -1,0 +1,62 @@
+.dashboard-container {
+    margin-top: 6rem !important;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-container h1{
+    margin: 1rem 0 ;
+}
+.token-section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+#token-display {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#generate-token {
+    background-color: #4CAF50;
+    color: white;
+}
+#copy-token {
+    background-color: var(--color-primary);
+    color: white;
+}
+.instructions {
+    background-color: #e6f3ff;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.instructions h3{
+    margin: 1rem 0;
+}
+
+.instructions ol{
+    display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.logout-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #f44336;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+}

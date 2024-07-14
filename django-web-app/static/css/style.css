@@ -359,6 +359,7 @@ nav li [class="nav-btn"]:hover {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  list-style-type: none;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -407,6 +408,7 @@ body {
 }
 
 .elastic-section {
+  height: calc(100vh - 5rem);
   position: relative;
   padding: 6rem 2rem;
   overflow: hidden;
@@ -1690,7 +1692,7 @@ footer {
   padding: 0;
   margin: 0;
   position: fixed;
-  top: 10px;
+  top: 6rem;
   right: 10px;
   z-index: 1000;
 }

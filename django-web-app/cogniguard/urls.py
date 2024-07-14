@@ -10,6 +10,15 @@ from django.conf.urls.static import static
 
 from django.contrib.auth import views as auth_views
 
+# sitemap
+from .sitemap import StaticViewSitemap
+from django.contrib.sitemaps.views import sitemap
+
+sitemaps = {
+    'static': StaticViewSitemap,
+}
+
+
 # Admin panel customization
 admin.site.site_header = "CogniGuard Admin"
 admin.site.site_title = "CogniGuard Admin Portal"
@@ -30,11 +39,14 @@ urlpatterns = [
          auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'),
          name='password_reset_complete'),
 
-     path('accounts/', include('allauth.urls')), # all OAuth operations will be performed 
+    path('accounts/', include('allauth.urls')), # all OAuth operations will be performed 
 
      # api urls
-     path("api/", include("api.urls")),
+    path("api/", include("api.urls")),
      
+     # sitemap
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+
 ]
 # # vercel deployment url configuration
 

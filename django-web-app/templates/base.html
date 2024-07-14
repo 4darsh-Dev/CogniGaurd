@@ -92,13 +92,23 @@
                     </div>
                     
                 </ul>
+                {% if user.is_authenticated %}
+                <div class="user-profile">
+                    <a id="side-login" href="{% url 'home:dashboard' %}">Dashboard <i class="fas fa-user-circle"></i></a>
+                    <a id="side-register" href="{% url 'home:logoutUser' %}">Logout <i class="fas fa-sign-out-alt"></i></a>
+
+                {% else %}
+                
+                
                 <div class="side-items">
                     <i class="fas fa-search side-icons"></i>
                     <!-- <i class="fas fa-globe side-icons"></i> -->
-                    <a style="color: black;" target="_blank" href="https://github.com/4darsh-Dev/CogniGuard"><i class="fa-brands fa-github side-icons"></i></a>
+                    <a style="color: black;" target="_blank" href="https://github.com/4darsh-Dev/CogniGaurd"><i class="fa-brands fa-github side-icons"></i></a>
                     <a id="side-login" href="{% url 'home:loginUser' %}">Login</a>
                     <a class="nav-btn" id="side-register" href="{% url 'home:registerUser' %}">Get Started</a>
                 </div>
+
+                {% endif %}
             </nav>
         </section>
     </header>

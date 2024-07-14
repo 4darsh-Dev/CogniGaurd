@@ -1,5 +1,5 @@
-from .models import Visitor
+
 
 def visitor_count(request):
-    count = Visitor.objects.count()
+    count = 0
     return {'visitor_count': count}
