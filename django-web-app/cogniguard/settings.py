@@ -53,6 +53,9 @@ INSTALLED_APPS = [
     #drf configuration
     'rest_framework',
     'corsheaders', 
+
+    # jwt config
+    'rest_framework_simplejwt',
     
     # all-auth configuration
     'django.contrib.sites',
@@ -110,14 +113,30 @@ WSGI_APPLICATION = 'cogniguard.wsgi.application'
 
 
 # REST api settings configuration
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.AllowAny',
+#     ],
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.BasicAuthentication',
+#     ],
+# }
+
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
+
+# JWT settings
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=45),
+}
+
 
 # Cors allowed origins
 CORS_ALLOW_ALL_ORIGINS = True
@@ -263,10 +282,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
 # For Production only
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-# SECURE_SSL_REDIRECT = True
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 
 

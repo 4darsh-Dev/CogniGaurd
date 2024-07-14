@@ -28,6 +28,12 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.views.decorators.http import require_GET
 from django.http import HttpResponseBadRequest
 
+# generate token imps
+from rest_framework_simplejwt.tokens import RefreshToken
+from django.views.decorators.csrf import csrf_exempt
+from .models import APIKey
+import secrets
+
 
 # health check path
 def health_check(request):
@@ -56,11 +62,51 @@ def about(request):
     return render(request, "about.html")
 
 # Dashboard
+# @login_required
+# def dashboard(request):
+#     username = request.user.username
+#     return render(request, 'dashboard.html', {'username': username})
+
 @login_required
 def dashboard(request):
-    username = request.user.username
-    return render(request, 'dashboard.html', {'username': username})
+    api_keys = APIKey.objects.filter(user=request.user)
+    return render(request, 'dashboard.html', {'api_keys': api_keys, 'username': request.user.username})
 
+# Generate token
+@login_required
+def generate_token(request):
+    if request.method == 'POST':
+        user = request.user
+        refresh = RefreshToken.for_user(user)
+        return JsonResponse({
+            'token': str(refresh.access_token),
+        })
+    return JsonResponse({'error': 'Invalid request method'}, status=400)
+
+
+
+@login_required
+@csrf_exempt
+def create_api_key(request):
+    if request.method == 'POST':
+        name = request.POST.get('name', 'Default')
+        key = secrets.token_urlsafe(32)
+        api_key = APIKey.objects.create(user=request.user, name=name, key=key)
+        return JsonResponse({
+            'id': api_key.id,
+            'name': api_key.name,
+            'key': api_key.key,
+            'expires_at': api_key.expires_at.isoformat(),
+        })
+    return JsonResponse({'error': 'Invalid request'}, status=400)
+
+@login_required
+@csrf_exempt
+def delete_api_key(request, key_id):
+    if request.method == 'POST':
+        APIKey.objects.filter(id=key_id, user=request.user).delete()
+        return JsonResponse({'success': True})
+    return JsonResponse({'error': 'Invalid request'}, status=400)
 
 # User Authentication
 def loginUser(request):
