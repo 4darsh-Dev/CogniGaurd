@@ -125,47 +125,6 @@ function updateProgress(message, percentage) {
   progressBar.value = percentage;
 }
 
-// function displayDp(response) {
-//   if (!scanResultBox) {
-//       console.error('scanResultBox not found');
-//       return;
-//   }
-
-//   // Clear previous results
-//   scanResultBox.innerHTML = '';
-
-//   let head = document.createElement('h2');
-//   head.innerText = "Analysis Results:";
-//   scanResultBox.appendChild(head);
-
-//   let scanList = document.createElement("ul");
-//   scanList.classList.add("scan-list");
-//   scanResultBox.appendChild(scanList);
-
-//   if (response && response.length > 0) {
-//       response.forEach(item => {
-//           let scanItem = document.createElement("li");
-//           scanItem.classList.add("scan-item");
-//           scanItem.innerHTML = `
-//               <strong>${item.dark_pattern_label}</strong>: ${item.dark_text}
-//               <br>
-//               <small>URL: ${item.website_url}</small>
-//           `;
-//           scanList.appendChild(scanItem);
-//       });
-//   } else {
-//       let noResultItem = document.createElement("li");
-//       noResultItem.classList.add("scan-item");
-//       noResultItem.innerText = "No dark patterns found.";
-//       scanList.appendChild(noResultItem);
-//   }
-
-//   // Hide progress area after displaying results
-//   if (progressArea) {
-//       progressArea.style.display = 'none';
-//   }
-// }
-
 
 function displayDp(response) {
   if (!scanResultBox) {
