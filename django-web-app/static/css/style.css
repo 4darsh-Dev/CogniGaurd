@@ -1689,7 +1689,7 @@ footer {
   padding: 0;
   margin: 0;
   position: fixed;
-  top: 10px;
+  top: 6rem;
   right: 10px;
   z-index: 1000;
 }

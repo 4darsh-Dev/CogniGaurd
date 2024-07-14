@@ -32,9 +32,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('PJ_SECRET_KEY')
 
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ["cogniguard.onionreads.com","*.onionreads.com", ".vercel.app", ".now.sh", "127.0.0.1", "*.onrender.com", "cognigaurd.onrender.com", "13.201.23.57"]
 
 
