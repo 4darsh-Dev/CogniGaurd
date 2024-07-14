@@ -28,7 +28,7 @@ class FAQData(models.Model):
 class APIKey(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    key = models.CharField(max_length=600, unique=True)
+    key = models.CharField(max_length=500, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateTimeField()
 

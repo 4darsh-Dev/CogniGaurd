@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
           progressArea.style.display = 'block';
           updateProgress("Sending URL for analysis...", 10);
 
-          fetch('https://cogniguard.onionreads.com/api/analyze-url/', {
+          fetch('http://127.0.0.1:8000/api/analyze-url/', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',

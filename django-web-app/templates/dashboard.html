@@ -10,36 +10,16 @@
 
 {% include 'messages.html' %}
 
-
 <div class="dashboard-container">
-    <h3>Welcome, {{ username }}!</h3>
-    <h1>Default API Keys</h1>
-    <button id="create-api-key" class="btn btn-primary">+ Create API Key</button>
-    
-    <table class="api-key-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Value</th>
-                <th>Expires At</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="api-key-list">
-            {% for key in api_keys %}
-            <tr data-key-id="{{ key.id }}">
-                <td>{{ key.name }}</td>
-                <td>{{ key.key|slice:":8" }}************************</td>
-                <td>{{ key.expires_at|date:"Y-m-d H:i" }}</td>
-                <td>
-                    <button class="copy-key" data-key="{{ key.key }}">Copy</button>
-                    <button class="refresh-key">Refresh</button>
-                    <button class="delete-key">Delete</button>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <h1>Welcome, {{ username }}!</h1>
+    <div class="token-section">
+        <h2>API Token</h2>
+        <div id="token-display">
+            <p>Your API token: <span id="token">Not generated</span></p>
+        </div>
+        <button id="generate-token">Generate New Token</button>
+        <button id="copy-token" disabled>Copy Token</button>
+    </div>
     <div class="instructions">
         <h3>How to use your token:</h3>
         <ol>
