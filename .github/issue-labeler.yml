@@ -1,6 +1,6 @@
 # Basic issue types
 bug:
-  - '(bug|fix|error|issue|crash|problem|failure)'
+  - '(bug|error|failure)'
 enhancement:
   - '(feature|enhancement|improvement|request|idea)'
 documentation:
