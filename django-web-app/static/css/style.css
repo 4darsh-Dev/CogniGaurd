@@ -17,6 +17,7 @@
   --font-size: 1.3rem;
   --deep-saffron: #ff9933;
   --pink: #ff6ac2;
+  --sky-blue: #87CEEB;
   --deep-pink: #a852a3;
   --mono: Montserrat, monospace;
   --sans: Poppins, sans-serif;
@@ -746,7 +747,7 @@ body {
 .server {
   width: 60px;
   height: 100px;
-  background-color: var(--color-secondary);
+  background-color: #87CEEB;
   position: absolute;
   border-radius: 5px;
 }
