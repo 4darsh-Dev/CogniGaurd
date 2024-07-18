@@ -270,9 +270,12 @@ nav h1 [class*="bxl-"] {
 
 .menu-list li a {
   text-decoration: none;
-  color: var(--black);
+  color: royalblue;
   display: block;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border-radius: 5px;
 }
 
 .menu-items:hover {
@@ -396,9 +399,7 @@ nav li [class="nav-btn"]:hover {
 
 /* main section css */
 
-.content-section {
-  padding-top: 5rem;
-}
+/* Base Styles */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -407,56 +408,103 @@ body {
   color: var(--text-color);
 }
 
+/* Padding for content section */
+.content-section {
+  padding-top: 5rem;
+}
+
+/* Elastic section styling */
 .elastic-section {
   height: calc(100vh - 5rem);
   position: relative;
   padding: 6rem 2rem;
   overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Container first styling */
 .container-first {
-  max-width: 1200px;
+  max-width: 800px; /* Reduced width for a more compact look */
   margin: 0 auto;
   text-align: center;
+  padding: 2rem;
+  background: #f0f8ff; /* Very light blue shade */
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  animation: moveBox 5s ease-in-out infinite;
+  font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
 }
 
+/* Keyframes for box movement animation */
+@keyframes moveBox {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Logo container styling */
 .logo-container {
   margin-bottom: 2rem;
 }
 
 .home-logo {
-  width: 32px;
+  width: 64px; /* Increased size for better visibility */
   height: auto;
+  transition: transform 0.3s ease;
 }
 
-.logo-container span{
-  font-size: 1.5rem;
-
+.home-logo:hover {
+  transform: scale(1.2);
 }
 
+.logo-container span {
+  font-size: 2rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Title styling */
 .title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s ease forwards;
-}
-
-.highlight {
   color: var(--color-primary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Highlight styling */
+.highlight {
+  color: var(--color-secondary);
+}
+
+/* Description styling */
 .description {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.8;
   max-width: 800px;
   margin: 0 auto 2rem;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s ease forwards 0.2s;
+  color: var(--text-color-secondary);
+  background-color: #f0f8ff; /* Very light blue shade */
+  padding: 1rem;
+  border-radius: 5px;
 }
 
+/* CTA container styling */
 .cta-container {
   display: flex;
   justify-content: center;
@@ -466,11 +514,12 @@ body {
 
 .btn {
   padding: 0.8rem 1.5rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 25px;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary {
@@ -480,31 +529,55 @@ body {
 
 .btn-primary:hover {
   background-color: darken(var(--color-primary), 10%);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
   background-color: transparent;
   color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .btn-secondary:hover {
   background-color: var(--color-primary);
   color: white;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Download link styling */
 .download-link {
   color: var(--color-primary);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
   border-bottom: 2px solid var(--color-primary);
 }
 
 .download-link:hover {
   color: darken(var(--color-primary), 15%);
-
+  border-bottom: 2px solid darken(var(--color-primary), 15%);
 }
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Additional styling for buttons */
+.btn-primary, .btn-secondary {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
 
 .shape {
   position: absolute;
