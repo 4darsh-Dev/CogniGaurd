@@ -10,7 +10,7 @@
   --color-primary-light: rgba(36, 87, 197, 0.3);
   --dark-primary:#34495e;
   --black: #171321;
-  --color-secondary: #00bfb3;
+  --color-secondary: #171321;
   --color-white: #fff;
   --blue: #5d12d2;
   --peach: #ffe5e5;
@@ -270,7 +270,7 @@ nav h1 [class*="bxl-"] {
 
 .menu-list li a {
   text-decoration: none;
-  color: royalblue;
+  color: var(--color-primary);
   display: block;
   font-size: 16px;
   font-weight: bold;
@@ -454,6 +454,9 @@ body {
 /* Logo container styling */
 .logo-container {
   margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .home-logo {
@@ -470,6 +473,7 @@ body {
   font-size: 2rem;
   color: var(--color-primary);
   font-weight: 700;
+  transform: translateY(-5px); /* Move text in parallel with logo */
 }
 
 /* Title styling */
@@ -487,6 +491,11 @@ body {
 /* Highlight styling */
 .highlight {
   color: var(--color-secondary);
+}
+
+/* Dark Pattern styling */
+.dark-pattern {
+  color: var(--color-secondary); /* Change text color to black */
 }
 
 /* Description styling */
@@ -543,6 +552,11 @@ body {
   color: white;
   border: 2px solid transparent;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Menu items styling */
+.menu-item {
+  color: var(--color-primary); /* Use color palette or CSS var */
 }
 
 /* Download link styling */
