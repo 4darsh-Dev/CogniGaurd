@@ -1909,7 +1909,7 @@ footer {
   overflow: hidden;
   flex-direction: column;
   position: absolute;
-  left:-170px ;
+  left:5rem ;
   bottom: -40px;
 }
 
