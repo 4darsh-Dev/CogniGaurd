@@ -1886,7 +1886,7 @@ footer {
   width: 60px;
   height: 60px;
   position: relative;
-  left:-170px ;
+  left:80px ;
   bottom: -40px;
   border-radius: 50%;
   background-color: var(--color-primary);
@@ -1897,7 +1897,7 @@ footer {
   background-color: var(--dark-primary);
 }
 .chatbot-toggle .material-icons {
-  font-size: 40px; /* Adjust this size as needed */
+  font-size: 32px; /* Adjust this size as needed */
 }
 
 .chatbot {
