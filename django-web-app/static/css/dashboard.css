@@ -1,0 +1,131 @@
+.dashboard-container {
+    margin-top: 6rem !important;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-container h1{
+    margin: 1rem 0 ;
+}
+.token-section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+#token-display {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#generate-token {
+    background-color: #4CAF50;
+    color: white;
+}
+#copy-token {
+    background-color: var(--color-primary);
+    color: white;
+}
+.instructions {
+    background-color: #e6f3ff;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.instructions h3{
+    margin: 1rem 0;
+}
+
+.instructions ol{
+    display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.logout-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #f44336;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+/* alert message display css */
+
+.alert-div {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 300px;
+    max-width: 80%;
+    opacity: 0;
+    transition: top 0.5s ease, opacity 0.5s ease;
+    z-index: 1000;
+}
+
+.alert-div.show {
+    top: 20%;
+    opacity: 1;
+}
+
+.alert-message {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+.alert-close {
+    background-color: transparent;
+    border: none;
+    color: #999;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0;
+    margin-left: 15px;
+}
+
+.alert-close:hover {
+    color: #333;
+}
+
+.alert-close::before {
+    content: "×";
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+.alert-div.show {
+    animation: pulse 2s infinite;
+}

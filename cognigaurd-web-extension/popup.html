@@ -42,14 +42,33 @@
     </section>
 
     <section id="scan-results">
-
       
       <div class="scan-result-box">
+
         
-        <a id="report-btn" href="http://127.0.0.1:8000/report-dp">Report Dark Patterns</a>
+        
+        <a id="report-btn" href="https://cogniguard.onionreads.com/report-dp">Report Dark Patterns</a>
+
+        <div id="progress-area" style="display: none;">
+          <h3>Processing URL</h3>
+          <p id="status-message">Initializing...</p>
+          <progress id="progress-bar" value="0" max="100"></progress>
+        </div>
+
+        <input type="text" id="token-input" placeholder="Enter your API token">
+
+        <div id="result"></div>
+    
+
+
+
+
       </div>
       
     </section>
+
+    
+    
 
 
     <section id="tp-score">

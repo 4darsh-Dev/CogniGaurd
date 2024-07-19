@@ -159,9 +159,6 @@ let menuBtn = document.getElementById("check");
 menuBtn.addEventListener("click", menuBtnChanger);
 
 
-
-
-
 // back to top button js
 
 

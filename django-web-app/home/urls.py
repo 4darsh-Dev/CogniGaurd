@@ -24,7 +24,9 @@ urlpatterns = [
     path('health-check/', views.health_check, name='health_check'),
     path('privacy-policy/', views.privacyPolicy, name='privacy-policy'),
     path('terms-of-use/', views.termsOfUse, name='terms-of-use'),
-    
+    path('generate-token/', views.generate_token, name='generate_token'),
+    path('create-api-key/', views.create_api_key, name='create_api_key'),
+    path('delete-api-key/<int:key_id>/', views.delete_api_key, name='delete_api_key'),
 
     
 ]

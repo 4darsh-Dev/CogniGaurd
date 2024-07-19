@@ -13,9 +13,8 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 
 ##### About Dark Patterns => https://www.deceptive.design/
 
-<p align="center">
-  <img src="https://onionreads.com/wp-content/uploads/2024/01/Screenshot-2024-01-15-014420.png" alt="CogniGuard" width="600px" />
-</p>
+![Screenshot 2024-07-13 024617](https://github.com/user-attachments/assets/e7c2dbe5-7c9c-4759-ab72-042c90fe3b2c)
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1DoYa1wVWhA?si=FCnzDxHuiJs5_Q4P" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

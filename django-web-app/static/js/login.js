@@ -45,3 +45,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
     
 })
+
+
+// show password
+function togglePasswordVisibility() {
+    const passwordField = document.getElementById('password');
+    const toggleIcon = document.getElementById('togglePassword');
+    const isPasswordVisible = passwordField.type === 'password';
+    passwordField.type = isPasswordVisible ? 'text' : 'password';
+    toggleIcon.textContent = isPasswordVisible ? '🙈' : '👁️';
+}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block head %}
-<!-- <link rel="stylesheet" href="{% static "css/faqs.css" %}"> -->
+<link rel="stylesheet" href="{% static "css/dashboard.css" %}">
 {% endblock head %}
 
 {% block title %}Dashboard{% endblock title %}
@@ -10,21 +10,36 @@
 
 {% include 'messages.html' %}
 
-{% if user.is_authenticated %}
+<div class="dashboard-container">
+    <h1>Welcome, {{ username }}!</h1>
+    <div class="token-section">
+        <h2>API Token</h2>
+        <div id="token-display">
+            <p>Your API token: <span id="token">Not generated</span></p>
+        </div>
+        <button id="generate-token">Generate New Token</button>
+        <button id="copy-token" disabled>Copy Token</button>
+    </div>
+    <token-list></token-list>
+    <div class="instructions">
+        <h3>How to use your token:</h3>
+        <ol>
+            <li>Generate a new token using the button above.</li>
+            <li>Copy the token and keep it secure.</li>
+            <li>Insert the token in your CogniGuard web extension.</li>
+            <li>The token will be used for authenticating API requests.</li>
+        </ol>
+    </div>
+    <a href="{% url 'home:logoutUser' %}" class="logout-btn">Logout</a>
+</div>
 
-<h1>Welcome to your dashboard, {{ username }}!</h1>
-    <a href="{% url 'home:logoutUser' %}">Logout</a>
 
-{% else %}
-    <h1>You are not logged in</h1>
-    <a href="{% url 'home:loginUser' %}">Login</a> | <a href="{% url 'home:registerUser' %}">Register</a>
-
-{% endif %}
 
 {% endblock content %}
 
 {% block script %}
 
  <script src="{% static "js/messages.js" %}"></script> 
+ <script src="{% static "js/dashboard.js" %}"></script> 
 
 {% endblock script %}
