@@ -1764,7 +1764,7 @@ footer {
  }   
 
  ::-webkit-scrollbar-thumb {
-     background-color: #4352d6; /* Scrollbar thumb color */
+     background-color:var(--color-primary); /* Scrollbar thumb color */
      border-radius: 10px; /* Roundness of scrollbar thumb */
      border: 3px solid #f1f1f1; /* Space around thumb */
  }   
@@ -1772,3 +1772,123 @@ footer {
  ::-webkit-scrollbar-thumb:hover {
      background: #b4adad; /* Scrollbar thumb hover color */
  }
+
+ 
+ 
+
+ 
+
+.chatbot-container {
+  position: fixed;
+  bottom: 60px;
+  right: 80rem;
+}
+
+.chatbot-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white; /* Blue color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  left:-170px ;
+  bottom: -40px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-toggle:hover{
+  background-color: var(--dark-primary);
+}
+.chatbot-toggle .material-icons {
+  font-size: 40px; /* Adjust this size as needed */
+}
+
+.chatbot {
+  display: none;
+  width: 300px;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: column;
+  position: absolute;
+  left:-170px ;
+  bottom: -40px;
+}
+
+.chatbot-header {
+  background-color:var(--color-primary); /* Blue color */
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.chatbot-close {
+  font-size: 30px; /* Adjust this size as needed */
+}
+
+.chatbot-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+
+.chatbot-footer {
+  display: flex;
+  padding: 10px;
+  background-color: #e9ecef;
+}
+
+.chatbot-footer input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.chatbot-footer button {
+  padding: 10px;
+  border: none;
+  background-color:transparent;  /* Blue color */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chatbot-footer button .material-icons {
+    color: var(--color-primary);
+}
+.message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 70%;
+}
+
+.message.user {
+  background-color: var(--color-primary); ; /* Blue color */
+  color: white;
+  align-self: flex-end;
+}
+
+.message.bot {
+  background-color: #e1e1e1;
+  align-self: flex-start;
+}
