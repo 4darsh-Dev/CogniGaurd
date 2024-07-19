@@ -1980,7 +1980,7 @@ footer {
 }
 
 .message.bot {
-  background-color: #e1e1e1;
+  background-color: gray;
   align-self: flex-start;
 }
 
