@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Add 'back to top' button functionality
   const backToTopButton = document.createElement('button');
-  backToTopButton.innerHTML = `<i class="fa-solid fa-arrow-up"></i>`;
+  backToTopButton.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
   backToTopButton.setAttribute('id', 'backToTop');
   backToTopButton.style.display = 'none';
   document.body.appendChild(backToTopButton);
