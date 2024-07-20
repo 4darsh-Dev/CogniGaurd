@@ -697,3 +697,21 @@
   left: 22%;
   }
 }
+
+::-webkit-scrollbar {
+  width: 12px; /* Adjust scrollbar width */
+ }
+
+ ::-webkit-scrollbar-track {
+     background: #f1f1f1; /* Scrollbar track color */
+ }   
+
+ ::-webkit-scrollbar-thumb {
+     background-color: #4352d6; /* Scrollbar thumb color */
+     border-radius: 10px; /* Roundness of scrollbar thumb */
+     border: 3px solid #f1f1f1; /* Space around thumb */
+ }   
+
+ ::-webkit-scrollbar-thumb:hover {
+     background: #555; /* Scrollbar thumb hover color */
+ }

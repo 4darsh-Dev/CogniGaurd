@@ -112,6 +112,7 @@ EMAIL_HOST=smtp.your-email-provider.com
 EMAIL_HOST_USER=your_email@example.com
 EMAIL_HOST_PASSWORD=your_email_password
 
+
 # database configuration or use default sqlite3 
 DB_NAME=your-database-name
 DB_USER=your-db-user-name
@@ -183,7 +184,7 @@ python manage.py makemigrations
 ```
 ```bash 
 python manage.py migrate 
-```
+
 ```bash 
 python manage.py runserver 
 ```
