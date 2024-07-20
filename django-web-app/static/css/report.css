@@ -3,6 +3,8 @@
 }
 .content-section {
   gap: 3rem;
+  box-sizing: border-box;
+  margin: 20px;
   /* padding-left: 30rem; */
 }
 
