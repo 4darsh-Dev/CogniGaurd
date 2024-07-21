@@ -194,3 +194,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   });
 });
+
+window.addEventListener("load", myLoad);
+const Preloader = document.querySelector(".preloader4");
+
+function myLoad(){
+  setTimeout(() => {
+    Preloader.style.display = "none";
+  }, 1000);
+}
