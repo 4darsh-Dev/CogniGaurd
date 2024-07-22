@@ -50,6 +50,9 @@
 .preloader4{
   background: linear-gradient(135deg, #16357e, #008579, #b0b4b9);
   display: block;
+  height: 100vh;
+  width: 100%;
+  position:fixed;
 }
 
 
