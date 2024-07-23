@@ -10,7 +10,8 @@
   --color-primary-light: rgba(36, 87, 197, 0.3);
   --dark-primary:#34495e;
   --black: #171321;
-  --color-secondary: #171321;
+  --chatbot-color: #09296e;
+  --color-secondary: #00bfb3;
   --color-white: #fff;
   --blue: #5d12d2;
   --peach: #ffe5e5;
@@ -36,23 +37,25 @@
 
 /* -----preloader-starts-------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 
 .loader{
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .preloader4{
-  background: linear-gradient(135deg, #16357e, #008579, #b0b4b9);
+  background: linear-gradient(135deg, #194dca, #123793, #054ea9);
   display: block;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position:fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999999;
 }
 
 
@@ -145,11 +148,11 @@
 
 .loader p{
   position: absolute;
-  color: white;
+  color: var(--white);
   top: 27rem;
-  font-size: 4rem;
-  letter-spacing: 0.8rem;
-  font-family: "Ubuntu";
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  /* font-family: "Ubuntu"; */
 }
 
 /* ------preloader-finish------ */
@@ -288,7 +291,7 @@ a:hover {
 nav {
   font-family: var(--sans);
   font-size: 80%;
-  padding: 1rem 4rem;
+  padding: 0.5rem 4rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -353,7 +356,7 @@ nav {
 }
 .logo h1 a span{
   position: relative;
-  top: -7px;
+  top: 3px;
 }
 .logo h1 a:hover {
   color: var(--color-primary);
@@ -391,10 +394,10 @@ nav h1 [class*="bxl-"] {
 
 .menu-list li a {
   text-decoration: none;
-  color: var(--color-primary);
+  color: var(--black);
   display: block;
   font-size: 16px;
-  font-weight: bold;
+  /* font-weight: bold; */
   transition: all 0.3s ease;
   border-radius: 5px;
 }
@@ -581,7 +584,7 @@ body {
 }
 
 .home-logo {
-  width: 64px; /* Increased size for better visibility */
+  width: 36px; /* Increased size for better visibility */
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -591,15 +594,15 @@ body {
 }
 
 .logo-container span {
-  font-size: 2rem;
+  font-size: 1.2rem;
   color: var(--color-primary);
-  font-weight: 700;
-  transform: translateY(-5px); /* Move text in parallel with logo */
+  font-weight: 500;
+  
 }
 
 /* Title styling */
 .title {
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   opacity: 0;
@@ -611,7 +614,7 @@ body {
 
 /* Highlight styling */
 .highlight {
-  color: var(--color-secondary);
+  color: var(--text-color);
 }
 
 /* Dark Pattern styling */
@@ -867,7 +870,7 @@ body {
 .server {
   width: 60px;
   height: 100px;
-  background-color: #87CEEB;
+  background-color:var(--color-secondary);
   position: absolute;
   border-radius: 5px;
 }
@@ -1698,6 +1701,7 @@ footer {
 .testimonial-header h2 {
   font-size: 2rem;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .testimonial-header p {
@@ -1948,7 +1952,7 @@ footer {
 
 #backToTop {
   position: fixed;
-  bottom: 20px;
+  bottom: 5rem;
   right: 20px;
   z-index: 99;
   border: none;
@@ -1957,8 +1961,11 @@ footer {
   color: white;
   cursor: pointer;
   padding: 15px;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 50%;
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
+  transition: background-color 0.3s;
 }
 
 #backToTop:hover {
@@ -1999,15 +2006,15 @@ footer {
   background: none;
   border: none;
   cursor: pointer;
-  color: white; /* Blue color */
+  color: white; 
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  position: relative;
-  left:80px ;
-  bottom: -40px;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right:20px ;
+  bottom: 20px;
   border-radius: 50%;
   background-color: var(--color-primary);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -2017,29 +2024,34 @@ footer {
   background-color: var(--dark-primary);
 }
 .chatbot-toggle .material-icons {
-  font-size: 32px; /* Adjust this size as needed */
+  font-size: 22px; /* Adjust this size as needed */
 }
 
 .chatbot {
   display: none;
-  width: 300px;
+  width: 30vw;
   background-color: var(--color-primary);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 25px rgba(27, 26, 26, 0.1);
   border-radius: 10px;
   overflow: hidden;
   flex-direction: column;
-  position: absolute;
-  left:5rem ;
-  bottom: -40px;
+  position: fixed;
+  right:80px ;
+  bottom: 55px;
+  max-height: 400px;
 }
 
 .chatbot-header {
-  background-color:var(--color-primary); /* Blue color */
+  background-color: var(--chatbot-color); 
   color: white;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.chatbot-header h2{
+  font-size: 1.5rem;
 }
 
 .chatbot-close {
@@ -2094,13 +2106,14 @@ footer {
 }
 
 .message.user {
-  background-color: var(--color-primary); ; /* Blue color */
+  background-color: var(--chatbot-color); ;
   color: white;
   align-self: flex-end;
 }
 
 .message.bot {
-  background-color: gray;
+  background-color: #e1dbdb;
   align-self: flex-start;
+  color: var(--black);
 }
 

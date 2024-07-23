@@ -195,11 +195,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 });
 
-window.addEventListener("load", myLoad);
-const Preloader = document.querySelector(".preloader4");
+// preloaer js 
+const preloader = document.querySelector(".preloader4");
 
-function myLoad(){
+const preloadFunc = () =>{
   setTimeout(() => {
-    Preloader.style.display = "none";
+    preloader.style.display = "none";
   }, 1000);
 }
+
+window.addEventListener("load", preloadFunc);

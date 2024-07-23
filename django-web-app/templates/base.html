@@ -122,7 +122,6 @@
                     <a style="color: black;" target="_blank" href="https://github.com/4darsh-Dev/CogniGuard"><i
                             class="fa-brands fa-github side-icons"></i></a>
 
-                    <a style="color: black;" target="_blank" href="https://github.com/4darsh-Dev/CogniGaurd"><i class="fa-brands fa-github side-icons"></i></a>
 
                     <a id="side-login" href="{% url 'home:loginUser' %}">Login</a>
                     <a class="nav-btn" id="side-register" href="{% url 'home:registerUser' %}">Get Started</a>
@@ -229,7 +228,7 @@
         </button>
         <div class="chatbot" id="chatbot">
             <div class="chatbot-header">
-                <h2>Chatbot</h2>
+                <h2><i class="fa-solid fa-robot"></i></i> Chatbot <sub>(maintenance)</sub> </h2>
                 <button id="chatbotClose" class="chatbot-close">&times;</button>
             </div>
             <div class="chatbot-body" id="chatbot-body">
@@ -248,9 +247,9 @@
     <script src="{% static 'js/app.js' %}"></script>
     <script src="https://kit.fontawesome.com/f3379b7634.js" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> {% endcomment %}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
