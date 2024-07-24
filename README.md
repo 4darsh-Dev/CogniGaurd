@@ -43,7 +43,7 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
   <table border="1" cellpadding="10">
         <tr>
             <td rowspan="2">
-                <img src="https://github.com/user-attachments/assets/c450ca4f-935e-4628-8169-86f36bed694c" alt="GSSOC Logo" width="100" height="55">
+                <img src="https://github.com/user-attachments/assets/c450ca4f-935e-4628-8169-86f36bed694c" alt="GSSOC Logo" width="80" height="65">
             </td>
             <td>
                 <strong>GSSOC 2024</strong>
@@ -56,7 +56,7 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
         </tr>
         <tr>
             <td rowspan="2">
-                <img src="https://github.com/user-attachments/assets/7d08bb33-18ac-455a-8c1f-af811443b1ff" alt="GSSOC Logo" width="100" height="55">
+                <img src="https://github.com/user-attachments/assets/7d08bb33-18ac-455a-8c1f-af811443b1ff" alt="GSSOC Logo" width="80" height="60">
             </td>
             <td>
                 <strong>VSOC 2024</strong>
