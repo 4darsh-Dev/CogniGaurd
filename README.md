@@ -35,28 +35,41 @@ CogniGuard is a powerful web extension designed to empower users by identifying 
 ![GitHub forks](https://img.shields.io/github/forks/4darsh-Dev/CogniGaurd)
 ![GitHub Repo stars](https://img.shields.io/github/stars/4darsh-Dev/CogniGaurd)
 
-## Open Source Programs
+<!-- Open Source Programs -->
+  <div>
+    <h2><img src="https://github.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/blob/master/Emojis/Hand%20gestures/Flexed%20Biceps.png?raw=true" width="35" height="35" > Open Source Programs</h2>
+  </div>
 
-<table>
-  <tr>
-    <td width="250px">
-      <img src="https://onionreads.com/wp-content/uploads/2024/06/gssoc-program.png" alt="GSSoC '24 Image" width=400 height=auto>
-    </td>
-    <td>
-      <b>**GSSoC'24**</b>
-      GirlScript Summer Of Code is a three-month-long Open-Source Program conducted every summer by the Girlscript Foundation. Timeline : 10th May - 10th August 2024 
-    </td>
-  </tr>
-  <tr>
-    <td width="250px">
-      <img  src="https://onionreads.com/wp-content/uploads/2024/06/vsoc-program.webp" alt="VSoC '24 Image" width=auto height="100">
-    </td>
-    <td>
-        <b>**VSoC'24**</b>
-      Vinyasa Summer of Code is an immersive program designed to elevate your coding skills and provide hands-on experience with real-world open-source projects. Collaborate with experienced mentors, build an impressive portfolio, and become a vital part of a vibrant coding community.
-    </td>
-  </tr>
-</table>
+  <table border="1" cellpadding="10">
+        <tr>
+            <td rowspan="2">
+                <img src="https://github.com/user-attachments/assets/c450ca4f-935e-4628-8169-86f36bed694c" alt="GSSOC Logo" width="80" height="65">
+            </td>
+            <td>
+                <strong>GSSOC 2024</strong>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                This project is part of GirlScript Summer of Code. We warmly welcome contributions from the community.
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2">
+                <img src="https://github.com/user-attachments/assets/7d08bb33-18ac-455a-8c1f-af811443b1ff" alt="GSSOC Logo" width="80" height="60">
+            </td>
+            <td>
+                <strong>VSOC 2024</strong>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                This project is part of Vinyasa Summer of Code We warmly welcome contributions from the community.
+            </td>
+        </tr>
+    </table>
+
+<hr>
 
 ## Website SS
 
