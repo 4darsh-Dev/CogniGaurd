@@ -539,7 +539,7 @@ body {
 
 /* Elastic section styling */
 .elastic-section {
-  height: calc(100vh - 5rem);
+  height: auto;
   position: relative;
   padding: 6rem 2rem;
   overflow: hidden;
