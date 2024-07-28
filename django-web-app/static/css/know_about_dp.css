@@ -1,154 +1,150 @@
-
-
 #hero {
-    background: url('/static/img/know-about-hero-img.jpg') no-repeat center center/cover;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    margin-top: 6rem; 
+  background: url("/static/img/know-about-hero-img.jpg") no-repeat center
+    center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  margin-top: 6rem;
 }
 
 .hero-text h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    animation: fadeInDown 1s;
-    font-family: var(--font-primary);
-    
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s;
+  font-family: var(--font-primary);
 }
 
 .hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    animation: fadeInUp 1s;
-    font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s;
+  font-family: var(--font-secondary);
 }
 
 .section-cls {
-    padding: 5rem 0;
-    text-align: center;
+  padding: 5rem 0;
+  text-align: center;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
-.container h2{
-    font-size: 2rem;
+.container h2 {
+  font-size: 2rem;
   font-family: var(--font-secondary);
 }
 .patterns-grid {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 1000px;
-    flex-wrap: wrap;
-    margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .pattern {
-    flex: 1;
-    max-width: 40%;
-    margin: 1rem;
-    padding: 2rem;
-    background: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+  width: 30%;
+  margin: 1rem;
+  padding: 2rem;
+  background: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }
-.pattern h3{
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-family: var(--font-primary);
-    color: #333;
-
+.pattern h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-primary);
+  color: #333;
 }
 .pattern p {
-    font-size: 1.2rem;
-    font-family: var(--font-secondary);
-    padding: 12px 0 ;
-
+  font-size: 1.2rem;
+  font-family: var(--font-secondary);
+  padding: 12px 0;
 }
 .pattern:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .pattern i {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
 }
 
-
 @keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 
 /* responsive props */
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background: #333;
-    }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #333;
+  }
+  .container {
+    width: 100%;
+  }
 
-    .nav-links li {
-        margin: 1.5rem 0;
-    }
+  .nav-links li {
+    margin: 1.5rem 0;
+  }
 
-    .menu-icon {
-        display: block;
-    }
+  .menu-icon {
+    display: block;
+  }
 
-    .patterns-grid {
-        flex-direction: column;
-    }
+  .patterns-grid {
+    flex-direction: column;
+  }
 
-    .pattern {
-        max-width: 100%;
-    }
-    #top-div{
-        margin-top: 4rem;
-        
-    }
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-    
+  .pattern {
+    max-width: 80%;
+    width: 80%;
+  }
+  #top-div {
+    margin-top: 4rem;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
 }
 
-@media only screen and (max-width:1250px){
-    .patterns-grid{
-        height: auto;
-    }
-    .pattern {
-        max-width: 80%;
-    }
+@media only screen and (max-width: 1250px) {
+  .patterns-grid {
+    height: auto;
+  }
+  .pattern {
+    max-width: 80%;
+  }
 }
