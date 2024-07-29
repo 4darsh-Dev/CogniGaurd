@@ -37,6 +37,11 @@
   letter-spacing: 0.7px;
   line-height: 24px;
 }
+
+.faq:hover{
+  box-shadow: 0 0 25px gray;
+
+}
 .faq-question {
   padding: 0.5rem;
   display: flex;
@@ -54,22 +59,20 @@
 
 .faq-answer {
   border-radius: 10px;
+  padding: 0px 1.5rem;
   max-height: 0;
   display: none;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .faq:hover .faq-answer{
-  display: block;
   padding: 1.5rem;
-  box-shadow: 0 0 25px gray;
-  transition: max-height 0.4s ease-in-out;
+  max-height: 200px;
 }
 
 .faq:hover .faq-button{
   transform: rotate(0deg);
-
 }
 
 
