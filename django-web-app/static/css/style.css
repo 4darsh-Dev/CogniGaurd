@@ -687,6 +687,22 @@ body {
   border-bottom: 2px solid darken(var(--color-primary), 15%);
 }
 
+/* Scroll indicator */
+.progress-container {
+  position: fixed;
+  /* top: 0; */
+  z-index: 1;
+  width: 100%;
+  height: 6px;
+  background: transparent;
+}
+
+.scrollIndicator {
+  height: 6px;
+  background: rgb(0, 0, 255);
+  width: 0%;
+}
+
 /* Keyframes for animations */
 @keyframes fadeInUp {
   to {
